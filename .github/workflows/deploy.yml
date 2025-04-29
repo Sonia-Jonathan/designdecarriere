@@ -1,4 +1,4 @@
-name: Déploiement FTP vers OVH
+name: Upload via FTP
 
 on:
   push:
@@ -7,18 +7,18 @@ on:
 
 jobs:
   ftp-deploy:
-    name: Upload via FTP
+    name: Déploiement FTP
     runs-on: ubuntu-latest
 
     steps:
-    - name: Récupération du dépôt
-      uses: actions/checkout@v2
+      - name: Récupération du dépôt
+        uses: actions/checkout@v2
 
-    - name: Déploiement FTP
-      uses: SamKirkland/FTP-Deploy-Action@4.3.3
-      with:
-        server: ${{ secrets.FTP_HOST }}
-        username: ${{ secrets.FTP_USER }}
-        password: ${{ secrets.FTP_PASSWORD }}
-        local-dir: ./wp-content/themes/hello-child  # ou ./wp-content/themes/hello-child si tu veux pousser un dossier précis
-        server-dir: /www/wp-content/themes/hello-child/
+      - name: Upload via FTP
+        uses: SamKirkland/FTP-Deploy-Action@4.3.3
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USER }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: wp-content/themes/hello-child/ # ✅ avec le slash final
+          server-dir: www/wp-content/themes/hello-child/ # ou l’endroit exact selon OVH

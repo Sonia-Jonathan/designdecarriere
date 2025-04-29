@@ -20,5 +20,5 @@ jobs:
             server: ${{ secrets.FTP_HOST }}
             username: ${{ secrets.FTP_USER }}
             password: ${{ secrets.FTP_PASSWORD }}
-            local-dir: wp-content/themes/hello-child/
+            local-dir: ./
             server-dir: www/wp-content/themes/hello-child/

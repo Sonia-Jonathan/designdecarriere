@@ -63,7 +63,6 @@
         <div class="intro">
           <h1>
             <?php the_field('titre_pour_qui'); ?>
-            jcznkcez
           </h1>
           <div class="underline-carriere">
             <?php $img = get_field('underline_carriere'); ?>

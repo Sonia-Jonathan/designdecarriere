@@ -17,8 +17,8 @@ jobs:
       - name: Upload via FTP
         uses: SamKirkland/FTP-Deploy-Action@4.3.3
         with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USER }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: wp-content/themes/hello-child/ # ✅ avec le slash final
-          server-dir: www/wp-content/themes/hello-child/ # ou l’endroit exact selon OVH
+            server: ${{ secrets.FTP_SERVER }}
+            username: ${{ secrets.FTP_USER }}
+            password: ${{ secrets.FTP_PASSWORD }}
+            local-dir: wp-content/themes/hello-child/
+            server-dir: www/wp-content/themes/hello-child/

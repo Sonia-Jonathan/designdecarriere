@@ -27,4 +27,13 @@ function hello_child_enqueue_assets() {
 }
 add_action('wp_enqueue_scripts', 'hello_child_enqueue_assets');
 
-  
+function ajouter_meta_robots() {
+    // Si l'utilisateur est connecté en tant qu'admin, on laisse indexer
+    if (current_user_can('administrator')) {
+        return;
+    }
+
+    echo '<meta name="robots" content="noindex, nofollow">' . "\n";
+}
+add_action('wp_head', 'ajouter_meta_robots');
+

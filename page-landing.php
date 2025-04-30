@@ -20,41 +20,44 @@
 </head>
 
 <body>
-  <!-- header -->
+  <!-- HEADER -->
   <header class="main-header">
+    <div class="progress-wrapper"></div>
+    <div class="progress-bar"></div>
     <div class="container">
-
-      <div class="logo">
-        <?php
-        $logo = get_field('logo_header', get_the_ID());
-        if ($logo): ?>
-          <img src="<?php echo esc_url($logo['url']); ?>" alt="Logo Marc Bergère">
+      <div class="logo-group">
+        <?php $img = get_field('marc_img'); ?>
+        <?php if ($img): ?>
+          <img class="logo-round" aria-hidden="true" src="<?php echo esc_url($img['url']); ?>" alt="<?php echo esc_attr($img['alt']); ?>">
+        <?php endif; ?>
+        <?php $img = get_field('logo_header'); ?>
+        <?php if ($img): ?>
+          <img class="logo-default" src="<?php echo esc_url($img['url']); ?>" alt="<?php echo esc_attr($img['alt']); ?>">
         <?php endif; ?>
       </div>
-      <!-- navbar -->
-      <nav class="main-nav">
-        <?php
-        wp_nav_menu([
-          'menu' => 'Header Menu', // 🔥 nom exact de ton menu
-          'container' => false,
-          'menu_class' => '',
-          'items_wrap' => '<ul>%3$s</ul>'
-        ]);
-        ?>
-      </nav>
-
-
-      <!-- Btn rdv -->
-      <div class="cta-container">
-        <a href="<?php the_field('lien_bouton_rdv', get_the_ID()); ?>" class="cta-button">
-          <?php the_field('texte_bouton_rdv', get_the_ID()); ?><i class="fa-solid fa-arrow-right"></i></span>
-        </a>
+      <div class="header-right">
+        <nav class="main-nav">
+          <?php
+          wp_nav_menu([
+            'menu' => 'Header Menu',
+            'container' => false,
+            'menu_class' => '',
+            'items_wrap' => '<ul>%3$s</ul>'
+          ]);
+          ?>
+        </nav>
+        <div class="cta-container">
+          <a href="<?php the_field('lien_bouton_rdv'); ?>" class="cta-button">
+            <?php the_field('texte_bouton_rdv'); ?> <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
       </div>
-
     </div>
   </header>
 
-  <!-- main -->
+
+
+  <!-- MAIN -->
   <main class="landing">
 
     <section id="pour-qui" class="section-pour-qui">
@@ -653,7 +656,34 @@
     });
   </script>
 
-  </script>
+<script>
+  window.addEventListener('scroll', function () {
+    const header = document.querySelector('.main-header');
+    const progressBar = document.querySelector('.progress-bar');
+    const progressWrapper = document.querySelector('.progress-wrapper');
+    const scrollTop = window.scrollY;
+    const docHeight = document.body.scrollHeight - window.innerHeight;
+    const progress = (scrollTop / docHeight) * 100;
+
+    // Seuil d'activation du scroll
+    const SCROLL_THRESHOLD = 100;
+
+    if (scrollTop > SCROLL_THRESHOLD) {
+      header.classList.add('scrolled');
+      progressWrapper.style.display = 'block';
+    } else {
+      header.classList.remove('scrolled');
+      progressWrapper.style.display = 'none';
+    }
+
+    // Mise à jour de la barre
+    progressBar.style.width = progress + '%';
+  });
+</script>
+
+
+
+
 
 
 </body>

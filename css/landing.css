@@ -30,6 +30,7 @@ h3 {
 }
 
 .main-header {
+    margin: auto;
     background: transparent;
     padding: 20px 40px;
     display: flex;

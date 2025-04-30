@@ -36,5 +36,3 @@ function ajouter_meta_robots() {
     echo '<meta name="robots" content="noindex, nofollow">' . "\n";
 }
 add_action('wp_head', 'ajouter_meta_robots');
-
-add_filter('show_admin_bar', '__return_false');

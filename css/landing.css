@@ -9,6 +9,14 @@ body {
 
 }
 
+html {
+  margin-top: 0 !important;
+}
+#wpadminbar {
+  display: none !important;
+}
+
+
 h1 {
     font-size: 55px;
     font-weight: 800;

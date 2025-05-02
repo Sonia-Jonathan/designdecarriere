@@ -9,6 +9,7 @@
   <meta charset="UTF-8">
   <title><?php the_title(); ?></title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
   <?php wp_head(); ?>
   <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/css/landing.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -79,7 +80,7 @@
               <img src="<?php echo esc_url($img['url']); ?>" alt="<?php echo esc_attr($img['alt']); ?>">
             <?php endif; ?>
           </div>
-          <h2><?php the_field('texte_intro_pour_qui'); ?></h2>
+          <h3><?php the_field('texte_intro_pour_qui'); ?></h3>
         </div>
 
         <div class="visuel">
@@ -98,11 +99,11 @@
               <img src="<?php echo esc_url($img['url']); ?>" alt="<?php echo esc_attr($img['alt']); ?>">
             <?php endif; ?>
           </div>
-          <h3 class="text-bold"><?php the_field('titre_types_epuisement'); ?></h3>
+          <p class="bold-content"><?php the_field('titre_types_epuisement'); ?></p>
           <ul>
-            <li><?php the_field('etiquette_1'); ?></li>
-            <li><?php the_field('etiquette_2'); ?></li>
-            <li><?php the_field('etiquette_3'); ?></li>
+            <li><h2><?php the_field('etiquette_1'); ?></h2></li>
+            <li><h2><?php the_field('etiquette_2'); ?></h2></li>
+            <li><h2><?php the_field('etiquette_3'); ?></h2></li>
           </ul>
         </div>
 
@@ -666,7 +667,7 @@
     const progress = (scrollTop / docHeight) * 100;
 
     // Seuil d'activation du scroll
-    const SCROLL_THRESHOLD = 100;
+    const SCROLL_THRESHOLD = 50;
 
     if (scrollTop > SCROLL_THRESHOLD) {
       header.classList.add('scrolled');

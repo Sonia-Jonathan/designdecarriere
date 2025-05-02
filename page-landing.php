@@ -48,7 +48,7 @@
           ?>
         </nav>
         <div class="cta-container">
-          <a href="<?php the_field('lien_bouton_rdv'); ?>" class="cta-button">
+          <a href="<?php the_field('lien_bouton_rdv'); ?>" class="btn btn-jaune cta-button">
             <?php the_field('texte_bouton_rdv'); ?> <i class="fa-solid fa-arrow-right"></i>
           </a>
         </div>
@@ -99,11 +99,11 @@
               <img src="<?php echo esc_url($img['url']); ?>" alt="<?php echo esc_attr($img['alt']); ?>">
             <?php endif; ?>
           </div>
-          <p class="bold-content"><?php the_field('titre_types_epuisement'); ?></p>
+          <p class="fs-18-bold"><?php the_field('titre_types_epuisement'); ?></p>
           <ul>
-            <li><h2><?php the_field('etiquette_1'); ?></h2></li>
-            <li><h2><?php the_field('etiquette_2'); ?></h2></li>
-            <li><h2><?php the_field('etiquette_3'); ?></h2></li>
+            <li class="titre-exergue"><?php the_field('etiquette_1'); ?></li>
+            <li class="titre-exergue"><?php the_field('etiquette_2'); ?></li>
+            <li class="titre-exergue"><?php the_field('etiquette_3'); ?></li>
           </ul>
         </div>
 
@@ -111,11 +111,11 @@
           <?php for ($i = 1; $i <= 4; $i++): ?>
             <div class="stat-item">
               <div class="valeur-wrapper">
-                <span class="ombre-jaune" data-value="<?php the_field("valeur_stat_$i"); ?>">
+                <span class="titre-exergue" data-value="<?php the_field("valeur_stat_$i"); ?>">
                   <?php the_field("valeur_stat_$i"); ?>
                 </span>
               </div>
-              <p class="stat-texte"><?php the_field("texte_stat_$i"); ?></p>
+              <p class="fs-16-bold"><?php the_field("texte_stat_$i"); ?></p>
               <small class="stat-source"><?php the_field("source_stat_$i"); ?></small>
             </div>
           <?php endfor; ?>
@@ -132,15 +132,15 @@
       <!-- POUR QUI 2  -->
       <section class="bloc-retravail">
 
-        <h2 class="titre-centre"><?php the_field('titre_bloc_centre'); ?></h2>
+        <h2 class="titre"><?php the_field('titre_bloc_centre'); ?></h2>
 
         <div class="contenu-bloc">
           <div class="col-gauche">
             <h3><?php the_field('titre_colonne_gauche_1'); ?></h3>
-            <p><?php the_field('texte_colonne_gauche_1'); ?></p>
+            <p class="fs-16"><?php the_field('texte_colonne_gauche_1'); ?></p>
 
             <h3><?php the_field('titre_colonne_gauche_2'); ?></h3>
-            <p><?php the_field('texte_colonne_gauche_2'); ?></p>
+            <p class="fs-16"><?php the_field('texte_colonne_gauche_2'); ?></p>
           </div>
 
           <div class="col-droite">

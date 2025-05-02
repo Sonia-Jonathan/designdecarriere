@@ -1,9 +1,9 @@
 :root {
   --violet-profond: #1A0034;
-  --fuchsia:#FF00FF;
+  --fuchsia: #FF00FF;
   --blanc: #FFFFFF;
   --noir: #000000;
-  --jaune: #FCF57F; 
+  --jaune: #FCF57F;
   --bleu-clair: #F4F5FF;
 }
 
@@ -19,7 +19,14 @@ body {
   justify-content: center;
   width: 100%;
   font-family: "Montserrat", sans-serif;
+}
 
+.sur-titre {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 4px;
+  color: var(--fuchsia);
 }
 
 h1 {
@@ -40,30 +47,75 @@ h3 {
   line-height: 45px;
 }
 
-p{
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 28px;
+.titre-exergue {
+  font-size: 30px;
+  font-weight: 800;
+  line-height: 100%;
 }
 
-.bold-content{
+.fs-18-bold {
   font-size: 18px;
   font-weight: 700;
   line-height: 28px;
 }
 
-.link{
-  font-size: 18px;
+.fs-16 {
+  font-size: 16px;
   font-weight: 400;
   line-height: 28px;
 }
 
-.title-section{
+.fs-16-bold {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 22px;
+}
+
+.fs-16 {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 28px;
+}
+
+.btn {
+  position: relative;
+  display: inline-block;
+  padding: 11px 16px;
+  font-weight: 700;
   font-size: 14px;
-  font-weight: 600;
-  line-height: 16px;
-  letter-spacing: 4px;
-  color: var(--fuchsia);
+  color: var(--violet-profond);
+  border: 1px solid var(--violet-profond);
+  border-radius: 10px;
+  text-decoration: none;
+  z-index: 1;
+}
+
+.btn:hover::after{
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: -8px;
+  width: 100%;
+  height: 100%;
+  border-left: 1px solid var(--violet-profond);
+  border-bottom: 1px solid var(--violet-profond);
+  border-radius: 10px;
+  z-index: -1;
+  background: transparent;
+}
+
+.btn:hover{
+ background-color: transparent;
+}
+
+.btn-jaune {
+  background-color: var(--jaune);
+  color: var(--violet-profond);
+}
+
+.btn-rose {
+  background-color: var(--fuchsia);
+  color: var(--blanc);
 }
 
 /*** HEADER ***/
@@ -74,7 +126,7 @@ p{
   z-index: 999;
   background: transparent;
   padding: 0;
-  height: 90px;
+  height: 100px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -96,7 +148,7 @@ p{
 
 /* Logo principal */
 .logo-default {
-  height: 55px;
+  height: 60px;
 }
 
 
@@ -147,7 +199,7 @@ p{
 }
 
 .main-nav ul {
-  display: flex ;
+  display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
@@ -158,27 +210,47 @@ p{
 }
 
 .main-nav a {
-  padding: 12px 16px;
-  color: var(--violet-profond);
+  position: relative;
+  display: inline-block;
+  padding: 11px 16px;
   font-weight: 700;
   font-size: 14px;
+  color: var(--violet-profond);
+  border-radius: 10px;
+  text-decoration: none;
+  z-index: 1;
+  transition: all 0.2s ease;
+}
+
+.main-nav a::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: -8px;
+  width: 100%;
+  height: 100%;
+  border-left: 1px solid var(--violet-profond);
+  border-bottom: 1px solid var(--violet-profond);
+  border-radius: 10px;
+  z-index: -1;
+  opacity: 0;
+  transition: all 0.2s ease;
+}
+
+.main-nav a:hover {
+  border: 1px solid var(--violet-profond);
+  opacity: 1;
+}
+
+.main-nav a:hover::after {
+  opacity: 1;
 }
 
 .cta-button {
+  width: 148px;
   display: inline-flex;
   align-items: center;
   justify-content: space-between;
-  background: var(--jaune);
-  padding: 6px 16px;
-  border-radius: 10px;
-  border: 1px solid var(--violet-profond);
-  font-weight: bold;
-  color: #1a0034;
-  text-decoration: none;
-  font-size: 14px;
-  transition: background 0.3s ease;
-  width: 155px;
-  gap: 10px;
 }
 
 /* Barre de progression */
@@ -208,24 +280,26 @@ p{
 /* POUR QUI */
 
 .section-pour-qui {
-
   color: var(--violet-profond);
+  padding-bottom: 50px;
 }
 
 .section-pour-qui .wrapper {
   width: 90%;
   margin: 0 auto;
   padding-top: 50px;
-  padding-bottom: 50px;
-
+  padding-bottom: 100px;
 }
 
 #pour-qui h1 {
-  width: 30%;
+  width: 517px;
+  font-size: 70px;
+  line-height: 100%;
 }
 
 #pour-qui h3 {
-  width: 30%;
+  margin-top: 40px;
+  width: 517px;
 }
 
 /*  underline carriere */
@@ -249,16 +323,6 @@ p{
   pointer-events: none;
 }
 
-.section-pour-qui .wrapper h2 {
-  width: 38%;
-  margin-top: 30px;
-}
-
-.section-pour-qui h3 {
-  width: 100%;
-  margin-top: 30px;
-}
-
 .section-pour-qui .visuel img {
   position: absolute;
   top: 155px;
@@ -268,16 +332,16 @@ p{
 }
 
 .section-pour-qui .types-epuisement {
-  margin-top: 50px;
-  margin-left: 115px;
-  width: 28%;
+  margin-top: 75px;
+  margin-left: 120px;
+  width: auto;
 
 }
 
-.section-pour-qui .types-epuisement h3 {
-
-  line-height: 32px;
-
+.section-pour-qui .types-epuisement .fs-18-bold{
+  width: 474px;
+  font-size: 20px;
+  font-weight: 800;
 }
 
 .section-pour-qui .types-epuisement .arrow-left-to-right {
@@ -290,60 +354,59 @@ p{
   display: flex;
   gap: 20px;
   list-style: none;
-  margin: 2rem 0;
-  padding: 0;
+  margin: 27px 0;
+  padding: 0px;
 }
 
-.section-pour-qui .types-epuisement li {
+.section-pour-qui .types-epuisement .titre-exergue {
   background: var(--jaune);
   padding: 20px 20px;
   border-radius: 50px;
-  font-weight: 800;
-  color: var(--violet-profond);
-  font-size: 30px;
+  height: 80px;
+  font-size: 32.5px;
+  width: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
 }
 
 /* stats */
 
 .stats {
   display: flex;
-  gap: 4.5rem;
-  padding: 2rem 0;
-  justify-content: center;
+  gap: 40px;
+  margin-top: 50px;
+  margin-left: 120px;
 }
 
 .stat-item {
   background: white;
-  border: 1px solid var(--violet-profond);
+  border: 1.5px solid var(--violet-profond);
   border-radius: 100px 100px 100px 0px;
-  width: 231px;
-  height: 281px;
+  width: 254px;
+  height: 300px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  padding: 50px 24px;
+  padding: 40px 30px;
   justify-content: flex-start;
 }
 
-.valeur-wrapper {
+.stats .valeur-wrapper {
   width: 100%;
   display: flex;
   justify-content: center;
   margin-bottom: 1rem;
 }
 
-.ombre-jaune {
+.stats .titre-exergue {
   position: relative;
   display: inline-block;
-  font-weight: 800;
-  font-size: 30px;
-  color: var(--violet-profond);
-  margin-bottom: 1px;
-  line-height: 1;
   z-index: 2;
 }
 
-.ombre-jaune::before {
+.stats .titre-exergue::before {
   content: attr(data-value);
   position: absolute;
   top: 4px;
@@ -352,16 +415,10 @@ p{
   z-index: -1;
 }
 
-.stat-texte {
-  font-weight: 700;
-  color: var(--violet-profond);
-  font-size: 16px;
-  line-height: 1.4;
-  margin-bottom: auto;
-}
-
 .stat-source {
   font-size: 12px;
+  font-weight: 400;
+  line-height: 20px;
   color: var(--violet-profond);
   margin-top: auto;
 }
@@ -383,7 +440,7 @@ p{
   background: radial-gradient(circle, rgba(32, 21, 91, 1) 0%, rgba(41, 5, 83, 1) 50%, rgba(26, 0, 52, 1) 100%);
   color: var(--blanc);
   width: 100%;
-  padding-top: 80px;
+  padding-top: 70px;
   padding-bottom: 40px;
   display: flex;
   justify-content: center;
@@ -393,41 +450,24 @@ p{
 
 }
 
-.titre-centre {
+.bloc-retravail .titre{
+  width: 899px;
   text-align: center;
   color: var(--blanc);
-  font-weight: 700;
-  font-size: 30px;
-  margin-bottom: 2.5rem;
-  width: 880px;
-  list-style: 45px;
 }
 
-.contenu-bloc {
+.bloc-retravail .contenu-bloc {
   display: flex;
   gap: 200px;
   width: 75%;
+  margin-top: 40px;
   margin-bottom: 2rem;
-
 }
 
 .col-gauche {
-  width: 365px;
-}
-
-.col-gauche h3 {
-  font-size: 30px;
-  font-weight: 400;
-  color: var(--blanc);
-  margin-bottom: 1.5rem;
-
-}
-
-.col-gauche p {
-  font-size: 16px;
-  margin-bottom: 2rem;
-  font-weight: 300;
-  width: 90%;
+  width: 361px;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .col-droite {
@@ -437,8 +477,8 @@ p{
 
 .col-droite .img-portrait {
   border-radius: 0px 100px 0px 100px;
-  height: 420px;
-  width: 600px;
+  height: 480.5px;
+  width: 631px;
 
 }
 
@@ -452,11 +492,11 @@ p{
 }
 
 
-.liste-ateliers,
+/* .liste-ateliers,
 .liste-finale {
   margin-top: 0px;
   width: 50%;
-}
+} */
 
 .liste-finale {
   margin-bottom: 2rem;
@@ -1667,10 +1707,9 @@ p{
   font-weight: 700;
 }
 
-.btn-jaune {
+/* .btn-jaune {
   background: #fff172;
   color: #1a0034;
-  padding: 14px 24px;
   font-weight: 700;
   border-radius: 8px;
   text-decoration: none;
@@ -1678,11 +1717,11 @@ p{
   align-items: center;
   gap: 10px;
   transition: background 0.3s ease;
-}
+} */
 
-.btn-jaune:hover {
+/* .btn-jaune:hover {
   background: #ffe800;
-}
+} */
 
 /*** FOOTER ***/
 

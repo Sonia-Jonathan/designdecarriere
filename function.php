@@ -1,5 +1,7 @@
 <?php
+
 // 🔹 1. Enregistrer le menu de navigation personnalisé
+
 function hello_child_setup()
 {
     register_nav_menus([
@@ -17,6 +19,7 @@ function hello_child_register_footer_menus()
     ]);
 }
 add_action('after_setup_theme', 'hello_child_register_footer_menus');
+
 // 🔹 2. Charger landing.css uniquement sur la landing page
 function hello_child_enqueue_assets()
 {

@@ -155,35 +155,40 @@
           </div>
         </div>
 
-        <div class="liste-ateliers">
-          <?php $img = get_field('illu_arrow_boucle'); ?>
-          <?php if ($img): ?>
-            <img class="illu-arrow-boucle" src="<?php echo esc_url($img['url']); ?>" alt="<?php echo esc_attr($img['alt']); ?>">
-          <?php endif; ?>
-          <h3><?php the_field('titre_ateliers'); ?></h3>
-          <ul>
-            <?php foreach (explode("\n", get_field('liste_ateliers')) as $item): ?>
-              <li><?php echo esc_html(trim($item)); ?></li>
-            <?php endforeach; ?>
-          </ul>
-        </div>
+        <div class="pour-qui-listes">
 
-        <div class="liste-finale">
-          <h3><?php the_field('titre_final'); ?></h3>
-          <ul>
-            <?php foreach (explode("\n", get_field('liste_finale')) as $item): ?>
-              <li><?php echo esc_html(trim($item)); ?></li>
-            <?php endforeach; ?>
-          </ul>
-          <?php $img = get_field('arrow_to_bottom'); ?>
-          <?php if ($img): ?>
-            <img class="arrow-to-bottom" src="<?php echo esc_url($img['url']); ?>" alt="<?php echo esc_attr($img['alt']); ?>">
-          <?php endif; ?>
-        </div>
 
+          <div class="liste-ateliers">
+            <?php $img = get_field('illu_arrow_boucle'); ?>
+            <?php if ($img): ?>
+              <img class="illu-arrow-boucle" src="<?php echo esc_url($img['url']); ?>" alt="<?php echo esc_attr($img['alt']); ?>">
+            <?php endif; ?>
+            <h3><?php the_field('titre_ateliers'); ?></h3>
+            <ul>
+              <?php foreach (explode("\n", get_field('liste_ateliers')) as $item): ?>
+                <li><?php echo esc_html(trim($item)); ?></li>
+              <?php endforeach; ?>
+            </ul>
+          </div>
+
+          <div class="liste-finale">
+            <h3><?php the_field('titre_final'); ?></h3>
+            <ul>
+              <?php foreach (explode("\n", get_field('liste_finale')) as $item): ?>
+                <li><?php echo esc_html(trim($item)); ?></li>
+              <?php endforeach; ?>
+            </ul>
+            <?php $img = get_field('arrow_to_bottom'); ?>
+            <?php if ($img): ?>
+              <img class="arrow-to-bottom" src="<?php echo esc_url($img['url']); ?>" alt="<?php echo esc_attr($img['alt']); ?>">
+            <?php endif; ?>
+          </div>
+        </div>
       </section>
-      </div>
     </section>
+
+    <!-- TEMOIGNAGES -->
+
     <section id="temoignages" class="section-temoignages">
       <div class="title-section">
         <span class="title"><?php the_field('titre_section'); ?></span>
@@ -214,12 +219,12 @@
                   <div class="temoignage-card">
                     <span class="quote-icon">“</span>
                     <div class="citation">
-                      <?php echo wpautop(esc_html(get_field('citation'))); ?>
+                      <p><?php echo wpautop(esc_html(get_field('citation'))); ?></p>
                       <div class="temoin">
                         <?php if ($photo): ?>
                           <img src="<?php echo esc_url($photo['url']); ?>" alt="<?php echo esc_attr($nom); ?>">
                         <?php endif; ?>
-                        <strong><?php echo esc_html($nom); ?></strong>
+                        <p class="fs-16-bold"><?php echo esc_html($nom); ?></p>
                       </div>
                     </div>
 
@@ -246,9 +251,9 @@
           <?php endif; ?>
 
           <div class="temoin-details">
-            <strong><?php the_field('nom_prenom'); ?></strong><br>
-            <strong><?php the_field('profession'); ?></strong>
-            <p><?php the_field('avis'); ?></p>
+            <p class="fs-16-bold"><?php the_field('nom_prenom'); ?></p>
+            <p class="fs-16-bold"><?php the_field('profession'); ?></p>
+            <p class="avis"><?php the_field('avis'); ?></p>
           </div>
         </div>
       </div>
@@ -261,9 +266,9 @@
 
         <!-- Colonne Gauche -->
         <div class="processus-left">
-          <h3 class="mini-titre"><?php the_field('titre'); ?></h3>
-          <h2 class="gros-titre"><?php the_field('sous-titre'); ?></h2>
-          <p class="description">
+          <h3 class="sur-titre"><?php the_field('titre'); ?></h3>
+          <h2><?php the_field('sous-titre'); ?></h2>
+          <p class="fs-18">
             <?php the_field('description'); ?>
           </p>
           <?php $img = get_field('fleche-boucle'); ?>
@@ -297,8 +302,8 @@
                 <div class="accordion-item">
                   <div class="accordion-header">
                     <div class="accordion-title">
-                      <p class="atelier-titre"><?php echo esc_html($numero); ?></p>
-                      <p class="atelier-sous-titre"><?php echo esc_html($sous_titre); ?></p>
+                      <p class="fs-18-bold num"><?php echo esc_html($numero); ?></p>
+                      <p class="fs-18-bold"><?php echo esc_html($sous_titre); ?></p>
                     </div>
                     <div class="accordion-icon">
                       <i class="fa-solid fa-plus"></i>
@@ -306,42 +311,45 @@
                   </div>
                   <div class="accordion-content">
                     <?php if ($points): ?>
-                      <ul class="points">
+                      <ul class="fs-18 ">
                         <?php foreach (explode("\n", $points) as $point): ?>
                           <li><i class="fa-solid fa-check"></i> <?php echo esc_html(trim($point)); ?></li>
                         <?php endforeach; ?>
                       </ul>
                     <?php endif; ?>
 
-                    <?php if ($titre_travail): ?>
-                      <h4 class="atelier-titre-travail"><?php echo esc_html($titre_travail); ?></h4>
-                    <?php endif; ?>
+                    <div class="travail">
+                      <?php if ($titre_travail): ?>
+                        <p class="fs-16-bold"><?php echo esc_html($titre_travail); ?></p>
+                      <?php endif; ?>
 
-                    <?php if ($liste_travail): ?>
-                      <ul class="list-travail">
-                        <?php foreach (explode("\n", $liste_travail) as $travail): ?>
-                          <?php
-                          $travail = trim($travail);
+                      <?php if ($liste_travail): ?>
+                        <ul class="fs-16 list-travail">
+                          <?php foreach (explode("\n", $liste_travail) as $travail): ?>
+                            <?php
+                            $travail = trim($travail);
 
-                          // Détection
-                          $is_sub = strpos($travail, '-') === 0;
-                          $is_pink = strpos($travail, '+') === 0;
+                            // Détection
+                            $is_sub = strpos($travail, '-') === 0;
+                            $is_pink = strpos($travail, '+') === 0;
 
-                          // Nettoyage du texte
-                          $texte = ltrim($travail, "+");
-                          ?>
+                            // Nettoyage du texte
+                            $texte = ltrim($travail, "+");
+                            ?>
 
-                          <li class="<?php echo $is_sub ? 'decale' : ''; ?>">
-                            <?php if ($is_pink): ?>
-                              <span class="pink"><?php echo esc_html($texte); ?></span>
-                            <?php else: ?>
-                              <?php echo esc_html($texte); ?>
-                            <?php endif; ?>
-                          </li>
+                            <li class="<?php echo $is_sub ? 'decale' : ''; ?>">
+                              <?php if ($is_pink): ?>
+                                <span class="pink"><?php echo esc_html($texte); ?></span>
+                              <?php else: ?>
+                                <?php echo esc_html($texte); ?>
+                              <?php endif; ?>
+                            </li>
 
-                        <?php endforeach; ?>
-                      </ul>
-                    <?php endif; ?>
+                          <?php endforeach; ?>
+                        </ul>
+                      <?php endif; ?>
+                    </div>
+
 
 
                   </div>
@@ -361,8 +369,8 @@
 
     <section id="tarifs" class="section-offres">
       <div class="offres-wrapper">
-        <h3 class="mini-titre"><?php the_field('titre_section'); ?></h3>
-        <h2 class="gros-titre"><?php the_field('sous_titre_section'); ?></h2>
+        <h3 class="mini-titre"><?php the_field('titre_section_tarifs'); ?></h3>
+        <h2 class="gros-titre"><?php the_field('sous_titre_section-tarifs'); ?></h2>
 
         <div class="offres-grid">
           <?php
@@ -650,37 +658,47 @@
 
     accordions.forEach(item => {
       const header = item.querySelector('.accordion-header');
+      const icon = item.querySelector('.accordion-icon i');
 
       header.addEventListener('click', () => {
-        item.classList.toggle('active');
+        const isActive = item.classList.toggle('active');
+
+        // Basculer l'icône
+        if (isActive) {
+          icon.classList.remove('fa-plus');
+          icon.classList.add('fa-minus');
+        } else {
+          icon.classList.remove('fa-minus');
+          icon.classList.add('fa-plus');
+        }
       });
     });
   </script>
 
-<script>
-  window.addEventListener('scroll', function () {
-    const header = document.querySelector('.main-header');
-    const progressBar = document.querySelector('.progress-bar');
-    const progressWrapper = document.querySelector('.progress-wrapper');
-    const scrollTop = window.scrollY;
-    const docHeight = document.body.scrollHeight - window.innerHeight;
-    const progress = (scrollTop / docHeight) * 100;
+  <script>
+    window.addEventListener('scroll', function() {
+      const header = document.querySelector('.main-header');
+      const progressBar = document.querySelector('.progress-bar');
+      const progressWrapper = document.querySelector('.progress-wrapper');
+      const scrollTop = window.scrollY;
+      const docHeight = document.body.scrollHeight - window.innerHeight;
+      const progress = (scrollTop / docHeight) * 100;
 
-    // Seuil d'activation du scroll
-    const SCROLL_THRESHOLD = 50;
+      // Seuil d'activation du scroll
+      const SCROLL_THRESHOLD = 50;
 
-    if (scrollTop > SCROLL_THRESHOLD) {
-      header.classList.add('scrolled');
-      progressWrapper.style.display = 'block';
-    } else {
-      header.classList.remove('scrolled');
-      progressWrapper.style.display = 'none';
-    }
+      if (scrollTop > SCROLL_THRESHOLD) {
+        header.classList.add('scrolled');
+        progressWrapper.style.display = 'block';
+      } else {
+        header.classList.remove('scrolled');
+        progressWrapper.style.display = 'none';
+      }
 
-    // Mise à jour de la barre
-    progressBar.style.width = progress + '%';
-  });
-</script>
+      // Mise à jour de la barre
+      progressBar.style.width = progress + '%';
+    });
+  </script>
 
 
 

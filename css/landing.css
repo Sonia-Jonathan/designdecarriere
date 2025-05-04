@@ -53,6 +53,12 @@ h3 {
   line-height: 100%;
 }
 
+.fs-18 {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28px;
+}
+
 .fs-18-bold {
   font-size: 18px;
   font-weight: 700;
@@ -281,7 +287,6 @@ h3 {
 
 .section-pour-qui {
   color: var(--violet-profond);
-  padding-bottom: 50px;
 }
 
 .section-pour-qui .wrapper {
@@ -291,13 +296,13 @@ h3 {
   padding-bottom: 100px;
 }
 
-#pour-qui h1 {
+.section-pour-qui .wrapper h1 {
   width: 517px;
   font-size: 70px;
   line-height: 100%;
 }
 
-#pour-qui h3 {
+.section-pour-qui .wrapper h3 {
   margin-top: 40px;
   width: 517px;
 }
@@ -339,9 +344,7 @@ h3 {
 }
 
 .section-pour-qui .types-epuisement .fs-18-bold{
-  width: 474px;
-  font-size: 20px;
-  font-weight: 800;
+  width: 420px;
 }
 
 .section-pour-qui .types-epuisement .arrow-left-to-right {
@@ -363,7 +366,6 @@ h3 {
   padding: 20px 20px;
   border-radius: 50px;
   height: 80px;
-  font-size: 32.5px;
   width: auto;
   display: flex;
   align-items: center;
@@ -433,7 +435,7 @@ h3 {
   height: 210px;
 }
 
-/* Pour qui 2 */
+/*** POUR QUI 2 ***/
 
 .bloc-retravail {
   background: #20155B;
@@ -441,7 +443,7 @@ h3 {
   color: var(--blanc);
   width: 100%;
   padding-top: 70px;
-  padding-bottom: 40px;
+  padding-bottom: 70px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -453,7 +455,6 @@ h3 {
 .bloc-retravail .titre{
   width: 899px;
   text-align: center;
-  color: var(--blanc);
 }
 
 .bloc-retravail .contenu-bloc {
@@ -468,17 +469,18 @@ h3 {
   width: 361px;
   display: flex;
   flex-wrap: wrap;
+  margin-top: 55px;
 }
 
 .col-droite {
   position: absolute;
-  right: 110px;
+  right: 80px;
 }
 
 .col-droite .img-portrait {
   border-radius: 0px 100px 0px 100px;
   height: 480.5px;
-  width: 631px;
+  width: 640px;
 
 }
 
@@ -492,16 +494,22 @@ h3 {
 }
 
 
-/* .liste-ateliers,
-.liste-finale {
-  margin-top: 0px;
-  width: 50%;
-} */
+.pour-qui-listes {
+  margin-top: 65px;
+  margin-left: 85px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 744px;
+} 
 
-.liste-finale {
-  margin-bottom: 2rem;
-
+.pour-qui-listes ul{
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+  width: 650px;
 }
+
 
 .liste-ateliers .illu-arrow-boucle {
   position: absolute;
@@ -511,8 +519,6 @@ h3 {
 
 .liste-ateliers h3,
 .liste-finale h3 {
-  font-size: 30px;
-  font-weight: 400;
   margin-bottom: 2rem;
   color: var(--blanc);
 }
@@ -529,7 +535,6 @@ h3 {
   margin-bottom: 0.5rem;
   font-size: 16px;
   font-weight: 300;
-  width: 85%;
 }
 
 .liste-finale .arrow-to-bottom {
@@ -538,22 +543,26 @@ h3 {
   right: 220px;
 }
 
-/* TEMOIGNAGES */
+/*** TEMOIGNAGES ***/
 
 #temoignages {
-  padding-top: 90px;
+  padding-top: 80px;
   padding-bottom: 90px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  background-color: var(--blanc);
 }
 
 #temoignages .title-section {
+  margin: auto;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-  padding-bottom: 50px;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 608px;
+  margin-bottom: 30px;
 }
 
 #temoignages .title {
@@ -597,26 +606,22 @@ h3 {
 
 }
 
-/* Wrapper fond gris clair */
 .temoignages-background {
   position: relative;
   overflow: hidden;
 
-
 }
 
-/* Fond violet clair derrière les cards */
 .temoignages-background::before {
   content: '';
   position: absolute;
-  top: 0;
   left: 40px;
   right: 40px;
-  bottom: 0;
-  background: #f4f5ff;
+  top: 70px;
+  background: var(--bleu-clair);
   z-index: 0;
   width: 80%;
-  height: 70%;
+  height: 450px;
   margin: auto;
 }
 
@@ -627,25 +632,26 @@ h3 {
 /* Carte témoignage */
 .temoignage-card {
   position: relative;
-  padding-top: 30px;
-  padding-bottom: 30px;
+  padding-top: 25px;
+  padding-bottom: px;
   padding-right: 40px;
   padding-left: 60px;
-  background: white;
+  background: var(--blanc);
   border-radius: 10px;
-  border: 2px solid #d1ccd6;
+  border: 1.5px solid #1A003433;
   width: 406px;
-
+  display: flex;
+  align-items: center;
 }
 
 /* Citation */
-.citation {
-  margin-top: 7px;
+.temoignage-card .citation {  
+  margin-top: 0px;
+  width:100%;
   font-size: 13px;
   font-weight: 400;
-  width: 95%;
   line-height: 24px;
-  color: #1A0034;
+  color: var(--violet-profond);
 }
 
 /* Icône quote */
@@ -662,7 +668,7 @@ h3 {
   display: flex;
   align-items: center;
   gap: 1rem;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
 }
 
 .temoin img {
@@ -671,17 +677,16 @@ h3 {
   border-radius: 50%;
 }
 
-.temoin strong {
-  font-weight: 700;
-  font-size: 16px;
+.temoin .fs-16-bold {
   color: #1f0032;
 }
 
 /* Flèches de navigation personnalisées */
+
 #temoignages .swiper-button-prev,
 #temoignages .swiper-button-next {
   position: absolute;
-  background: #f4f5ff;
+  background: var(--bleu-clair);
   border-radius: 50%;
   width: 36px;
   height: 36px;
@@ -690,9 +695,7 @@ h3 {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.3s ease;
-  border: 1px solid transparent;
-  overflow: visible;
+  transition: box-shadow 0.3s ease;
 }
 
 #temoignages .swiper-button-prev {
@@ -708,56 +711,37 @@ h3 {
   display: none;
 }
 
-#temoignages .swiper-button-prev::before,
-#temoignages .swiper-button-next::before {
-  content: "";
-  position: absolute;
-  width: 40px;
-  height: 40px;
-  background-color: #fff172;
-  border-radius: 50%;
-  z-index: 0;
-  /* ✅ le cercle est en-dessous */
-  transform: translate(-8px, 8px);
-  opacity: 0;
-  transition: 0.3s ease all;
-}
-
-#temoignages .swiper-button-prev:hover::before,
-#temoignages .swiper-button-next:hover::before {
-  opacity: 1;
-}
-
-#temoignages .swiper-button-prev:hover,
-#temoignages .swiper-button-next:hover {
-  background: white;
-  border: 1px solid #1f0032;
+#temoignages .swiper-button-prev:hover, #temoignages .swiper-button-next:hover{
+  box-shadow: -8px 8px 0 0 var(--jaune); /* effet léger au hover */
+  background-color: var(--blanc);
+  border: 1px solid var(--violet-profond);
 }
 
 #temoignages .swiper-button-prev i,
 #temoignages .swiper-button-next i {
   position: relative;
   z-index: 2;
-  color: #1f0032;
+  color: var(--violet-profond);
   font-size: 16px;
 }
 
 /* TEMOIGNAGE SPEC */
 
 .temoignage-special {
-  background: #f4f5ff;
+  background: var(--bleu-clair);
   border-radius: 10px;
   padding: 40px 60px;
   width: 853px;
   margin-top: 20px;
   position: relative;
   margin: auto;
+  width: 853px;
 }
 
 .temoignage-special-inner {
   display: flex;
-  align-items: flex-start;
-  gap: 2rem;
+  align-items: center;
+  gap: 10px;
   position: relative;
 }
 
@@ -779,64 +763,45 @@ h3 {
 
 .temoin-details {
   flex: 1;
-  padding-left: 50px;
-  /* espace à cause de la quote */
+  padding-left: 20px;
+ 
 }
 
-.temoin-details strong {
-  font-size: 16px;
-  font-weight: 700;
-  color: #1f0032;
-  line-height: 22px;
+.temoin-details .fs-16-bold{
+  color: var(--violet-profond);
+  line-height: 10px;
 }
 
 
-.temoin-details p {
+
+.temoin-details .avis {
   margin-top: 20px;
   font-size: 13px;
   font-weight: 400;
   line-height: 24px;
-  color: #1f0032;
+  color: var(--violet-profond);
 }
 
 /***  PROCESSUS ***/
 
 .section-processus {
-  padding: 6rem 2rem;
   background: white;
+  padding-top: 20px;
 }
 
 .processus-wrapper {
-  display: flex;
+  display: flex; 
   justify-content: space-between;
   align-items: flex-start;
   gap: 50px;
-  max-width: 1200px;
+  width: 90%;
   margin: auto;
   position: relative;
 }
 
 /* Gauche */
 .processus-left {
-  flex: 1;
-  max-width: 450px;
-}
-
-.mini-titre {
-  font-weight: 600;
-  font-size: 14px;
-  color: #FF00FF;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  margin-bottom: 20px;
-}
-
-.gros-titre {
-  font-weight: 800;
-  font-size: 36px;
-  color: #000000;
-  margin-bottom: 20px;
-  line-height: 1.2;
+  width: 407px;
 }
 
 .section-processus .description {
@@ -857,192 +822,24 @@ h3 {
   flex: 2;
 }
 
-/* Accordéon */
-/* .accordion-item {
-    border: 2px solid transparent;
-    border-radius: 10px;
-    margin-bottom: 15px;
-    transition: all 0.3s ease;
-    cursor: pointer;
-    overflow: hidden;
-  }
-
-  .accordion-item.active{
-    background-color: #f9f9ff;
-  }
-  
-  .accordion-item:hover {
-    border-color: #fff172;
-  }
-  
-  .accordion-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 30px;
-    position: relative;
-  }
-  
-  .accordion-title p {
-    margin: 0;
-  }
-  
-  .accordion-title .atelier {
-    font-weight: 700;
-    font-size: 18px;
-    color: #ff00ff;
-    margin-bottom: 5px;
-  }
-  
-  .accordion-title .atelier-titre {
-    font-weight: 700;
-    font-size: 18px;
-    color: #1a0034;
-  }
-  
-  .accordion-icon {
-    position: relative;
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    background: #f4f5ff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 4;
-  }
-  
-  .accordion-item:hover .accordion-icon {
-    background: white;
-    border: 1px solid #1a0034;
-  }
- .accordion-icon::before {
-    opacity: 1;
-  }
-
-  .accordion-icon::before {
-    content: "";
-    position: absolute;
-    width: 40px;
-    height: 40px;
-    background: #fff172;
-    border-radius: 50%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) translate(-8px, 8px); 
-    opacity: 1;
-    transition: 0.3s ease all;
-    z-index: -4;
-  }
-
-  
-  
-  .accordion-icon i {
-    position: relative;
-    z-index: 2;
-    color: #1a0034;
-    font-size: 16px;
-  }
-  
-  .accordion-content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.4s ease, padding 0.4s ease;
-    padding: 0 30px;
-  }
-
-  .accordion-content .points {
-    list-style: none; Enlève les puces classiques 
-    padding-left: 20px;
-  }
-  
-  .accordion-content .points li {
-    position: relative;
-    padding-left: 15px; /* Laisse la place à l'icône 
-    margin-bottom: 10px;
-    font-weight: 400;
-    font-size: 18px;
-
-  }
-
-  .accordion-content .points li i{
-    padding-right: 16px;
-  }
-  
-  
-  .accordion-content  .atelier-titre-travail{
-    font-size: 16px;
-    font-weight: 700;
-  }
-  
-  .accordion-content .list-travail li {
-    margin-bottom: 10px;
-    color: #1A0034;
-    font-size: 18px;
-    list-style: disc;
-    list-style-position: inside;
-    padding-left: 0;    
-    font-weight: 400; /* Solid 
-
-  }
-
-  .accordion-content .list-travail li.pink {
-    color: inherit; /* NE PAS toucher aux puces 
-  }
-  
-  .accordion-content .list-travail li .pink {
-    color: #FF00FF; /* Seul le texte en rose 
-    font-weight: 700;
-  }
-  
-  
-  /* Décalage si la ligne commence par "-" 
-  .accordion-content .list-travail li.decale {
-    margin-left: 20px; /* Tu peux ajuster ici pour plus ou moins de décalage 
-    list-style: none; /* Enlève le • 
-    position: relative;
-  }
-  
-  .accordion-content .list-travail li.decale::before {
-    content: "-"; /* Ajoute un petit tiret automatiquement 
-    position: absolute;
-    left: 0;
-    color: #1a0034; /* même couleur que ton texte 
-  }
-  
-  /* Ouvert 
-  .accordion-item.active {
-    border-color: #fff172;
-  }
-  
-  .accordion-item.active .accordion-content {
-    max-height: 500px;
-    padding: 20px 30px;
-  }
-  
-  .accordion-item.active .accordion-icon i {
-    transform: rotate(45deg);
-    transition: transform 0.3s ease;
-  }
-  */
-
 .accordion {
-  border: 2px solid #e5e5f0;
-  /* gris clair par défaut */
+  border: 2px solid #1A003433;
   border-radius: 10px;
   overflow: hidden;
 }
 
 .accordion-item {
-  border-top: 2px solid #e5e5f0;
+  border-top: 2px solid #1A003433;
   transition: all 0.3s ease;
   cursor: pointer;
 }
 
 /* Quand ouvert */
 .accordion-item.active {
-  background: #f8f8ff;
+  background: #F4F5FF;
+background: linear-gradient(180deg, rgba(244, 245, 255, 1) 0%, rgba(255, 255, 255, 1) 100%);
   border-color: #fff172;
+
 }
 
 /* Header */
@@ -1050,16 +847,20 @@ h3 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 30px 40px;
   cursor: pointer;
   font-weight: 700;
   font-size: 18px;
+  padding: 30px 40px;
+
+
+
 
 }
 
-.accordion-title .atelier-titre {
+
+.accordion-title .num {
   color: #ff00ff;
-  margin-bottom: 5px;
+  margin-bottom: 0px;
 }
 
 
@@ -1068,25 +869,28 @@ h3 {
   position: relative;
   width: 36px;
   height: 36px;
-  background: #f4f5ff;
+  background: var(--blanc);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
+  border: 2px solid var(--violet-profond);
+  box-shadow: -8px 8px 0 0 var(--jaune); /* effet léger au hover */
+  transition: transform 0.3s ease;
 }
 
-.accordion-icon::before {
-  content: "";
-  position: absolute;
-  width: 40px;
-  height: 40px;
-  background: #fff172;
-  border-radius: 50%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) translate(-8px, 8px);
-  z-index: -1;
+.accordion-icon i {
+  color: var(--noir);
+  font-size: 16px;
+  transition: transform 0.3s ease;
 }
+
+.accordion-icon:hover, .accordion-icon::after{
+  background-color: var(--jaune);
+  box-shadow: none;
+  border: none;
+}
+
 
 .accordion-icon i {
   color: #1a0034;
@@ -1094,11 +898,16 @@ h3 {
   transition: transform 0.3s ease;
 }
 
-.accordion-item.active .accordion-icon i {
-  transform: rotate(45deg);
+.accordion-item.active .accordion-icon {
+  box-shadow: none;
+  border: 2px solid var(--violet-profond); /* tu peux garder une bordure ici si tu veux */
+  background: transparent;
 }
 
 /* Content */
+.accordion-item.active .accordion-header{
+  padding-bottom: 10px;
+}
 .accordion-content {
   max-height: 0;
   overflow: hidden;
@@ -1107,52 +916,40 @@ h3 {
 
 .accordion-item.active .accordion-content {
   max-height: min-content;
-  padding: 0px 40px;
+  padding: 0px 20px;
   padding-bottom: 20px;
 
 }
 
 /* Liste points (avec check) */
-.accordion-content .points {
+.accordion-content .fs-18{
   list-style: none;
-  padding-left: 20px;
+  margin-top: 0px;
+  line-height: 35px;
 }
 
-.accordion-content .points li {
-  position: relative;
-  margin-bottom: 10px;
-  font-weight: 400;
-  font-size: 18px;
+.accordion-content i {
+  margin-right: 10px;
 }
 
-.accordion-content .points li::before {
-  font-weight: 900;
-  position: absolute;
-  left: 0;
-  font-size: 14px;
-  color: #1a0034;
-}
 
-.accordion-content .points li i {
-  padding-right: 16px;
-}
+
 
 /* Liste travail */
 
-.accordion-content .atelier-titre-travail {
-  font-size: 16px;
-  font-weight: 700;
+.accordion-content .travail{
+  padding-left: 20px;
+  margin-top: 24px;
+  
 }
 
 .accordion-content .list-travail li {
-  list-style: disc inside;
+  list-style: disc ;
   margin-bottom: 8px;
-  font-size: 16px;
 }
 
 /* Décalage pour sous-élément */
 .accordion-content .list-travail li.decale {
-  margin-left: 20px;
   list-style: none;
   position: relative;
 }

@@ -262,9 +262,11 @@
 
     <!-- PROCESSUS -->
     <section id="processus" class="section-processus">
+
       <div class="processus-wrapper">
 
         <!-- Colonne Gauche -->
+
         <div class="processus-left">
           <h3 class="sur-titre"><?php the_field('titre'); ?></h3>
           <h2><?php the_field('sous-titre'); ?></h2>
@@ -325,18 +327,20 @@
 
                       <?php if ($liste_travail): ?>
                         <ul class="fs-16 list-travail">
-                          <?php foreach (explode("\n", $liste_travail) as $travail): ?>
-                            <?php
+                          <?php
+                          foreach (explode("\n", $liste_travail) as $travail):
                             $travail = trim($travail);
 
                             // Détection
                             $is_sub = strpos($travail, '-') === 0;
                             $is_pink = strpos($travail, '+') === 0;
 
-                            // Nettoyage du texte
+                            // Nettoyage pour l'affichage (mais on garde le '-' s'il y est)
                             $texte = ltrim($travail, "+");
-                            ?>
 
+                            // On ne met la classe 'decale' QUE si le texte ne commence PAS déjà par un "-"
+                            $needs_decoration = $is_sub && strpos(ltrim($texte), '-') !== 0;
+                          ?>
                             <li class="<?php echo $is_sub ? 'decale' : ''; ?>">
                               <?php if ($is_pink): ?>
                                 <span class="pink"><?php echo esc_html($texte); ?></span>
@@ -344,8 +348,8 @@
                                 <?php echo esc_html($texte); ?>
                               <?php endif; ?>
                             </li>
-
                           <?php endforeach; ?>
+
                         </ul>
                       <?php endif; ?>
                     </div>
@@ -369,8 +373,8 @@
 
     <section id="tarifs" class="section-offres">
       <div class="offres-wrapper">
-        <h3 class="mini-titre"><?php the_field('titre_section_tarifs'); ?></h3>
-        <h2 class="gros-titre"><?php the_field('sous_titre_section-tarifs'); ?></h2>
+        <h3 class="sur-titre"><?php the_field('titre_section_tarifs'); ?></h3>
+        <h1><?php the_field('sous_titre_section-tarifs'); ?></h1>
 
         <div class="offres-grid">
           <?php
@@ -401,13 +405,13 @@
                 <div class="offre-contenu">
                   <h4 class="option"><?php the_title(); ?></h4>
 
-                  <h3 class="titre-offre"><?php echo esc_html($titre); ?></h3>
-                  <h3 class="type"><?php echo esc_html($type); ?></h3>
+                  <h2 class="titre-offre"><?php echo esc_html($titre); ?></h2>
+                  <h2 class="type"><?php echo esc_html($type); ?></h2>
 
-                  <h4 class="description"><?php echo esc_html($description); ?></h4>
+                  <h4 class="fs-18-bold description"><?php echo esc_html($description); ?></h4>
 
-                  <h4 class="prix"><?php echo esc_html($prix); ?> € <span>TTC</span></h4>
-                  <p class="option-paiement"><?php echo esc_html($option_paiement); ?></p>
+                  <h4 class="fs-18-bold prix"><?php echo esc_html($prix); ?> € <span>TTC</span></h4>
+                  <p class="fs-16 option-paiement"><?php echo esc_html($option_paiement); ?></p>
 
                   <?php if ($liste_descriptive): ?>
                     <ul class="liste-descriptive">
@@ -429,7 +433,7 @@
 
 
                   <?php if ($texte_btn): ?>
-                    <a href="<?php echo esc_url($lien); ?>" class="cta-offre"><?php echo esc_html($texte_btn); ?> <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="<?php echo esc_url($lien); ?>" class="cta-offre btn"><?php echo esc_html($texte_btn); ?> <i class="fa-solid fa-arrow-right"></i></a>
                   <?php endif; ?>
                 </div>
               </div>
@@ -443,9 +447,10 @@
 
     <!--  LIVRE BLANC -->
     <section id="livre-blanc" class="section-livre-blanc">
+      <!-- LIVRE BLANC - REMISE -->
       <?php if (get_field('afficher_remise')): ?>
-        <div class="remise-card">
-          <div class="remise-left">
+        <div class="card">
+          <div class="card-left">
             <?php $cadeau = get_field('cadeau'); ?>
             <?php if ($cadeau): ?>
               <div class="cadeau-img">
@@ -453,9 +458,9 @@
               </div>
             <?php endif; ?>
             <div class="texte-remise">
-              <div class="titre-remise">
+              <h3 class="sur-titre">
                 <?php the_field('titre_remise'); ?>
-              </div>
+              </h3>
               <div class="description-remise">
                 <?php
                 $texte = get_field('remise_pourcentage');
@@ -469,7 +474,7 @@
             </div>
           </div>
 
-          <div class="remise-right">
+          <div class="card-right">
             <div class="remise-benefices">
               <?php
               $texte = get_field('description_remise');
@@ -477,7 +482,7 @@
               // Séparer le texte par lignes
               $lignes = preg_split('/\r\n|\r|\n/', $texte);
 
-              echo '<p>' . esc_html(trim($lignes[0])) . '</p>'; // Première phrase normale
+              echo '<p class="fs-16">' . esc_html(trim($lignes[0])) . '</p>'; // Première phrase normale
 
               if (count($lignes) > 1) {
                 echo '<ul>';
@@ -485,7 +490,7 @@
                   $ligne = trim($ligne);
                   if (strpos($ligne, '-') === 0) {
                     // Si la ligne commence par -, on enlève - et on la met dans <li>
-                    echo '<li>' . esc_html(ltrim($ligne, '- ')) . '</li>';
+                    echo '<li class="fs-16">' . esc_html(ltrim($ligne, '- ')) . '</li>';
                   }
                 }
                 echo '</ul>';
@@ -495,7 +500,7 @@
 
 
             <?php if (get_field('btn_rdv')): ?>
-              <a href="<?php the_field('lien_btn'); ?>" class="cta-remise">
+              <a href="<?php the_field('lien_btn'); ?>" class="cta-remise btn">
                 <?php the_field('btn_rdv'); ?> <i class="fa-solid fa-arrow-right"></i>
               </a>
             <?php endif; ?>
@@ -510,52 +515,55 @@
         </div>
       <?php endif; ?>
 
-      <section id="livre-blanc" class="section-livre-blanc">
-        <div class="container-livre-blanc">
-          <div class="livre-blanc-texte">
-            <div class="bloc-gauche">
-              <p class="titre-telechargement">
-                <?php
-                $texte = get_field('texte_telecharger_lb');
 
-                // Remplacer ce qui est entre guillemets par un span rose
-                $texte = preg_replace('/“(.*?)”/', '“<span class="rose">$1</span>”', $texte);
+      <!-- LIVRE BLANC - TELECHARGER LIVRE BLANC -->
+      
+      <div class="card card-telechargement">
+        <div class="card-left">
+          <p class="description-remise">
+            <?php
+            $texte = get_field('texte_telecharger_lb');
 
-                echo $texte;
-                ?>
-              </p>
-            </div>
+            // Remplacer ce qui est entre guillemets par un span rose
+            $texte = preg_replace('/“(.*?)”/', '“<span class="rose">$1</span>”', $texte);
 
+            echo $texte;
+            ?>
+          </p>
+        </div>
 
-            <div class="bloc-centre">
-              <h4 class="titre-sommaire"><?php the_field('titre_sommaire'); ?></h4>
+        <div class="card-right">
+          <div class="bloc-texte">
+            <h4 class="fs-16-bold "><?php the_field('titre_sommaire'); ?></h4>
 
-              <?php if (get_field('liste_sommaire')): ?>
-                <ul class="liste-sommaire">
-                  <?php foreach (explode("\n", get_field('liste_sommaire')) as $item): ?>
-                    <li><?php echo esc_html(trim($item)); ?></li>
-                  <?php endforeach; ?>
-                </ul>
-              <?php endif; ?>
+            <?php if (get_field('liste_sommaire')): ?>
+              <ul class="liste-sommaire">
+                <?php foreach (explode("\n", get_field('liste_sommaire')) as $item): ?>
+                  <li class="fs-16"><?php echo esc_html(trim($item)); ?></li>
+                <?php endforeach; ?>
+              </ul>
+            <?php endif; ?>
 
-              <?php if (get_field('lien_btn_envoi_lb') && get_field('btn_envoi_lb')): ?>
-                <a class="btn-livre-blanc" href="<?php the_field('lien_btn_envoi_lb'); ?>">
-                  <?php the_field('btn_envoi_lb'); ?> <i class="fa-solid fa-arrow-right"></i>
-                </a>
-              <?php endif; ?>
-            </div>
+            <?php if (get_field('lien_btn_envoi_lb') && get_field('btn_envoi_lb')): ?>
+              <a class="btn-livre-blanc" href="<?php the_field('lien_btn_envoi_lb'); ?>">
+                <?php the_field('btn_envoi_lb'); ?> <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            <?php endif; ?>
+          </div>
 
-            <div class="bloc-droite">
-              <?php $illu = get_field('illu_livre_blanc'); ?>
-              <?php if ($illu): ?>
-                <img src="<?php echo esc_url($illu['url']); ?>" alt="<?php echo esc_attr($illu['alt']); ?>">
-              <?php endif; ?>
-            </div>
+          <div class="bloc-img">
+            <?php $illu = get_field('illu_livre_blanc'); ?>
+            <?php if ($illu): ?>
+              <img src="<?php echo esc_url($illu['url']); ?>" alt="<?php echo esc_attr($illu['alt']); ?>">
+            <?php endif; ?>
           </div>
         </div>
-      </section>
+      </div>
 
     </section>
+
+
+    <!-- PODCAST -->
     <section id="podcast" class="section-podcast">
       <div class="podcast-wrapper">
 
@@ -657,23 +665,31 @@
     const accordions = document.querySelectorAll('.accordion-item');
 
     accordions.forEach(item => {
-      const header = item.querySelector('.accordion-header');
       const icon = item.querySelector('.accordion-icon i');
 
-      header.addEventListener('click', () => {
-        const isActive = item.classList.toggle('active');
+      item.addEventListener('click', (e) => {
+        // Ne pas réagir si on clique dans le contenu déjà ouvert
 
-        // Basculer l'icône
-        if (isActive) {
+        const isActive = item.classList.contains('active');
+
+        // Ferme tous les autres
+        accordions.forEach(acc => {
+          acc.classList.remove('active');
+          acc.querySelector('.accordion-icon i').classList.remove('fa-minus');
+          acc.querySelector('.accordion-icon i').classList.add('fa-plus');
+        });
+
+        // Ouvre si ce n’était pas déjà actif
+        if (!isActive) {
+          item.classList.add('active');
           icon.classList.remove('fa-plus');
           icon.classList.add('fa-minus');
-        } else {
-          icon.classList.remove('fa-minus');
-          icon.classList.add('fa-plus');
         }
       });
     });
   </script>
+
+
 
   <script>
     window.addEventListener('scroll', function() {

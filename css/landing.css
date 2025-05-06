@@ -96,11 +96,11 @@ h3 {
   z-index: 1;
 }
 
-.btn:hover::after{
+.btn:hover::after {
   content: "";
   position: absolute;
-  bottom: -8px;
-  left: -8px;
+  bottom: -9px;
+  left: -9px;
   width: 100%;
   height: 100%;
   border-left: 1px solid var(--violet-profond);
@@ -110,8 +110,8 @@ h3 {
   background: transparent;
 }
 
-.btn:hover{
- background-color: transparent;
+.btn:hover {
+  background-color: transparent;
 }
 
 .btn-jaune {
@@ -231,12 +231,12 @@ h3 {
 .main-nav a::after {
   content: "";
   position: absolute;
-  bottom: -8px;
-  left: -8px;
+  bottom: -8.5px;
+  left: -8.5px;
   width: 100%;
   height: 100%;
-  border-left: 1px solid var(--violet-profond);
-  border-bottom: 1px solid var(--violet-profond);
+  border-left: 1.5px solid var(--violet-profond);
+  border-bottom: 1.5px solid var(--violet-profond);
   border-radius: 10px;
   z-index: -1;
   opacity: 0;
@@ -343,7 +343,7 @@ h3 {
 
 }
 
-.section-pour-qui .types-epuisement .fs-18-bold{
+.section-pour-qui .types-epuisement .fs-18-bold {
   width: 420px;
 }
 
@@ -452,7 +452,7 @@ h3 {
 
 }
 
-.bloc-retravail .titre{
+.bloc-retravail .titre {
   width: 899px;
   text-align: center;
 }
@@ -501,9 +501,9 @@ h3 {
   flex-wrap: wrap;
   align-items: center;
   width: 744px;
-} 
+}
 
-.pour-qui-listes ul{
+.pour-qui-listes ul {
   font-weight: 400;
   font-size: 18px;
   line-height: 28px;
@@ -645,9 +645,9 @@ h3 {
 }
 
 /* Citation */
-.temoignage-card .citation {  
+.temoignage-card .citation {
   margin-top: 0px;
-  width:100%;
+  width: 100%;
   font-size: 13px;
   font-weight: 400;
   line-height: 24px;
@@ -711,8 +711,10 @@ h3 {
   display: none;
 }
 
-#temoignages .swiper-button-prev:hover, #temoignages .swiper-button-next:hover{
-  box-shadow: -8px 8px 0 0 var(--jaune); /* effet léger au hover */
+#temoignages .swiper-button-prev:hover,
+#temoignages .swiper-button-next:hover {
+  box-shadow: -8px 8px 0 0 var(--jaune);
+  /* effet léger au hover */
   background-color: var(--blanc);
   border: 1px solid var(--violet-profond);
 }
@@ -764,10 +766,10 @@ h3 {
 .temoin-details {
   flex: 1;
   padding-left: 20px;
- 
+
 }
 
-.temoin-details .fs-16-bold{
+.temoin-details .fs-16-bold {
   color: var(--violet-profond);
   line-height: 10px;
 }
@@ -787,21 +789,32 @@ h3 {
 .section-processus {
   background: white;
   padding-top: 20px;
+  padding-bottom: 100px;
 }
 
 .processus-wrapper {
-  display: flex; 
-  justify-content: space-between;
-  align-items: flex-start;
+  display: flex;
   gap: 50px;
   width: 90%;
   margin: auto;
   position: relative;
+  align-items: flex-start;
 }
 
-/* Gauche */
 .processus-left {
-  width: 407px;
+  margin-top: 30px;
+  margin-bottom: 90px;
+  position: sticky;
+  top: 140px;
+  /* hauteur à partir du top de la fenêtre */
+  flex: 0 0 30%;
+  align-self: flex-start;
+  height: fit-content;
+}
+
+.processus-right {
+  flex: 2;
+  overflow: visible;
 }
 
 .section-processus .description {
@@ -818,29 +831,34 @@ h3 {
 }
 
 /* Droite */
-.processus-right {
-  flex: 2;
+
+
+
+.accordion-item {
+  border: 1px solid #1A003433;
 }
 
-.accordion {
-  border: 2px solid #1A003433;
-  border-radius: 10px;
-  overflow: hidden;
+
+
+.accordion-item:first-child {
+  border-radius: 10px 10px 0px 0px;
+}
+
+.accordion-item:last-child {
+  border-radius: 0px 0px 10px 10px;
+  background: var(--bleu-clair);
 }
 
 .accordion-item {
-  border-top: 2px solid #1A003433;
   transition: all 0.3s ease;
   cursor: pointer;
 }
 
-/* Quand ouvert */
-.accordion-item.active {
-  background: #F4F5FF;
-background: linear-gradient(180deg, rgba(244, 245, 255, 1) 0%, rgba(255, 255, 255, 1) 100%);
-  border-color: #fff172;
-
+.accordion-item:hover {
+  border: 2px solid var(--jaune);
+  /* Passe à 2px et couleur jaune */
 }
+
 
 /* Header */
 .accordion-header {
@@ -875,7 +893,8 @@ background: linear-gradient(180deg, rgba(244, 245, 255, 1) 0%, rgba(255, 255, 25
   align-items: center;
   justify-content: center;
   border: 2px solid var(--violet-profond);
-  box-shadow: -8px 8px 0 0 var(--jaune); /* effet léger au hover */
+  box-shadow: -8px 8px 0 0 var(--jaune);
+  /* effet léger au hover */
   transition: transform 0.3s ease;
 }
 
@@ -885,7 +904,8 @@ background: linear-gradient(180deg, rgba(244, 245, 255, 1) 0%, rgba(255, 255, 25
   transition: transform 0.3s ease;
 }
 
-.accordion-icon:hover, .accordion-icon::after{
+.accordion-icon:hover,
+.accordion-icon::after {
   background-color: var(--jaune);
   box-shadow: none;
   border: none;
@@ -900,14 +920,16 @@ background: linear-gradient(180deg, rgba(244, 245, 255, 1) 0%, rgba(255, 255, 25
 
 .accordion-item.active .accordion-icon {
   box-shadow: none;
-  border: 2px solid var(--violet-profond); /* tu peux garder une bordure ici si tu veux */
+  border: 2px solid var(--violet-profond);
+  /* tu peux garder une bordure ici si tu veux */
   background: transparent;
 }
 
 /* Content */
-.accordion-item.active .accordion-header{
+.accordion-item.active .accordion-header {
   padding-bottom: 10px;
 }
+
 .accordion-content {
   max-height: 0;
   overflow: hidden;
@@ -921,15 +943,21 @@ background: linear-gradient(180deg, rgba(244, 245, 255, 1) 0%, rgba(255, 255, 25
 
 }
 
+.accordion-item.active {
+  border: transparent;
+  border: 1px solid #1A003433;
+
+}
+
 /* Liste points (avec check) */
-.accordion-content .fs-18{
+.accordion-content .fs-18 {
   list-style: none;
   margin-top: 0px;
   line-height: 35px;
 }
 
 .accordion-content i {
-  margin-right: 10px;
+  margin-right: 16px;
 }
 
 
@@ -937,51 +965,59 @@ background: linear-gradient(180deg, rgba(244, 245, 255, 1) 0%, rgba(255, 255, 25
 
 /* Liste travail */
 
-.accordion-content .travail{
+.accordion-content .travail {
   padding-left: 20px;
   margin-top: 24px;
-  
+
 }
 
 .accordion-content .list-travail li {
-  list-style: disc ;
+  list-style: disc;
   margin-bottom: 8px;
+  padding-left: 15px;
 }
 
 /* Décalage pour sous-élément */
 .accordion-content .list-travail li.decale {
-  list-style: none;
+  list-style-type: none;
+  /* Enlève le point */
+  padding-left: 15px;
+  /* Supprime l’indentation */
   position: relative;
 }
 
 .accordion-content .list-travail li.decale::before {
-  content: "-";
-  position: absolute;
-  left: 0;
-  color: #1a0034;
+  content: "";
+  /* Ne rien afficher manuellement ici */
 }
 
 /* Texte rose uniquement */
 .accordion-content .list-travail li .pink {
-  color: #FF00FF;
+  color: var(--fuchsia);
   font-weight: 700;
 }
 
 /*** TARIFS ***/
 .section-offres {
-  padding: 6rem 0rem;
-  background: #1a0136;
+  padding: 70px 0rem;
+  padding-bottom: 80px ;
+  background: #1A0034;
+  background: linear-gradient(180deg, rgba(26, 0, 52, 1) 0%, rgba(32, 21, 91, 1) 100%);
   text-align: center;
+  color: var(--blanc);
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
 }
 
-#tarifs .gros-titre {
-  color: white;
+.section-offres h1 {
+  margin-bottom: 50px;
+  
 }
 
-.offres-wrapper {
-  width: 90%;
-  margin: auto;
-}
+
+
 
 .offres-grid {
   display: flex;
@@ -990,15 +1026,17 @@ background: linear-gradient(180deg, rgba(244, 245, 255, 1) 0%, rgba(255, 255, 25
 }
 
 .offre-card {
-  flex: 1;
-  background: #1A0034;
+  background: transparent;
   /* fond violet foncé */
   border-bottom: none;
-  padding: 40px;
+  padding: 30px 40px;
+  padding-bottom: 40px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   transition: all 0.3s ease;
+  height: fit-content;
+  width: 427px;
 }
 
 .offre-card:first-child {
@@ -1056,85 +1094,90 @@ background: linear-gradient(180deg, rgba(244, 245, 255, 1) 0%, rgba(255, 255, 25
   color: #fff172;
 }
 
-.titre-offre,
-.type {
+.section-offres .titre-offre,
+.section-offres .type {
   font-size: 30px;
   font-weight: 800;
   line-height: 100%;
 }
 
-.titre-offre {
+.section-offres .titre-offre {
   color: white;
+  margin-bottom: 10px;
 }
 
-.description {
+.section-offres .type{
+  margin-bottom: 20px;
+}
+.section-offres .description {
   margin: 1rem 0;
-  font-size: 18px;
-  font-weight: 700;
   color: white;
 }
 
-.prix {
-  font-size: 18px;
-  font-weight: 700;
-  line-height: 28px;
+.section-offres .prix {
   color: white;
   margin: 0.5rem 0;
 }
 
-.prix span {
+.section-offres .prix span {
   font-size: 12px;
 }
 
-.option-paiement {
+.section-offres .option-paiement {
   font-size: 14px;
   font-weight: 400;
   color: white;
 }
 
 
-.liste-descriptive {
-  list-style: none;
+.section-offres .option-paiement, .section-offres .liste-descriptive,  .section-offres .desc-rdv {
   font-size: 12px;
   font-weight: 400;
+  line-height: 20px;
+
+}
+
+.section-offres .liste-descriptive, .section-offres .desc-rdv{
+  list-style: none;
+  margin-bottom: 30px ;
+
 }
 
 .liste-descriptive li {
   position: relative;
-  padding-left: 25px;
   margin-bottom: 10px;
-  font-size: 16px;
-  color: white;
+  margin-left: -15px;
 }
 
 .liste-descriptive li i {
   position: absolute;
-  left: 0;
-  color: #140027;
+  top: 4px;
+  left: -20px;
+  color: var(--violet-profond);
 }
 
 .liste-descriptive li strong {
   font-weight: 700;
 }
 
-.desc-rdv {
-  font-weight: 400;
-  font-style: 12px;
-  color: #fff;
-}
+
 
 .cta-offre {
   background: transparent;
   border: 2px solid #fff;
   color: #fff;
-  padding: 12px 24px;
+  padding: 12px;
   border-radius: 10px;
   text-align: center;
   display: inline-flex;
   align-items: center;
-  justify-content: center;
+  justify-content: left;
   gap: 10px;
-  font-weight: bold;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 100%;
+  height: 44px;
+  width: 211px;
   transition: all 0.3s ease;
 }
 
@@ -1144,6 +1187,20 @@ background: linear-gradient(180deg, rgba(244, 245, 255, 1) 0%, rgba(255, 255, 25
 
 .offre-card.pink .cta-offre {
   background-color: #ff00ff;
+}
+
+.offre-card.pink .btn:hover, .offre-card.yellow .btn:hover {
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
+}
+
+.offre-card.pink .btn:hover::after, .offre-card.yellow .btn:hover::after{
+  border-bottom: 1.5px solid white;
+  border-left: 1.5px solid white;
+  top: 8px;
+  right: 6px;
+
 }
 
 .offre-card.yellow .cta-offre {
@@ -1164,29 +1221,33 @@ background: linear-gradient(180deg, rgba(244, 245, 255, 1) 0%, rgba(255, 255, 25
 
 /***  LIVRE BLANC ***/
 .section-livre-blanc {
-  padding: 80px 20px;
-  background: linear-gradient(135deg, #e0f2ff 0%, #f7efff 100%);
+  padding-top: 180px;
+  padding-bottom: 180px;
+  background: #ffffff;
+background: linear-gradient(142deg, rgba(255, 255, 255, 1) 0%, rgba(254, 254, 255, 1) 17%, rgba(231, 244, 255, 1) 27%, rgba(214, 230, 255, 1) 36%, rgba(241, 229, 255, 1) 60%, rgba(252, 250, 255, 1) 76%, rgba(255, 255, 255, 1) 100%);
 }
 
-.remise-card {
+.section-livre-blanc .card {
   display: flex;
   justify-content: left;
   align-items: center;
   background: white;
   border-radius: 100px;
-  padding: 60px 90px;
+  padding: 60px 100px;
   margin: auto;
+  margin-bottom: 80px;
   position: relative;
-  width: 1300px;
+  width: 90%;
   box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.05);
 }
 
-.remise-left {
-  width: 25%;
+.section-livre-blanc .card-left {
+  flex: 1;
+  width: 20%;
   position: relative;
 }
 
-.remise-left .rose {
+.section-livre-blanc .card-left .rose {
   color: #FF00FF;
   font-weight: 800;
 }
@@ -1196,7 +1257,8 @@ background: linear-gradient(180deg, rgba(244, 245, 255, 1) 0%, rgba(255, 255, 25
   position: absolute;
   width: 149px;
   height: 149px;
-  top: -150px
+  top: -135px;
+  left:-10px;
 }
 
 .cadeau-img img {
@@ -1204,45 +1266,48 @@ background: linear-gradient(180deg, rgba(244, 245, 255, 1) 0%, rgba(255, 255, 25
   height: auto;
 }
 
-.texte-remise {
+.card-left .description-remise {
   margin-top: 20px;
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 32px;
 }
 
-.mini-titre {
-  font-size: 12px;
-  font-weight: 600;
-  color: #ff00ff;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  margin-bottom: 10px;
+
+
+.card-left .texte-remise {
+  
+  margin-top: 35px;
+
 }
 
-.titre-remise {
-  font-size: 18px;
-  font-weight: 600;
-  color: #ff00ff;
-  margin-bottom: 10px;
+.card-right .remise-benefices {
+  color: var(--violet-profond);
+  width: 630px;
+  padding-top: 0px;
 }
 
-.description-remise {
-  font-size: 18px;
-  font-weight: 700;
-  color: #1a0034;
-  margin-top: 20px;
-  line-height: 1.4;
-}
 
-.remise-right {
-  width: 55%;
+.card-right {
+  flex: 3;
+  width: 100%;
   position: relative;
   margin-left: 70px;
+  top:-10px;
+  color: var(--violet-profond);
 }
 
-.remise-benefices {
-  color: #1a0034;
-  font-size: 16px;
-  line-height: 1.6;
+.card-right .remise-benefices ul {
+  margin: 30px 0px;
 }
+.card-right .remise-benefices ul li{
+ line-height: 22px;
+  padding-left: 5px;
+  margin-left: 5px;
+  list-style-type: disc;
+}
+
+
 
 .remise-benefices ul {
   margin: 1rem 0 0 0;
@@ -1259,15 +1324,15 @@ background: linear-gradient(180deg, rgba(244, 245, 255, 1) 0%, rgba(255, 255, 25
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: #fff172;
-  color: #1a0034;
+  background: var(--jaune);
+  color: var(--violet-profond);
   font-weight: 700;
   font-size: 14px;
   padding: 12px 24px;
   border-radius: 8px;
   text-decoration: none;
   transition: all 0.3s ease;
-  border: 1px solid #1a0034;
+  border: 1px solid var(--violet-profond);
 }
 
 .cta-remise i {
@@ -1275,8 +1340,8 @@ background: linear-gradient(180deg, rgba(244, 245, 255, 1) 0%, rgba(255, 255, 25
 }
 
 .cta-remise:hover {
-  background: #1a0034;
-  color: #fff172;
+  background: transparent;
+  color: var(--violet-profond);
 }
 
 .etoile-img {
@@ -1291,62 +1356,7 @@ background: linear-gradient(180deg, rgba(244, 245, 255, 1) 0%, rgba(255, 255, 25
   height: auto;
 }
 
-/* LIVRE BLANC TELECHARGERMENT */
-
-.container-livre-blanc {
-  display: flex;
-  justify-content: left;
-  align-items: flex-start;
-  background: white;
-  border-radius: 100px;
-  padding: 60px 90px;
-  position: relative;
-  margin: auto;
-  width: 1300px;
-  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.05);
-}
-
-.livre-blanc-texte {
-  display: flex;
-  justify-content: space-between;
-}
-
-.bloc-gauche {
-  width: 22%;
-}
-
-.container-livre-blanc .rose {
-  color: #ff00ff;
-  font-weight: 700;
-}
-
-
-.bloc-centre {
-  width: 45%;
-}
-
-.bloc-droite {
-  width: 20%;
-}
-
-.titre-telechargement {
-  font-weight: 700;
-  font-size: 18px;
-  color: #1a0034;
-  margin-bottom: 10px;
-}
-
-.titre-telechargement strong {
-  display: block;
-  color: #ff00ff;
-}
-
-.titre-sommaire {
-  font-size: 16px;
-  font-weight: 700;
-  color: #1a0034;
-  margin-bottom: 1rem;
-}
+/* LIVRE BLANC TELECHARGERMENT */ 
 
 .liste-sommaire {
   list-style: disc;
@@ -1354,41 +1364,29 @@ background: linear-gradient(180deg, rgba(244, 245, 255, 1) 0%, rgba(255, 255, 25
   margin-bottom: 2rem;
 }
 
-.liste-sommaire li {
-  font-size: 16px;
-  font-weight: 400;
-  color: #1a0034;
-  margin-bottom: 8px;
+.liste-sommaire ul li {
+  line-height: 22px;
 }
 
-.btn-livre-blanc {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: #fff172;
-  padding: 12px 20px;
-  border-radius: 10px;
-  border: 1px solid #1a0034;
-  color: #1a0034;
-  font-weight: 700;
-  font-size: 14px;
-  text-decoration: none;
-  transition: all 0.3s ease;
+.card-telechargement .card-left{
+  margin-top: -145px;
 }
 
-.btn-livre-blanc i {
-  margin-left: 10px;
+.card-telechargement .card-right{
+  display: flex;
+  justify-content: space-between;
+
 }
 
-.btn-livre-blanc:hover {
-  background: #fef9c3;
-  transform: translateY(-2px);
+.card-right .bloc-texte {
+  flex: 1;
 }
 
-.bloc-droite img {
+.card-right img {
+  flex: 1;
   width: 160px;
   height: auto;
-  border: 1px solid black;
+  border: 1px solid var(--noir);
 }
 
 /*** PODCAST ***/

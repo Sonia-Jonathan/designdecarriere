@@ -81,14 +81,15 @@
             <?php endif; ?>
           </div>
           <h3><?php the_field('texte_intro_pour_qui'); ?></h3>
-        </div>
-
-        <div class="visuel">
+          <div class="visuel">
           <?php $img = get_field('image_femme_pour_qui'); ?>
           <?php if ($img): ?>
             <img src="<?php echo esc_url($img['url']); ?>" alt="<?php echo esc_attr($img['alt']); ?>">
           <?php endif; ?>
         </div>
+        </div>
+
+        
 
         <!-- TYPE EPUISEMENT -->
 
@@ -457,11 +458,11 @@
                 <img src="<?php echo esc_url($cadeau['url']); ?>" alt="<?php echo esc_attr($cadeau['alt']); ?>">
               </div>
             <?php endif; ?>
-            <div class="texte-remise">
+            <div class="texte-left">
               <h3 class="sur-titre">
                 <?php the_field('titre_remise'); ?>
               </h3>
-              <div class="description-remise">
+              <div class="description">
                 <?php
                 $texte = get_field('remise_pourcentage');
 
@@ -475,7 +476,7 @@
           </div>
 
           <div class="card-right">
-            <div class="remise-benefices">
+            <div class="bloc-text">
               <?php
               $texte = get_field('description_remise');
 
@@ -496,31 +497,34 @@
                 echo '</ul>';
               }
               ?>
+
+              <?php if (get_field('btn_rdv')): ?>
+                <a href="<?php the_field('lien_btn'); ?>" class="cta-remise btn">
+                  <?php the_field('btn_rdv'); ?> <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              <?php endif; ?>
             </div>
 
 
-            <?php if (get_field('btn_rdv')): ?>
-              <a href="<?php the_field('lien_btn'); ?>" class="cta-remise btn">
-                <?php the_field('btn_rdv'); ?> <i class="fa-solid fa-arrow-right"></i>
-              </a>
-            <?php endif; ?>
-
             <?php $etoile = get_field('etoile'); ?>
             <?php if ($etoile): ?>
-              <div class="etoile-img">
+              <div class="bloc-img">
                 <img src="<?php echo esc_url($etoile['url']); ?>" alt="<?php echo esc_attr($etoile['alt']); ?>">
               </div>
             <?php endif; ?>
           </div>
+
+
+        </div>
         </div>
       <?php endif; ?>
 
 
       <!-- LIVRE BLANC - TELECHARGER LIVRE BLANC -->
-      
+
       <div class="card card-telechargement">
         <div class="card-left">
-          <p class="description-remise">
+          <p class="texte-left  ">
             <?php
             $texte = get_field('texte_telecharger_lb');
 
@@ -533,7 +537,7 @@
         </div>
 
         <div class="card-right">
-          <div class="bloc-texte">
+          <div class="bloc-text">
             <h4 class="fs-16-bold "><?php the_field('titre_sommaire'); ?></h4>
 
             <?php if (get_field('liste_sommaire')): ?>
@@ -544,8 +548,9 @@
               </ul>
             <?php endif; ?>
 
-            <?php if (get_field('lien_btn_envoi_lb') && get_field('btn_envoi_lb')): ?>
-              <a class="btn-livre-blanc" href="<?php the_field('lien_btn_envoi_lb'); ?>">
+
+            <?php if (get_field('btn_envoi_lb')): ?>
+              <a href="<?php the_field('lien_btn_envoi_lb'); ?>" class="cta-remise btn">
                 <?php the_field('btn_envoi_lb'); ?> <i class="fa-solid fa-arrow-right"></i>
               </a>
             <?php endif; ?>
@@ -568,30 +573,35 @@
       <div class="podcast-wrapper">
 
         <div class="bloc-gauche">
-          <h2 class="titre-gauche"><?php the_field('titre_gauche_podcast'); ?></h2>
+          <h2 class="titre-exergue"><?php the_field('titre_gauche_podcast'); ?></h2>
 
           <div class="vignette-podcast">
             <?php $illu = get_field('image_vignette_podcast'); ?>
             <?php if ($illu): ?>
               <img src="<?php echo esc_url($illu['url']); ?>" alt="<?php echo esc_attr($illu['alt']); ?>">
             <?php endif; ?>
+
+            <button class="btn-ecouter">
+              <i class="fa-solid fa-play"></i>
+              <span class="text"><?php the_field('btn_hover_text'); ?></span>
+            </button>
+
             <div class="hover-vignette">
-              <button class="btn-ecouter">
-                <i class="fa-solid fa-play"></i> <?php the_field('texte_btn_ecouter_podcast'); ?>
-              </button>
-              <p class="titre-hover"><?php the_field('titre_texte_hover_podcast'); ?></p>
+              <p class="fs-16-bold"><?php the_field('titre_texte_hover_podcast'); ?></p>
             </div>
           </div>
+
+
         </div>
 
         <div class="bloc-droit">
           <h3 class="citation"><?php the_field('grand_titre_citation_podcast'); ?></h3>
 
-          <div class="texte-descriptif">
+          <div class="fs-16">
             <?php the_field('texte_descriptif_podcast'); ?>
           </div>
 
-          <a href="<?php the_field('lien_btn_podcast'); ?>" class="btn-jaune">
+          <a href="<?php the_field('lien_btn_podcast'); ?>" class="btn btn-jaune">
             <?php the_field('btn_podcast'); ?> <i class="fa-solid fa-arrow-right"></i>
           </a>
         </div>

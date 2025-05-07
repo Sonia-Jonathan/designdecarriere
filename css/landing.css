@@ -94,6 +94,7 @@ h3 {
   border-radius: 10px;
   text-decoration: none;
   z-index: 1;
+  transition: all 0.5s ease;
 }
 
 .btn:hover::after {
@@ -110,8 +111,14 @@ h3 {
   background: transparent;
 }
 
+
+
 .btn:hover {
   background-color: transparent;
+}
+
+.btn:hover i {
+  transform: translateX(6px);
 }
 
 .btn-jaune {
@@ -225,8 +232,11 @@ h3 {
   border-radius: 10px;
   text-decoration: none;
   z-index: 1;
-  transition: all 0.2s ease;
+  /* Réserve la place du contour */
+  border: 1.5px solid transparent;
+  transition: border-color 0.3s ease, background-color 0.3s ease, opacity 0.3s ease;
 }
+
 
 .main-nav a::after {
   content: "";
@@ -244,9 +254,12 @@ h3 {
 }
 
 .main-nav a:hover {
-  border: 1px solid var(--violet-profond);
-  opacity: 1;
+  border-color: var(--violet-profond);
+  background-color: rgba(255, 255, 255, 0.3);
+  /* si tu veux un léger fond, optionnel */
 }
+
+
 
 .main-nav a:hover::after {
   opacity: 1;
@@ -308,7 +321,7 @@ h3 {
   width: 517px;
 }
 
-.section-pour-qui .wrapper .intro{
+.section-pour-qui .wrapper .intro {
   position: relative;
 }
 
@@ -327,7 +340,7 @@ h3 {
 /* arrow envol */
 .arrow-envol {
   position: absolute;
-  top:  25px;
+  top: 25px;
   left: 570px;
   width: 15.2%;
   pointer-events: none;
@@ -336,9 +349,9 @@ h3 {
 .section-pour-qui .visuel img {
   position: absolute;
   top: -20px;
-  right: 50px;
-  width: 598.08px;
-  height: 545.67px;
+  right: 15px;
+  width: 698.08px;
+  height: 540px;
 }
 
 .section-pour-qui .types-epuisement {
@@ -383,6 +396,7 @@ h3 {
 /* stats */
 
 .stats {
+  position: relative;
   display: flex;
   gap: 40px;
   margin-top: 50px;
@@ -432,13 +446,13 @@ h3 {
   margin-top: auto;
 }
 
-.curly-arrow {
+.stats .curly-arrow {
   position: absolute;
-  top: 780px;
-  right: 80px;
+  bottom: 0px;
+  right: 0px;
 }
 
-.curly-arrow img {
+.stats .curly-arrow img {
   height: 210px;
 }
 
@@ -476,12 +490,12 @@ h3 {
   width: 361px;
   display: flex;
   flex-wrap: wrap;
-  margin-top: 55px;
+  margin-top: 25px;
 }
 
 .col-droite {
-  position: absolute;
-  right: 80px;
+  position: relative;
+  right: -80px;
 }
 
 .col-droite .img-portrait {
@@ -502,7 +516,8 @@ h3 {
 
 
 .pour-qui-listes {
-  margin-top: 65px;
+  position: relative;
+  margin-top: 10px;
   margin-left: 85px;
   display: flex;
   flex-wrap: wrap;
@@ -517,12 +532,21 @@ h3 {
   width: 650px;
 }
 
+.liste-ateliers,
+.liste-finale {
+  position: relative;
+}
 
 .liste-ateliers .illu-arrow-boucle {
   position: absolute;
-  top: 1845px;
-  left: 220px;
+  top: 40px;
+  left: -240px;
+  width: 190px;
+  height: 190px;
+
+
 }
+
 
 .liste-ateliers h3,
 .liste-finale h3 {
@@ -552,8 +576,10 @@ h3 {
 
 .liste-finale .arrow-to-bottom {
   position: absolute;
-  top: 2170px;
-  right: 220px;
+  top: 40px;
+  right: -260px;
+  width: 28px;
+  height: 86px;
 }
 
 /*** TEMOIGNAGES ***/
@@ -568,6 +594,7 @@ h3 {
 }
 
 #temoignages .title-section {
+  position: relative;
   margin: auto;
   display: flex;
   justify-content: center;
@@ -597,8 +624,10 @@ h3 {
 
 #temoignages .arrow-boucle {
   position: absolute;
-  top: 2545px;
-  right: 250px;
+  top: 75px;
+  right: -180px;
+  width: 97px;
+  height: 82px;
 }
 
 /* Zone globale du slider */
@@ -708,7 +737,7 @@ h3 {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: box-shadow 0.3s ease;
+  transition: all 0.5s ease;
 }
 
 #temoignages .swiper-button-prev {
@@ -830,6 +859,11 @@ h3 {
   overflow: visible;
 }
 
+.processus-left .arrow-boucle {
+  position: relative;
+  margin-top: 40px;
+}
+
 .section-processus .description {
   font-size: 16px;
   color: #1A0034;
@@ -849,8 +883,10 @@ h3 {
 
 .accordion-item {
   border: 1px solid #1A003433;
+  outline: 2px solid transparent; /* Réserve la place d’une bordure + épaisse */
+  outline-offset: -1px; /* Aligne avec la bordure */
+  transition: border 0.5s ease, outline-color 0.5s ease;
 }
-
 
 
 .accordion-item:first-child {
@@ -862,16 +898,15 @@ h3 {
   background: var(--bleu-clair);
 }
 
-.accordion-item {
-  transition: all 0.3s ease;
-  cursor: pointer;
-}
+
+
 
 .accordion-item:hover {
-  border: 2px solid var(--jaune);
-  /* Passe à 2px et couleur jaune */
-}
+  border: 1px solid var(--jaune); /* Garde bordure fine */
+  outline-color: var(--jaune);    /* Simule l’épaisseur */
+  outline-offset: -3px; /* Aligne avec la bordure */
 
+}
 
 /* Header */
 .accordion-header {
@@ -881,11 +916,10 @@ h3 {
   cursor: pointer;
   font-weight: 700;
   font-size: 18px;
-  padding: 30px 40px;
-
-
-
-
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 30px;
+  padding-bottom: 20px;
 }
 
 
@@ -908,33 +942,27 @@ h3 {
   border: 2px solid var(--violet-profond);
   box-shadow: -8px 8px 0 0 var(--jaune);
   /* effet léger au hover */
-  transition: transform 0.3s ease;
+  transition: all 0.8s ease;
 }
 
 .accordion-icon i {
   color: var(--noir);
   font-size: 16px;
-  transition: transform 0.3s ease;
+  color: #1a0034;
+  font-size: 16px;
 }
 
-.accordion-icon:hover,
-.accordion-icon::after {
+.accordion-item:hover .accordion-icon {
   background-color: var(--jaune);
   box-shadow: none;
   border: none;
 }
 
 
-.accordion-icon i {
-  color: #1a0034;
-  font-size: 16px;
-  transition: transform 0.3s ease;
-}
 
 .accordion-item.active .accordion-icon {
   box-shadow: none;
   border: 2px solid var(--violet-profond);
-  /* tu peux garder une bordure ici si tu veux */
   background: transparent;
 }
 
@@ -944,21 +972,27 @@ h3 {
 }
 
 .accordion-content {
-  max-height: 0;
   overflow: hidden;
-  padding: 0 30px;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.5s ease, opacity 0.5s ease;
+  padding: 0 20px;
+  pointer-events: none; /* évite clics pendant fermeture */
 }
 
 .accordion-item.active .accordion-content {
-  max-height: min-content;
-  padding: 0px 20px;
-  padding-bottom: 20px;
-
+  pointer-events: auto;
+  cursor: pointer;
 }
+
+
+
 
 .accordion-item.active {
   border: transparent;
+  outline: transparent;
   border: 1px solid #1A003433;
+  padding-bottom: 20px;
 
 }
 
@@ -988,6 +1022,7 @@ h3 {
   list-style: disc;
   margin-bottom: 8px;
   padding-left: 15px;
+
 }
 
 .accordion-content .list-travail li::marker {
@@ -1001,6 +1036,7 @@ h3 {
   padding-left: 15px;
   /* Supprime l’indentation */
   position: relative;
+
 }
 
 .accordion-content .list-travail li.decale::before {
@@ -1559,7 +1595,7 @@ h3 {
   display: inline;
 }
 
-.bloc-droit .btn{
+.bloc-droit .btn {
   display: flex;
   justify-content: space-between;
   align-items: center;

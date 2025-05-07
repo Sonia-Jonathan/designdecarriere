@@ -82,14 +82,14 @@
           </div>
           <h3><?php the_field('texte_intro_pour_qui'); ?></h3>
           <div class="visuel">
-          <?php $img = get_field('image_femme_pour_qui'); ?>
-          <?php if ($img): ?>
-            <img src="<?php echo esc_url($img['url']); ?>" alt="<?php echo esc_attr($img['alt']); ?>">
-          <?php endif; ?>
-        </div>
+            <?php $img = get_field('image_femme_pour_qui'); ?>
+            <?php if ($img): ?>
+              <img src="<?php echo esc_url($img['url']); ?>" alt="<?php echo esc_attr($img['alt']); ?>">
+            <?php endif; ?>
+          </div>
         </div>
 
-        
+
 
         <!-- TYPE EPUISEMENT -->
 
@@ -120,13 +120,15 @@
               <small class="stat-source"><?php the_field("source_stat_$i"); ?></small>
             </div>
           <?php endfor; ?>
+
+          <div class="curly-arrow">
+            <?php $img = get_field('curly_arrow'); ?>
+            <?php if ($img): ?>
+              <img src="<?php echo esc_url($img['url']); ?>" alt="<?php echo esc_attr($img['alt']); ?>">
+            <?php endif; ?>
+          </div>
         </div>
-        <div class="curly-arrow">
-          <?php $img = get_field('curly_arrow'); ?>
-          <?php if ($img): ?>
-            <img src="<?php echo esc_url($img['url']); ?>" alt="<?php echo esc_attr($img['alt']); ?>">
-          <?php endif; ?>
-        </div>
+
 
       </div>
 
@@ -674,27 +676,46 @@
     // ACCORDÉON
     const accordions = document.querySelectorAll('.accordion-item');
 
-    accordions.forEach(item => {
-      const icon = item.querySelector('.accordion-icon i');
+accordions.forEach(item => {
+  const content = item.querySelector('.accordion-content');
+  const icon = item.querySelector('.accordion-icon i');
 
-      item.addEventListener('click', (e) => {
-        // Ne pas réagir si on clique dans le contenu déjà ouvert
+  item.addEventListener('click', (e) => {
+    // Évite les conflits avec des liens ou boutons internes
+    if (e.target.closest('a, button')) return;
 
-        const isActive = item.classList.contains('active');
+    const isOpen = item.classList.contains('active');
 
-        // Ferme tous les autres
-        accordions.forEach(acc => {
-          acc.classList.remove('active');
-          acc.querySelector('.accordion-icon i').classList.remove('fa-minus');
-          acc.querySelector('.accordion-icon i').classList.add('fa-plus');
-        });
+    if (isOpen) {
+      content.style.maxHeight = content.scrollHeight + 'px';
+      content.style.opacity = '1';
 
-        // Ouvre si ce n’était pas déjà actif
-        if (!isActive) {
-          item.classList.add('active');
-          icon.classList.remove('fa-plus');
-          icon.classList.add('fa-minus');
-        }
+      requestAnimationFrame(() => {
+        content.style.maxHeight = '0';
+        content.style.opacity = '0';
+      });
+
+      item.classList.remove('active');
+      icon.classList.remove('fa-minus');
+      icon.classList.add('fa-plus');
+    } else {
+      content.style.maxHeight = content.scrollHeight + 'px';
+      content.style.opacity = '1';
+
+      item.classList.add('active');
+      icon.classList.remove('fa-plus');
+      icon.classList.add('fa-minus');
+    }
+  });
+
+  content.addEventListener('transitionend', () => {
+    if (item.classList.contains('active')) {
+      content.style.maxHeight = 'none';
+    }
+ 
+
+
+
       });
     });
   </script>

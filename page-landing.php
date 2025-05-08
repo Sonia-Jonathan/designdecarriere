@@ -376,8 +376,15 @@
 
     <section id="tarifs" class="section-offres">
       <div class="offres-wrapper">
-        <h3 class="sur-titre"><?php the_field('titre_section_tarifs'); ?></h3>
-        <h1><?php the_field('sous_titre_section-tarifs'); ?></h1>
+        <div class="offres-wrapper-title">
+          <h3 class="sur-titre"><?php the_field('titre_section_tarifs'); ?></h3>
+          <h1><?php the_field('sous_titre_section-tarifs'); ?></h1>
+          <?php $img = get_field('ampoule_img'); ?>
+          <?php if ($img): ?>
+            <img class="ampoule_img" src="<?php echo esc_url($img['url']); ?>" alt="<?php echo esc_attr($img['alt']); ?>">
+          <?php endif; ?>
+        </div>
+
 
         <div class="offres-grid">
           <?php
@@ -401,6 +408,7 @@
               $lien = get_field('lien_btn');
               $texte_btn = get_field('texte_btn');
               $couleur = get_field('couleur');
+              $label_hover = get_field('label_hover');
           ?>
               <div class="offre-card <?php echo esc_attr($couleur); ?>">
 
@@ -436,7 +444,10 @@
 
 
                   <?php if ($texte_btn): ?>
-                    <a href="<?php echo esc_url($lien); ?>" class="cta-offre btn"><?php echo esc_html($texte_btn); ?> <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="<?php echo esc_url($lien); ?>" class="cta-offre btn">
+                      <span class="label-default"><?php echo esc_html($texte_btn); ?></span>
+                      <span class="label-hover"><?php echo esc_html($label_hover); ?></span>
+                      <i class="fa-solid fa-arrow-right"></i></a>
                   <?php endif; ?>
                 </div>
               </div>
@@ -500,10 +511,11 @@
               }
               ?>
 
-              <?php if (get_field('btn_rdv')): ?>
+              <?php if (get_field('btn_rdv')):  ?>
                 <a href="<?php the_field('lien_btn'); ?>" class="cta-remise btn">
-                  <?php the_field('btn_rdv'); ?> <i class="fa-solid fa-arrow-right"></i>
-                </a>
+                  <span class="label-default"><?php the_field('btn_rdv'); ?></span>
+                  <span class="label-hover"><?php the_field('btn_rdv_hover'); ?></span>
+                  <i class="fa-solid fa-arrow-right"></i></a>
               <?php endif; ?>
             </div>
 
@@ -676,43 +688,43 @@
     // ACCORDÉON
     const accordions = document.querySelectorAll('.accordion-item');
 
-accordions.forEach(item => {
-  const content = item.querySelector('.accordion-content');
-  const icon = item.querySelector('.accordion-icon i');
+    accordions.forEach(item => {
+      const content = item.querySelector('.accordion-content');
+      const icon = item.querySelector('.accordion-icon i');
 
-  item.addEventListener('click', (e) => {
-    // Évite les conflits avec des liens ou boutons internes
-    if (e.target.closest('a, button')) return;
+      item.addEventListener('click', (e) => {
+        // Évite les conflits avec des liens ou boutons internes
+        if (e.target.closest('a, button')) return;
 
-    const isOpen = item.classList.contains('active');
+        const isOpen = item.classList.contains('active');
 
-    if (isOpen) {
-      content.style.maxHeight = content.scrollHeight + 'px';
-      content.style.opacity = '1';
+        if (isOpen) {
+          content.style.maxHeight = content.scrollHeight + 'px';
+          content.style.opacity = '1';
 
-      requestAnimationFrame(() => {
-        content.style.maxHeight = '0';
-        content.style.opacity = '0';
+          requestAnimationFrame(() => {
+            content.style.maxHeight = '0';
+            content.style.opacity = '0';
+          });
+
+          item.classList.remove('active');
+          icon.classList.remove('fa-minus');
+          icon.classList.add('fa-plus');
+        } else {
+          content.style.maxHeight = content.scrollHeight + 'px';
+          content.style.opacity = '1';
+
+          item.classList.add('active');
+          icon.classList.remove('fa-plus');
+          icon.classList.add('fa-minus');
+        }
       });
 
-      item.classList.remove('active');
-      icon.classList.remove('fa-minus');
-      icon.classList.add('fa-plus');
-    } else {
-      content.style.maxHeight = content.scrollHeight + 'px';
-      content.style.opacity = '1';
+      content.addEventListener('transitionend', () => {
+        if (item.classList.contains('active')) {
+          content.style.maxHeight = 'none';
+        }
 
-      item.classList.add('active');
-      icon.classList.remove('fa-plus');
-      icon.classList.add('fa-minus');
-    }
-  });
-
-  content.addEventListener('transitionend', () => {
-    if (item.classList.contains('active')) {
-      content.style.maxHeight = 'none';
-    }
- 
 
 
 

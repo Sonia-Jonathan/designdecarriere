@@ -883,8 +883,10 @@ h3 {
 
 .accordion-item {
   border: 1px solid #1A003433;
-  outline: 2px solid transparent; /* Réserve la place d’une bordure + épaisse */
-  outline-offset: -1px; /* Aligne avec la bordure */
+  outline: 2px solid transparent;
+  /* Réserve la place d’une bordure + épaisse */
+  outline-offset: -1px;
+  /* Aligne avec la bordure */
   transition: border 0.5s ease, outline-color 0.5s ease;
 }
 
@@ -902,9 +904,12 @@ h3 {
 
 
 .accordion-item:hover {
-  border: 1px solid var(--jaune); /* Garde bordure fine */
-  outline-color: var(--jaune);    /* Simule l’épaisseur */
-  outline-offset: -3px; /* Aligne avec la bordure */
+  border: 1px solid var(--jaune);
+  /* Garde bordure fine */
+  outline-color: var(--jaune);
+  /* Simule l’épaisseur */
+  outline-offset: -3px;
+  /* Aligne avec la bordure */
 
 }
 
@@ -977,7 +982,8 @@ h3 {
   opacity: 0;
   transition: max-height 0.5s ease, opacity 0.5s ease;
   padding: 0 20px;
-  pointer-events: none; /* évite clics pendant fermeture */
+  pointer-events: none;
+  /* évite clics pendant fermeture */
 }
 
 .accordion-item.active .accordion-content {
@@ -1069,6 +1075,17 @@ h3 {
 
 }
 
+.offres-wrapper-title {
+  position: relative;
+}
+
+.offres-wrapper-title .ampoule_img {
+  position: absolute;
+  top: -15px;
+  left: 30px;
+  width: 101.62px;
+  height: 101.63px;
+}
 
 
 
@@ -1093,18 +1110,31 @@ h3 {
 }
 
 .offre-card:first-child {
-  border: 2px solid var(--color-pink, #ff00ff);
   border-radius: 10px 0px 0px 10px;
+
 }
 
+.offre-card:first-child,
 .offre-card:nth-child(2) {
-  border: 2px solid var(--color-pink, #ff00ff);
+  border: 1px solid var(--fuchsia);
+  outline: 4px solid transparent;
+  /* Réserve la place d’une bordure + épaisse */
+  outline-offset: -1px;
+  /* Aligne avec la bordure */
+  transition: border 0.5s ease, outline-color 0.5s ease;
+
 }
+
+
 
 .offre-card:last-child {
-  border-left: none;
-  border: 2px solid var(--color-yellow, #fff172);
+  border: 1px solid var(--jaune);
   border-radius: 0px 10px 10px 0px;
+  outline: 4px solid transparent;
+  /* Réserve la place d’une bordure + épaisse */
+  outline-offset: -1px;
+  /* Aligne avec la bordure */
+  transition: border 0.5s ease, outline-color 0.5s ease;
 }
 
 
@@ -1118,11 +1148,21 @@ h3 {
 
 .offre-card:first-child:hover,
 .offre-card:nth-child(2):hover {
-  border: 4px solid var(--color-pink, #ff00ff);
+  /* border: 2px solid var(--color-pink, #ff00ff); */
+  border: 1px solid var(--fuchsia);
+  /* Garde bordure fine */
+  outline-color: var(--fuchsia);
+  /* Simule l’épaisseur */
+  outline-offset: -5px;
+  /* Aligne avec la bordure */
 }
 
 .offre-card:last-child:hover {
-  border: 4px solid var(--color-yellow, #fff172);
+  border: 1px solid var(--jaune);
+  /* Garde bordure fine */
+  outline-color: var(--jaune);
+  /* Simule l’épaisseur */
+  outline-offset: -5px;
 }
 
 .offre-contenu {
@@ -1221,7 +1261,7 @@ h3 {
 
 .cta-offre {
   background: transparent;
-  border: 2px solid #fff;
+  border: 2px solid var(--violet-profond);
   color: #fff;
   padding: 12px;
   border-radius: 10px;
@@ -1234,12 +1274,31 @@ h3 {
   font-size: 14px;
   line-height: 100%;
   height: 44px;
-  width: 211px;
-  transition: all 0.3s ease;
+  width: 220px; /* largeur initiale compacte */
+  transition: width 0.3s ease, background 0.3s ease;
 }
 
-.cta-offre {
-  border: none;
+
+.cta-offre:hover {
+  background: var(--hover-color, #ff00ff);
+  color: #1A0034;
+  font-weight: bold;
+  width: 310px;
+  white-space: nowrap;
+
+}
+
+.cta-offre .label-default {
+  display: block;
+  transition: all 12s ease;
+
+}
+
+
+.cta-offre .label-hover {
+  display: none;
+  transition: all 12s ease;
+
 }
 
 .offre-card.pink .cta-offre {
@@ -1267,10 +1326,14 @@ h3 {
   color: black;
 }
 
-.cta-offre:hover {
-  background: var(--hover-color, #ff00ff);
-  color: #1A0034;
-  font-weight: bold;
+
+
+.cta-offre:hover .label-default {
+  display: none;
+}
+
+.cta-offre:hover .label-hover {
+  display: block;
 }
 
 
@@ -1395,87 +1458,60 @@ h3 {
 }
 
 .section-livre-blanc .cta-remise {
+  background: var(--jaune);
+  border: 1px solid var(--violet-profond);
+  color: var(--violet-profond);
+  padding: 12px 20px;
+  border-radius: 10px;
+  text-align: center;
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  background: var(--jaune);
-  color: var(--violet-profond);
+  justify-content: left;
+  gap: 10px;
   font-weight: 700;
   font-size: 14px;
-  padding: 12px 24px;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  border: 1px solid var(--violet-profond);
+  line-height: 100%;
+  height: 44px;
+  width: 220px; /* largeur initiale compacte */
+  transition: width 0.3s ease, background 0.3s ease;
 }
 
-.cta-remise i {
-  margin-left: 8px;
+.card-telechargement .cta-remise{
+  width: max-content;
 }
 
-.cta-remise:hover {
+.card .cta-remise:hover {
   background: transparent;
   color: var(--violet-profond);
-}
-
-/* 
-
-
-
-
-
-
-.section-livre-blanc .card-right .bloc-text{
-  flex: 1;
-}
-
-.remise-benefices .bloc-img  {
-  position: relative;
-  border: 1px solid red!important;
-} */
-
-
-
-
-
-/* LIVRE BLANC TELECHARGERMENT */
-
-/* .section-livre-blanc .card-telechargement {
-  padding-top: 50px;
-  padding-bottom: 30px;
-}
-.section-livre-blanc .card-telechargement .description-remise{
-  margin-top: 0px;
-}
-.section-livre-blanc .card-right{
-  display: flex;
-  justify-content: space-between;
+  width: 315px; 
+  white-space: nowrap;
 }
 
 
-.section-livre-blanc .card-telechargement .card-right .bloc-img img{
-  border: 1.55px solid var(--violet-profond);
-  box-shadow: -8px 8px 0px 0 var(--bleu-clair);
-  width: 175px;
-  height: 240px;
+.card-telechargement .cta-remise:hover{
+width: max-content;
+}
 
+.cta-remise .label-default {
+  display: block;
+  transition: all 12s ease;
 
 }
 
-.liste-sommaire {
-  list-style: disc;
-  list-style-position: inside;
-  margin-bottom: 2rem;
+
+.cta-remise .label-hover {
+  display: none;
+  transition: all 12s ease;
+
 }
 
-.liste-sommaire ul li {
-  line-height: 22px;
+.cta-remise:hover .label-default {
+  display: none;
 }
 
-.card-telechargement .card-left{
-  margin-top: -145px;
-} */
-
+.cta-remise:hover .label-hover {
+  display: block;
+}
 
 
 
@@ -1519,6 +1555,7 @@ h3 {
   height: 320px;
   border-radius: 10px;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .vignette-podcast img {
@@ -1569,7 +1606,7 @@ h3 {
   font-size: 16px;
   cursor: pointer;
   z-index: 10;
-  transition: all 0.3s ease;
+  transition: all 1s ease;
 }
 
 /* Span texte caché par défaut */

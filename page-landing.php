@@ -33,7 +33,7 @@
         <?php endif; ?>
         <?php $img = get_field('logo_header'); ?>
         <?php if ($img): ?>
-          <img class="logo-default" src="<?php echo esc_url($img['url']); ?>" alt="<?php echo esc_attr($img['alt']); ?>">
+          <a href="/"><img class="logo-default" src="<?php echo esc_url($img['url']); ?>" alt="<?php echo esc_attr($img['alt']); ?>"></a>
         <?php endif; ?>
       </div>
       <div class="header-right">

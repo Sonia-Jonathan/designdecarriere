@@ -21,6 +21,13 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
+.cgv{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+  padding: 20px 24px ;
+}
 .sur-titre {
   font-size: 14px;
   font-weight: 600;

@@ -59,7 +59,7 @@
 
 
     <!-- MAIN -->
-    <main class="landing">
+    <main class="cgv">
 
         <?php
         while (have_posts()) : the_post();

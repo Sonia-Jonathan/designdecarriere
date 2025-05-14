@@ -1765,15 +1765,24 @@ h3 {
 
 /* FORMAT MOBILE  */
 @media screen and (max-width: 768px) {
+
+  
+
+
   body .btn-fixe-mobile {
     display: flex;
     position: sticky;
-    bottom: 240px;
+    bottom: 30px;
     border: 1px solid var(--violet-profond);
     background: var(--jaune);
     z-index: 9999999;
     width: 90%;
     margin: auto;
+  }
+
+  body .btn-fixe-mobile:hover{
+    border: 1px solid var(--violet-profond);
+    background: var(--jaune);
   }
 
   body .btn-fixe-mobile a {
@@ -1793,7 +1802,6 @@ h3 {
 
   body {
     height: auto;
-    padding-bottom: 200px;
   }
 
   h1 {
@@ -1838,6 +1846,9 @@ h3 {
     font-weight: 800;
   }
 
+  
+
+
   .main-header .burger-menu {
     background-color: transparent;
     display: block;
@@ -1868,6 +1879,18 @@ h3 {
     z-index: 9999;
     padding: 0px 20px;
 
+  }
+
+  .main-nav a::after {
+    display: none;
+  }
+
+  .main-nav a:active, .main-nav a:hover{
+    border: none;
+  }
+  .main-nav a:hover {
+    border-color: transparent;
+    background-color: transparent;
   }
 
   .main-header .close-menu {
@@ -1903,6 +1926,11 @@ h3 {
     width: 100%;
   }
 
+  .main-nav a::after {
+    display: none;
+  }
+
+
 
   .main-header .header-right ul {
     margin-top: 100px;
@@ -1911,7 +1939,7 @@ h3 {
   }
 
   .main-header .header-right ul li {
-
+    border: none;
     border-bottom: 1px solid var(--violet-profond);
   }
 
@@ -2654,7 +2682,7 @@ h3 {
 
   .footer-site {
     background: white;
-    padding: 30px 50px 50px 50px;
+    padding: 30px 50px 20px 50px;
     width: 100%;
     height: auto;
   }

@@ -25,7 +25,9 @@
   <header class="main-header">
     <div class="progress-wrapper"></div>
     <div class="progress-bar"></div>
-    <div class="container">
+
+
+    <div class="container ">
       <div class="logo-group">
         <?php $img = get_field('marc_img'); ?>
         <?php if ($img): ?>
@@ -36,22 +38,32 @@
           <a href="/"><img class="logo-default" src="<?php echo esc_url($img['url']); ?>" alt="<?php echo esc_attr($img['alt']); ?>"></a>
         <?php endif; ?>
       </div>
+
+      <button class="burger-menu" aria-label="Ouvrir le menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
       <div class="header-right">
         <nav class="main-nav">
-          <?php
-          wp_nav_menu([
-            'menu' => 'Header Menu',
-            'container' => false,
-            'menu_class' => '',
-            'items_wrap' => '<ul>%3$s</ul>'
-          ]);
-          ?>
+          <ul>
+
+            <?php
+            wp_nav_menu([
+              'menu' => 'Header Menu',
+              'container' => false,
+              'menu_class' => '',
+              'items_wrap' => '<li>%3$s</li>'
+            ]);
+            ?>
+
+            <li>
+              <a class="btn btn-jaune cta-button" href="<?php the_field('lien_bouton_rdv'); ?>">
+                <?php the_field('texte_bouton_rdv'); ?> <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </li>
+          </ul>
         </nav>
-        <div class="cta-container">
-          <a href="<?php the_field('lien_bouton_rdv'); ?>" class="btn btn-jaune cta-button">
-            <?php the_field('texte_bouton_rdv'); ?> <i class="fa-solid fa-arrow-right"></i>
-          </a>
-        </div>
+
       </div>
     </div>
   </header>
@@ -254,8 +266,10 @@
           <?php endif; ?>
 
           <div class="temoin-details">
-            <p class="fs-16-bold"><?php the_field('nom_prenom'); ?></p>
-            <p class="fs-16-bold"><?php the_field('profession'); ?></p>
+            <div class="fs-16-bold">
+              <p><?php the_field('nom_prenom'); ?></p>
+              <p><?php the_field('profession'); ?></p>
+            </div>
             <p class="avis"><?php the_field('avis'); ?></p>
           </div>
         </div>
@@ -377,12 +391,14 @@
     <section id="tarifs" class="section-offres">
       <div class="offres-wrapper">
         <div class="offres-wrapper-title">
-          <h3 class="sur-titre"><?php the_field('titre_section_tarifs'); ?></h3>
-          <h1><?php the_field('sous_titre_section-tarifs'); ?></h1>
           <?php $img = get_field('ampoule_img'); ?>
+
           <?php if ($img): ?>
             <img class="ampoule_img" src="<?php echo esc_url($img['url']); ?>" alt="<?php echo esc_attr($img['alt']); ?>">
           <?php endif; ?>
+          <h3 class="sur-titre"><?php the_field('titre_section_tarifs'); ?></h3>
+          <h1><?php the_field('sous_titre_section-tarifs'); ?></h1>
+
         </div>
 
 
@@ -407,6 +423,7 @@
               $desc_rdv = get_field('desc_rdv');
               $lien = get_field('lien_btn');
               $texte_btn = get_field('texte_btn');
+              $texte_btn_mobile = get_field('texte_btn_mobile');
               $couleur = get_field('couleur');
               $label_hover = get_field('label_hover');
           ?>
@@ -446,8 +463,17 @@
                   <?php if ($texte_btn): ?>
                     <a href="<?php echo esc_url($lien); ?>" class="cta-offre btn">
                       <span class="label-default"><?php echo esc_html($texte_btn); ?></span>
+                      <span class="label-mobile"><?php echo esc_html($texte_btn_mobile); ?></span>
                       <span class="label-hover"><?php echo esc_html($label_hover); ?></span>
-                      <i class="fa-solid fa-arrow-right"></i></a>
+                      <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                    <a href="<?php echo esc_url($lien); ?>" class="cta-offre-mobile">
+                      <div class="cta-content">
+                        <span class="label-mobile"><?php echo esc_html($texte_btn_mobile); ?></span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                      </div>
+                    </a>
                   <?php endif; ?>
                 </div>
               </div>
@@ -516,6 +542,13 @@
                   <span class="label-default"><?php the_field('btn_rdv'); ?></span>
                   <span class="label-hover"><?php the_field('btn_rdv_hover'); ?></span>
                   <i class="fa-solid fa-arrow-right"></i></a>
+
+                <a href="<?php the_field('lien_btn'); ?>" class="cta-remise-offre">
+                  <div class="cta-content">
+                    <span class="label-mobile"><?php the_field('btn_rdv_mobile'); ?></span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                  </div>
+                </a>
               <?php endif; ?>
             </div>
 
@@ -623,9 +656,9 @@
       </div>
     </section>
 
-
-
   </main>
+
+  <!-- BOUTON FIXE EN BAS DE PAGE -->
 
 
   <footer class="footer-site">
@@ -661,6 +694,18 @@
   </footer>
 
 
+  <div class="btn btn-fixe-mobile">
+    <a href="<?php the_field('lien_bouton_rdv'); ?>"><?php the_field('texte_btn_rdv_mobile'); ?> <i class="fa-solid fa-arrow-right"></i></a>
+  </div>
+
+
+  <!-- <div class="btn-fixe-mobile">
+      <a href="<?php the_field('lien_bouton_rdv'); ?>">
+        <?php the_field('texte_btn_rdv_mobile'); ?> <i class="fa-solid fa-arrow-right"></i>
+      </a>
+    </div> -->
+
+
 
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
@@ -668,17 +713,24 @@
     document.addEventListener('DOMContentLoaded', function() {
       const swiper = new Swiper('.temoignages-swiper', {
         slidesPerView: 1,
-        spaceBetween: -25,
         loop: true,
         navigation: {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev',
         },
         breakpoints: {
+          0: {
+            spaceBetween: 20,
+            autoHeight: true,
+
+            slidesPerView: 1,
+          },
           768: {
-            slidesPerView: 2
+            slidesPerView: 1
           },
           1200: {
+            spaceBetween: -25,
+
             slidesPerView: 3
           }
         }
@@ -759,6 +811,35 @@
     });
   </script>
 
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const burgerBtn = document.querySelector('.burger-menu');
+      const headerRight = document.querySelector('.header-right');
+      let closeBtn;
+
+      // Fonction pour créer le bouton de fermeture
+      function createCloseButton() {
+        closeBtn = document.createElement('button');
+        closeBtn.classList.add('close-menu');
+        closeBtn.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+        headerRight.prepend(closeBtn);
+      }
+
+      // Ouvre le menu mobile
+      burgerBtn.addEventListener('click', function() {
+        headerRight.classList.add('active');
+        document.body.classList.add('no-scroll'); // bloque le scroll
+        createCloseButton();
+
+        // Ferme le menu au clic sur la croix
+        closeBtn.addEventListener('click', function() {
+          headerRight.classList.remove('active');
+          document.body.classList.remove('no-scroll'); // réactive le scroll
+          closeBtn.remove(); // supprime le bouton pour éviter doublon
+        });
+      });
+    });
+  </script>
 
 
 

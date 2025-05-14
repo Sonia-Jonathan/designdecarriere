@@ -699,12 +699,6 @@
   </div>
 
 
-  <!-- <div class="btn-fixe-mobile">
-      <a href="<?php the_field('lien_bouton_rdv'); ?>">
-        <?php the_field('texte_btn_rdv_mobile'); ?> <i class="fa-solid fa-arrow-right"></i>
-      </a>
-    </div> -->
-
 
 
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>

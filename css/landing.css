@@ -1766,7 +1766,7 @@ h3 {
 /* FORMAT MOBILE  */
 @media screen and (max-width: 768px) {
   body .btn-fixe-mobile {
-    display: flex ;
+    display: flex;
     position: sticky;
     bottom: 240px;
     border: 1px solid var(--violet-profond);
@@ -1780,7 +1780,7 @@ h3 {
     color: var(--violet-profond);
   }
 
-}
+
 
 .btn-fixe-mobile i {
   margin-left: 10px;

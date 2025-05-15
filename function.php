@@ -44,3 +44,36 @@ function ajouter_meta_robots()
     echo '<meta name="robots" content="noindex, nofollow">' . "\n";
 }
 add_action('wp_head', 'ajouter_meta_robots');
+
+// mailpoet
+
+add_filter('mailpoet_automation_email_attachments', function($attachments, $email, $subscriber) {
+    // On vérifie que c’est bien l’automatisation du livre blanc
+    if (strpos($email['subject'], 'livre blanc') !== false) {
+        // On récupère le CPT "ressource" marqué à envoyer
+        $args = array(
+            'post_type' => 'ressource',
+            'meta_query' => array(
+                array(
+                    'key' => 'envoyer_dans_mailpoet',
+                    'value' => '1'
+                )
+            ),
+            'posts_per_page' => 1
+        );
+
+        $posts = get_posts($args);
+
+        if (!empty($posts)) {
+            $pdf_url = get_field('fichier_joint', $posts[0]->ID); // ACF champ fichier
+            if ($pdf_url) {
+                $pdf_path = ABSPATH . str_replace(site_url() . '/', '', $pdf_url);
+                if (file_exists($pdf_path)) {
+                    $attachments[] = $pdf_path;
+                }
+            }
+        }
+    }
+
+    return $attachments;
+}, 10, 3);

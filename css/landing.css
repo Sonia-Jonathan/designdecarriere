@@ -1280,6 +1280,11 @@ h3 {
 }
 
 
+.cta-offre {
+  display: inline-flex;
+
+}
+
 .cta-offre-mobile {
   display: none;
 }
@@ -1292,7 +1297,6 @@ h3 {
   padding: 12px;
   border-radius: 10px;
   text-align: center;
-  display: inline-flex;
   align-items: center;
   justify-content: left;
   gap: 10px;
@@ -1766,7 +1770,7 @@ h3 {
 /* FORMAT MOBILE  */
 @media screen and (max-width: 768px) {
 
-  
+
 
 
   body .btn-fixe-mobile {
@@ -1780,7 +1784,7 @@ h3 {
     margin: auto;
   }
 
-  body .btn-fixe-mobile:hover{
+  body .btn-fixe-mobile:hover {
     border: 1px solid var(--violet-profond);
     background: var(--jaune);
   }
@@ -1846,7 +1850,7 @@ h3 {
     font-weight: 800;
   }
 
-  
+
 
 
   .main-header .burger-menu {
@@ -1885,9 +1889,11 @@ h3 {
     display: none;
   }
 
-  .main-nav a:active, .main-nav a:hover{
+  .main-nav a:active,
+  .main-nav a:hover {
     border: none;
   }
+
   .main-nav a:hover {
     border-color: transparent;
     background-color: transparent;
@@ -2463,7 +2469,8 @@ h3 {
   }
 
   #tarifs .cta-offre-mobile {
-    display: block;
+    display: inline-flex;
+
     width: 100%;
     height: auto;
     text-align: left;

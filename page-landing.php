@@ -397,7 +397,7 @@
             <img class="ampoule_img" src="<?php echo esc_url($img['url']); ?>" alt="<?php echo esc_attr($img['alt']); ?>">
           <?php endif; ?>
           <h3 class="sur-titre"><?php the_field('titre_section_tarifs'); ?></h3>
-          <h1><?php the_field('sous_titre_section-tarifs'); ?></h1>
+          <h1><?php the_field('sous_titre_section_tarifs'); ?></h1>
 
         </div>
 
@@ -571,7 +571,7 @@
 
       <div class="card card-telechargement">
         <div class="card-left">
-          <p class="texte-left  ">
+          <p class="texte-left">
             <?php
             $texte = get_field('texte_telecharger_lb');
 

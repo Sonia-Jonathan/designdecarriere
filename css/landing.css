@@ -1789,6 +1789,10 @@ h3 {
     background: var(--jaune);
   }
 
+  body .btn-fixe-mobile::after {
+    display: none;
+  }
+
   body .btn-fixe-mobile a {
     color: var(--violet-profond);
   }
@@ -2213,11 +2217,10 @@ h3 {
     position: absolute;
     top: 55%;
     transform: translateY(-50%);
-    background: var(--blanc);
+    background: var(--bleu-clair);
     width: 32px;
     height: 32px;
     border-radius: 50%;
-    border: 1px solid var(--violet-profond);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2230,6 +2233,13 @@ h3 {
 
   #temoignages .swiper-button-next {
     right: 25px;
+  }
+
+  #temoignages .swiper-button-prev:hover,
+  #temoignages .swiper-button-next:hover {
+    box-shadow: none;
+    border: none;
+    background: var(--bleu-clair);
   }
 
   #temoignages .swiper-button-prev::after,

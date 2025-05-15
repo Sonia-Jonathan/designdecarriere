@@ -805,35 +805,51 @@
     });
   </script>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      const burgerBtn = document.querySelector('.burger-menu');
-      const headerRight = document.querySelector('.header-right');
-      let closeBtn;
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const burgerBtn = document.querySelector('.burger-menu');
+    const headerRight = document.querySelector('.header-right');
+    const navLinks = document.querySelectorAll(".main-nav a");
+    let closeBtn;
 
-      // Fonction pour créer le bouton de fermeture
-      function createCloseButton() {
-        closeBtn = document.createElement('button');
-        closeBtn.classList.add('close-menu');
-        closeBtn.innerHTML = '<i class="fa-solid fa-xmark"></i>';
-        headerRight.prepend(closeBtn);
-      }
+    // Fonction pour créer le bouton de fermeture
+    function createCloseButton() {
+      closeBtn = document.createElement('button');
+      closeBtn.classList.add('close-menu');
+      closeBtn.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+      headerRight.prepend(closeBtn);
 
-      // Ouvre le menu mobile
-      burgerBtn.addEventListener('click', function() {
-        headerRight.classList.add('active');
-        document.body.classList.add('no-scroll'); // bloque le scroll
-        createCloseButton();
+      // Ferme le menu au clic sur la croix
+      closeBtn.addEventListener('click', function () {
+        closeMenu();
+      });
+    }
 
-        // Ferme le menu au clic sur la croix
-        closeBtn.addEventListener('click', function() {
-          headerRight.classList.remove('active');
-          document.body.classList.remove('no-scroll'); // réactive le scroll
-          closeBtn.remove(); // supprime le bouton pour éviter doublon
-        });
+    // Fonction pour fermer le menu
+    function closeMenu() {
+      headerRight.classList.remove('active');
+      document.body.classList.remove('no-scroll');
+      if (closeBtn) closeBtn.remove();
+    }
+
+    // Ouvre le menu mobile
+    burgerBtn.addEventListener('click', function () {
+      headerRight.classList.add('active');
+      document.body.classList.add('no-scroll');
+      createCloseButton();
+    });
+
+    // Ferme le menu au clic sur un lien de navigation
+    navLinks.forEach(link => {
+      link.addEventListener("click", function () {
+        if (headerRight.classList.contains("active")) {
+          closeMenu();
+        }
       });
     });
-  </script>
+  });
+</script>
+
 
 
 

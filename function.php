@@ -48,26 +48,26 @@ add_action('wp_head', 'ajouter_meta_robots');
 // mailpoet
 
 add_filter('mailpoet_automation_email_attachments', function($attachments, $email, $subscriber) {
-    // On vérifie que c’est bien l’automatisation du livre blanc
-    if (strpos($email['subject'], 'livre blanc') !== false) {
-        // On récupère le CPT "ressource" marqué à envoyer
-        $args = array(
+    // Vérifie si l’objet contient "livre blanc"
+    if (strpos(strtolower($email['subject']), 'livre blanc') !== false) {
+        // Récupère le post de type ressource avec la case cochée
+        $args = [
             'post_type' => 'ressource',
-            'meta_query' => array(
-                array(
+            'meta_query' => [
+                [
                     'key' => 'envoyer_dans_mailpoet',
                     'value' => '1'
-                )
-            ),
+                ]
+            ],
             'posts_per_page' => 1
-        );
+        ];
 
         $posts = get_posts($args);
-
         if (!empty($posts)) {
-            $pdf_url = get_field('fichier_joint', $posts[0]->ID); // ACF champ fichier
+            $pdf_url = get_field('fichier_joint', $posts[0]->ID); // URL ACF
             if ($pdf_url) {
-                $pdf_path = ABSPATH . str_replace(site_url() . '/', '', $pdf_url);
+                $upload_dir = wp_upload_dir(); // plus fiable pour extraire le chemin local
+                $pdf_path = str_replace($upload_dir['baseurl'], $upload_dir['basedir'], $pdf_url);
                 if (file_exists($pdf_path)) {
                     $attachments[] = $pdf_path;
                 }
@@ -77,3 +77,4 @@ add_filter('mailpoet_automation_email_attachments', function($attachments, $emai
 
     return $attachments;
 }, 10, 3);
+

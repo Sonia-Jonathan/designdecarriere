@@ -7,6 +7,69 @@
   --bleu-clair: #F4F5FF;
 }
 
+/* 
+#popup-form {
+  background: #fefefe;
+  display: flex;
+  max-width: 900px;
+  margin: 50px auto;
+  border-radius: 12px;
+  box-shadow: 0 0 40px rgba(0,0,0,0.3);
+  overflow: hidden;
+  font-family: 'Inter', sans-serif;
+}
+
+#popup-form .mailpoet_form {
+  display: flex;
+  width: 100%;
+}
+
+#popup-form .mailpoet_column_with_background {
+  background-color: #2c004b;
+  padding: 30px;
+  color: white;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#popup-form .mailpoet_form_column {
+  flex: 2;
+  padding: 40px;
+  background: white;
+}
+
+.mailpoet_text_label,
+.mailpoet_checkbox_label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.mailpoet_text {
+  border: 2px solid #d600c0;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+.mailpoet_submit {
+  background: #ffe44d;
+  color: #000;
+  font-weight: bold;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.mailpoet_submit:hover {
+  background: #fddc00;
+}
+ */
 
 html {
   margin-top: 0px !important;
@@ -46,8 +109,8 @@ h1 {
 
 h2 {
   font-size: 30px;
-  font-weight: 700;
-  line-height: 45px;
+  font-weight: 800;
+  line-height: 35px;
 }
 
 h3 {
@@ -379,7 +442,7 @@ h3 {
 
 .section-pour-qui .types-epuisement .fs-18-bold {
   width: 420px;
-  margin-left: 10px;
+  margin-left: 5px;
 }
 
 .section-pour-qui .types-epuisement .arrow-left-to-right {
@@ -415,7 +478,7 @@ h3 {
   display: flex;
   gap: 40px;
   margin-top: 50px;
-  margin-left: 120px;
+  margin-left: 105px;
 }
 
 .stat-item {
@@ -547,7 +610,7 @@ h3 {
 .pour-qui-listes ul {
   font-weight: 400;
   font-size: 18px;
-  line-height: 28px;
+  line-height: 100%;
   width: 650px;
 }
 
@@ -794,11 +857,12 @@ h3 {
   background: var(--bleu-clair);
   border-radius: 10px;
   padding: 40px 60px;
-  width: 853px;
+  min-width: 853px;
+  max-width: 90%;
+  width: fit-content;
   margin-top: 20px;
   position: relative;
   margin: auto;
-  width: 853px;
 }
 
 .temoignage-special-inner {
@@ -864,7 +928,7 @@ h3 {
 
 .processus-left {
   margin-top: 30px;
-  margin-bottom: 90px;
+  margin-bottom: 0px;
   position: sticky;
   top: 140px;
   /* hauteur à partir du top de la fenêtre */
@@ -874,6 +938,39 @@ h3 {
   width: 407px;
 }
 
+.section-processus .processus-left .sur-titre {
+  margin-bottom: 40px;
+}
+
+.section-processus .processus-left .description {
+  color: var(--violet-profond);
+  margin-bottom: 40px;
+  margin-left: 0px;
+  margin-top: 40px;
+
+}
+
+.section-processus .processus-left .description ul {
+  padding-left: 15px;
+  margin-top: -10px;
+
+}
+
+.section-processus .processus-left .description ul li {
+  list-style: none;
+  position: relative;
+  padding-left: 1.2em;
+
+}
+
+.section-processus .processus-left .description ul li::before {
+  content: "–";
+  position: absolute;
+  left: 0;
+  color: var(--violet-profond);
+
+}
+
 .processus-right {
   flex: 2;
   overflow: visible;
@@ -881,18 +978,8 @@ h3 {
 
 .processus-left .arrow-boucle {
   position: relative;
-  margin-top: 40px;
+  margin-top: 0px;
 }
-
-.section-processus .description {
-  font-size: 16px;
-  color: #1A0034;
-  line-height: 26px;
-  margin-bottom: 40px;
-  font-weight: 450;
-
-}
-
 
 /* Droite */
 
@@ -905,6 +992,7 @@ h3 {
   outline-offset: -1px;
   /* Aligne avec la bordure */
   transition: border 0.5s ease, outline-color 0.5s ease;
+
 }
 
 
@@ -993,6 +1081,7 @@ h3 {
 }
 
 .accordion-content {
+
   overflow: hidden;
   max-height: 0;
   opacity: 0;
@@ -1015,21 +1104,73 @@ h3 {
   outline: transparent;
   border: 1px solid #1A003433;
   padding-bottom: 20px;
-
+  background: #F4F5FF;
+  background: linear-gradient(180deg, rgba(244, 245, 255, 1) 0%, rgba(255, 255, 255, 1) 50%);
 }
 
 /* Liste points (avec check) */
+
+
 .accordion-content .fs-18 {
   list-style: none;
   margin-top: 0px;
+
   line-height: 35px;
 }
 
-.accordion-content i {
-  margin-right: 16px;
+
+
+
+.accordion-content .points-principaux ul li {
+  list-style: none;
+  position: relative;
+  padding-left: 2em;
+
+}
+
+.accordion-content .points-principaux ul li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: var(--violet-profond);
+
+}
+
+.accordion-content .points-travails {
+  margin-bottom: 10px;
+}
+
+.accordion-content .points-travails ul {
+  line-height: 30px;
+
+}
+
+.accordion-content .points-travails ul li {
+
+  padding-left: 1rem;
+}
+
+.accordion-content .points-travails ul li ul {
+
+  padding-left: 0px;
 }
 
 
+
+.accordion-content .points-travails ul li ul li {
+  list-style: none;
+  position: relative;
+  padding-left: 0.7em;
+
+}
+
+.accordion-content .points-travails ul li ul li::before {
+  content: "-";
+  position: absolute;
+  left: 0;
+  color: var(--violet-profond);
+
+}
 
 
 /* Liste travail */
@@ -1253,31 +1394,32 @@ h3 {
   font-size: 12px;
   font-weight: 400;
   line-height: 20px;
-
-}
-
-.section-offres .liste-descriptive,
-.section-offres .desc-rdv {
-  list-style: none;
   margin-bottom: 30px;
+}
+
+.section-offres .liste-descriptive ul {
+  padding-left: 0px;
+  margin-top: 30px;
 
 }
 
-.liste-descriptive li {
+.section-offres .liste-descriptive ul li {
+  list-style: none;
   position: relative;
-  margin-bottom: 10px;
-  margin-left: -15px;
+  padding-left: 2em;
+  line-height: 20px;
+  margin-top: 20px;
 }
 
-.liste-descriptive li i {
+.section-offres .liste-descriptive ul li::before {
+  content: "✔";
   position: absolute;
-  top: 4px;
-  left: -20px;
+  left: 0;
+  color: var(--blanc);
+
 }
 
-.liste-descriptive li strong {
-  font-weight: 700;
-}
+
 
 
 .cta-offre {
@@ -1766,44 +1908,7 @@ h3 {
 
 
 /*** RESPONSIVE ***/
-
-/* FORMAT MOBILE  */
-@media screen and (max-width: 768px) {
-
-
-
-
-  body .btn-fixe-mobile {
-    display: flex;
-    position: sticky;
-    bottom: 30px;
-    border: 1px solid var(--violet-profond);
-    background: var(--jaune);
-    z-index: 9999999;
-    justify-content: space-around;
-    width: 90%;
-    margin: auto;
-  }
-
-  body .btn-fixe-mobile:hover {
-    border: 1px solid var(--violet-profond);
-    background: var(--jaune);
-  }
-
-  body .btn-fixe-mobile::after {
-    display: none;
-  }
-
-  body .btn-fixe-mobile a {
-    color: var(--violet-profond);
-  }
-
-
-
-  .btn-fixe-mobile i {
-    margin-left: 10px;
-  }
-
+@media screen and (max-width: 1024px) {
   body.no-scroll {
     overflow: hidden;
     touch-action: none;
@@ -1854,8 +1959,6 @@ h3 {
     font-size: 30px;
     font-weight: 800;
   }
-
-
 
 
   .main-header .burger-menu {
@@ -1963,6 +2066,621 @@ h3 {
     display: none;
   }
 
+  /*** POUR QUI  ***/
+  .stats .curly-arrow img {
+    display: none;
+  }
+
+  /*** POUR QUI 2 ***/
+  .bloc-retravail {
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    padding-top: 50px;
+  }
+
+  .bloc-retravail .titre {
+    width: 85%;
+    text-align: center;
+  }
+
+  .bloc-retravail .contenu-bloc {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 20px;
+    width: 85%;
+    margin-top: 40px;
+    margin-bottom: 2rem;
+  }
+
+  .bloc-retravail .col-gauche {
+    width: 100%;
+    margin-top: 0px;
+  }
+
+  .bloc-retravail .col-gauche h3 {
+    margin-top: 30px;
+  }
+
+  .bloc-retravail .col-gauche p {
+    margin-top: 15px;
+  }
+
+  .bloc-retravail .col-droite {
+    position: relative;
+    left: 0px;
+
+  }
+
+  .col-droite .img-portrait {
+    border-radius: 0px 100px 0px 100px;
+    height: auto;
+    width: 100%;
+
+  }
+
+  .col-droite .illu-torsade-portrait,
+  .liste-ateliers .illu-arrow-boucle,
+  .liste-finale .arrow-to-bottom {
+    display: none;
+
+  }
+
+  .col-gauche {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .bloc-retravail .pour-qui-listes {
+    margin-top: -10px;
+    margin-left: 0px;
+    width: 85%;
+  }
+
+  .pour-qui-listes ul {
+    font-weight: 400;
+    width: 100%;
+    line-height: 100%;
+  }
+
+  .pour-qui-listes ul li {
+
+    line-height: 25px;
+
+  }
+
+  .liste-finale {
+    margin-top: 30px;
+  }
+
+ 
+
+  /* TEMOIGNAGES */
+ #temoignages .arrow-boucle {
+    display: none;
+  }
+  #temoignages .temoignages-background {
+    position: relative;
+    padding-top: 60px;
+    padding-bottom: 0px;
+    display: flex;
+    justify-content: center;
+  }
+
+  #temoignages .temoignages-swiper {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    z-index: 1;
+    box-sizing: border-box;
+    padding: 0 20px;
+  }
+
+  /* Carte centrée et responsive */
+  #temoignages .temoignage-card {
+
+    width: 90%;
+    max-width: 400px;
+    box-sizing: border-box;
+    z-index: 2;
+  }
+
+  /* Flèches */
+  #temoignages .swiper-button-prev,
+  #temoignages .swiper-button-next {
+    position: absolute;
+    top: 55%;
+    transform: translateY(-50%);
+    background: var(--bleu-clair);
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+  }
+
+  #temoignages .swiper-button-prev:hover,
+  #temoignages .swiper-button-next:hover {
+    box-shadow: none;
+    border: none;
+    background: var(--bleu-clair);
+  }
+
+  #temoignages .swiper-button-prev::after,
+  #temoignages .swiper-button-next::after {
+    display: none;
+  }
+
+  #temoignages .swiper-button-prev i,
+  #temoignages.swiper-button-next i {
+    color: var(--violet-profond);
+    font-size: 16px;
+  }
+
+
+  #temoignages .quote-icon {
+    position: absolute;
+    top: 1.35rem;
+    left: 1rem;
+    font-size: 70px;
+  }
+
+  /***  PROCESSUS ***/
+
+
+  #processus .processus-left .arrow-boucle {
+    display: none;
+  }
+
+  #processus .processus-wrapper {
+    display: flex;
+    flex-direction: column !important;
+    width: 85%;
+
+  }
+
+  #processus .processus-wrapper .processus-left {
+    margin-top: 0px;
+    margin-bottom: 0px;
+
+    width: 100%;
+    position: unset;
+
+  }
+
+  .processus-wrapper .processus-left h2 {
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 34px;
+    margin-top: -15px;
+  }
+
+  .processus-wrapper .processus-left .fs-18 {
+    margin-top: 25px;
+  }
+
+
+  #processus .processus-wrapper .processus-right {
+    margin-top: -20px;
+    width: 100%;
+  }
+
+  #processus .accordion-header {
+    font-size: 15px;
+    padding-left: 20px;
+    padding-right: 30px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+
+
+  }
+
+  #processus .accordion-title {
+    width: 100%;
+  }
+
+  #processus .accordion-icon {
+    top: 0px;
+    right: -10px;
+    min-width: 32px;
+    min-height: 32px;
+    width: 32px;
+    height: 32px;
+    aspect-ratio: 1 / 1;
+    /* Garde un bouton parfaitement rond */
+    box-sizing: content-box;
+  }
+
+  .accordion-content .points-principaux ul {
+    padding-left: 1.8em;
+    line-height: 30px;
+    ;
+  }
+
+  .accordion-content .points-principaux ul li {
+    line-height: 30px;
+
+  }
+
+  .accordion-content .points-travails ul {
+
+    padding-left: 1.5rem;
+  }
+
+  /*** TARIFS ***/
+  #tarifs {
+    flex-direction: column;
+    padding-bottom: 30px;
+  }
+
+  #tarifs .offres-wrapper {
+    width: 85%;
+  }
+
+  #tarifs .offres-wrapper-title .ampoule_img {
+    position: relative;
+    top: 0px;
+    left: 0px;
+  }
+
+  #tarifs .offres-wrapper-title {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    line-height: 100%;
+  }
+
+
+
+  #tarifs .offres-wrapper-title .ampoule_img {
+    margin-bottom: 10px;
+    width: 60px;
+    height: 60px;
+
+  }
+
+  #tarifs .offres-wrapper-title h1 {
+    line-height: 34px;
+    margin-top: 0px;
+  }
+
+  #tarifs .offres-grid {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+  }
+
+  #tarifs .offres-grid .offre-card {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 40px;
+    padding: 30px 30px;
+  }
+
+  #tarifs .cta-offre {
+    display: none;
+
+  }
+
+  #tarifs .cta-offre-mobile {
+    display: inline-flex;
+
+    width: 100%;
+    height: auto;
+    text-align: left;
+    padding: 20px 20px;
+
+  }
+
+  #tarifs .cta-offre-mobile .cta-content {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: left;
+
+  }
+
+  /***  LIVRE BLANC ***/
+
+  #livre-blanc {
+    display: flex;
+    flex-direction: column;
+    padding-top: 40px;
+    padding-bottom: 50px;
+  }
+
+  .section-livre-blanc .card {
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    padding: 20px 20px;
+    padding-bottom: 40px;
+    border-radius: 50px;
+    justify-content: left;
+    gap: 0px;
+    margin-bottom: 30px;
+
+  }
+
+  .section-livre-blanc .card-left .cadeau-img {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .section-livre-blanc .card-left .cadeau-img img {
+    width: 100px;
+    height: auto;
+  }
+
+  .section-livre-blanc .card-left {
+    width: 100%;
+    position: relative;
+    align-content: center;
+
+  }
+
+  .section-livre-blanc .card-left .sur-titre {
+    text-align: center;
+
+  }
+
+  .section-livre-blanc .card-left .texte-left {
+    margin-left: 0px;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 22px;
+    margin-top: 20px;
+  }
+
+  .section-livre-blanc .card-right {
+    position: relative;
+    top: 0px;
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    gap: 0px;
+    margin-top: -80px;
+  }
+
+  .section-livre-blanc .card-right .bloc-text ul {
+    margin-top: 0px;
+
+  }
+
+  .section-livre-blanc .card-right .bloc-img {
+    display: none;
+
+  }
+
+  .section-livre-blanc .cta-remise {
+    display: none;
+  }
+
+  .section-livre-blanc .cta-remise-offre {
+    display: block;
+    padding: 15px 20px;
+    width: 100%;
+    height: auto;
+  }
+
+  .section-livre-blanc .cta-remise-offre .cta-content {
+    display: flex;
+    justify-content: left;
+    text-align: left;
+    align-items: center;
+    width: 100%;
+    margin-top: 0px;
+  }
+
+  .section-livre-blanc .card-telechargement {
+    display: flex;
+    flex-direction: column;
+    padding: 40px 20px;
+    height: auto;
+  }
+
+  .section-livre-blanc .card-telechargement .texte-left {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 32px;
+  }
+
+  .section-livre-blanc .card-telechargement .card-right {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .section-livre-blanc .card-telechargement .card-right .bloc-img {
+    display: flex;
+    justify-content: center;
+
+  }
+
+  .section-livre-blanc .card-right .bloc-text {
+    margin-top: 15px;
+
+  }
+
+  .section-livre-blanc .card-right .bloc-text ul {
+    font-size: 12px;
+    width: 100%;
+    margin-top: -10px;
+
+  }
+
+  .section-livre-blanc .card-telechargement .cta-remise {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+  }
+
+  /*** PODCAST ***/
+
+  .section-podcast {
+    width: 100%;
+    padding-top: 70px;
+    padding-bottom: 35px;
+    border-radius: 0px 0px 55px 55px;
+
+  }
+
+  .podcast-wrapper {
+    width: 85%;
+    border-radius: 10px 10px 50px 50px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 20px;
+    padding-bottom: 50px
+  }
+
+  .bloc-gauche {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+
+  }
+
+  .bloc-gauche .titre-exergue {
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 34px;
+  }
+
+  .bloc-gauche .vignette-podcast {
+    width: auto;
+    height: auto;
+  }
+
+  #podcast .bloc-droit {
+    width: 100%;
+    margin-top: 40px;
+    align-items: center;
+  }
+
+  #podcast .bloc-droit .citation {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 30px;
+  }
+
+  #podcast .bloc-droit .fs-16 {
+    width: 100%;
+    margin-top: 30px;
+
+  }
+
+  #podcast .bloc-droit .btn {
+    width: 100%;
+    font-size: 14px;
+  }
+
+
+
+
+
+}
+
+/* FORMAT MOBILE  */
+
+@media screen and (max-width: 426px) {
+
+  body .btn-fixe-mobile {
+    display: flex;
+    position: sticky;
+    bottom: 30px;
+    border: 1px solid var(--violet-profond);
+    background: var(--jaune);
+    z-index: 9999999;
+    justify-content: space-around;
+    width: 90%;
+    margin: auto;
+  }
+
+  body .btn-fixe-mobile:hover {
+    border: 1px solid var(--violet-profond);
+    background: var(--jaune);
+  }
+
+  body .btn-fixe-mobile::after {
+    display: none;
+  }
+
+  body .btn-fixe-mobile a {
+    color: var(--violet-profond);
+  }
+
+
+
+  .btn-fixe-mobile i {
+    margin-left: 10px;
+  }
+
+  body.no-scroll {
+    overflow: hidden;
+    touch-action: none;
+  }
+
+  body {
+    height: auto;
+  }
+
+  h1 {
+    font-size: 24px;
+    font-weight: 800;
+  }
+
+  h2 {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 26px;
+  }
+
+  h3 {
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 30px;
+  }
+
+  .fs-18 {
+    font-size: 15px;
+    font-weight: 400;
+  }
+
+  .fs-18-bold {
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  .fs-16 {
+    font-size: 15px;
+    font-weight: 400;
+  }
+
+  .fs-16-bold {
+    font-size: 15px;
+    font-weight: 700;
+  }
+
+  .titre-exergue {
+    font-size: 30px;
+    font-weight: 800;
+  }
+
+
+
+
+
   /*** SECTION POUR QUI ***/
 
   .section-pour-qui .wrapper {
@@ -2065,81 +2783,6 @@ h3 {
     display: none;
   }
 
-  /*** POUR QUI 2 ***/
-  .bloc-retravail {
-    flex-direction: column;
-    align-items: center;
-    align-content: center;
-    justify-content: center;
-    padding-top: 50px;
-  }
-
-  .bloc-retravail .titre {
-    width: 85%;
-    text-align: center;
-  }
-
-  .bloc-retravail .contenu-bloc {
-    display: flex;
-    flex-direction: column-reverse;
-    gap: 20px;
-    width: 85%;
-    margin-top: 40px;
-    margin-bottom: 2rem;
-  }
-
-  .bloc-retravail .col-gauche {
-    width: 100%;
-    margin-top: 0px;
-  }
-
-  .bloc-retravail .col-gauche h3 {
-    margin-top: 30px;
-  }
-
-  .bloc-retravail .col-gauche p {
-    margin-top: 15px;
-  }
-
-  .bloc-retravail .col-droite {
-    position: relative;
-    left: 0px;
-
-  }
-
-  .col-droite .img-portrait {
-    border-radius: 0px 100px 0px 100px;
-    height: auto;
-    width: 100%;
-
-  }
-
-  .col-droite .illu-torsade-portrait,
-  .liste-ateliers .illu-arrow-boucle,
-  .liste-finale .arrow-to-bottom {
-    display: none;
-
-  }
-
-  .col-gauche {
-    width: 100%;
-    margin-top: 20px;
-  }
-
-  .bloc-retravail .pour-qui-listes {
-    margin-top: -10px;
-    margin-left: 0px;
-    width: 85%;
-  }
-
-  .pour-qui-listes ul {
-    font-weight: 400;
-    width: 100%;
-  }
-
-  .liste-finale {
-    margin-top: 30px;
-  }
 
 
   /*** TEMOIGNAGES ***/
@@ -2158,9 +2801,7 @@ h3 {
     line-height: 34px;
   }
 
-  #temoignages .arrow-boucle {
-    display: none;
-  }
+
 
   /* Le conteneur du slider */
   #temoignages .temoignages-background {
@@ -2269,7 +2910,8 @@ h3 {
     margin: auto;
     margin-top: 100px;
     width: 85%;
-    max-width: 500px;
+    min-width: 85%;
+    max-width: 85%;
     box-sizing: border-box;
     position: relative;
   }
@@ -2349,153 +2991,6 @@ h3 {
     font-weight: 400;
   }
 
-  /***  PROCESSUS ***/
-
-
-  #processus .processus-left .arrow-boucle {
-    display: none;
-  }
-
-  #processus .processus-wrapper {
-    display: flex;
-    flex-direction: column !important;
-    width: 85%;
-
-  }
-
-  #processus .processus-wrapper .processus-left {
-    margin-top: 0px;
-    margin-bottom: 0px;
-
-    width: 100%;
-    position: unset;
-
-  }
-
-  .processus-wrapper .processus-left h2 {
-    font-size: 24px;
-    font-weight: 800;
-    line-height: 34px;
-  }
-
-  .processus-wrapper .processus-left .fs-18 {
-    margin-top: 30px;
-  }
-
-
-  #processus .processus-wrapper .processus-right {
-    margin-top: -20px;
-    width: 100%;
-  }
-
-  #processus .accordion-header {
-    font-size: 15px;
-    padding-left: 20px;
-    padding-right: 30px;
-    padding-top: 20px;
-    padding-bottom: 10px;
-
-
-  }
-
-  #processus .accordion-title {
-    width: 100%;
-  }
-
-  #processus .accordion-icon {
-    top: 0px;
-    right: -10px;
-    min-width: 32px;
-    min-height: 32px;
-    width: 32px;
-    height: 32px;
-    aspect-ratio: 1 / 1;
-    /* Garde un bouton parfaitement rond */
-    box-sizing: content-box;
-  }
-
-  #processus .accordion-icon i {
-    font-size: 15px;
-    line-height: 1;
-    pointer-events: none;
-  }
-
-  /*** TARIFS ***/
-  #tarifs {
-    flex-direction: column;
-    padding-bottom: 30px;
-  }
-
-  #tarifs .offres-wrapper {
-    width: 85%;
-  }
-
-  #tarifs .offres-wrapper-title .ampoule_img {
-    position: relative;
-    top: 0px;
-    left: 0px;
-  }
-
-  #tarifs .offres-wrapper-title {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    line-height: 100%;
-  }
-
-
-
-  #tarifs .offres-wrapper-title .ampoule_img {
-    margin-bottom: 10px;
-    width: 60px;
-    height: 60px;
-
-  }
-
-  #tarifs .offres-wrapper-title h1 {
-    line-height: 34px;
-    margin-top: 0px;
-  }
-
-  #tarifs .offres-grid {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-
-  }
-
-  #tarifs .offres-grid .offre-card {
-    width: 100%;
-    border-radius: 10px;
-    margin-bottom: 40px;
-    padding: 30px 30px;
-  }
-
-  #tarifs .cta-offre {
-    display: none;
-
-  }
-
-  #tarifs .cta-offre-mobile {
-    display: inline-flex;
-
-    width: 100%;
-    height: auto;
-    text-align: left;
-    padding: 20px 20px;
-
-  }
-
-  #tarifs .cta-offre-mobile .cta-content {
-    display: flex;
-    width: 100%;
-    align-items: center;
-    justify-content: left;
-
-  }
 
 
   /***  LIVRE BLANC ***/
@@ -2558,7 +3053,7 @@ h3 {
     display: flex;
     justify-content: left;
     gap: 0px;
-    margin-top: -50px;
+    margin-top: -80px;
   }
 
   .section-livre-blanc .card-right .bloc-text ul {
@@ -2728,6 +3223,257 @@ h3 {
 
   .footer-menu {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+
+@media screen and (min-width: 426px) and (max-width: 1024px) {
+.main-header .cta-button{
+  display: inline-flex;
+  width:30%;
+  margin-top: 20px;
+}
+  #pour-qui .visuel {
+    position: relative;
+    left: 150px;
+    top: 250px;
+    width: 70%;
+  }
+
+  .types-epuisement {
+    margin-bottom: 550px;
+  }
+
+
+  .stats {
+    margin-top: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    /* Permet le retour à la ligne */
+    justify-content: center;
+    gap: 50px;
+    /* Optionnel : espace entre les items */
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .stats .stat-item {
+    flex: 0 1 calc(50% - 30px);
+    /* Deux par ligne avec un petit gap */
+    box-sizing: border-box;
+  }
+
+  /*** TEMOIGNAGES ***/
+
+  #temoignages {
+    padding-bottom: 60px;
+  }
+
+  #temoignages .title-section {
+    width: 70%;
+  }
+
+  #temoignages .subtitle {
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 34px;
+  }
+
+
+  /* Le conteneur du slider */
+
+
+  /* Le fond gris adaptatif */
+  #temoignages .temoignages-background::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 10%;
+    right: 10%;
+    width: 50%;
+    height: 100%;
+    background: var(--bleu-clair);
+    z-index: 0;
+    border-radius: 10px;
+  }
+
+  /* Le slider lui-même */
+  
+
+  /* Slide unique visible */
+  #temoignages .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  
+
+  
+
+  #temoignages .swiper-button-prev {
+    left: 35px;
+  }
+
+  #temoignages .swiper-button-next {
+    right: 35px;
+  }
+
+  
+
+  #temoignages .temoignage-special {
+    background: var(--bleu-clair);
+    border-radius: 10px;
+    padding: 24px 24px 5px 24px;
+    margin: auto;
+    margin-top: 100px;
+    width: 60%;
+    min-width: 60%;
+    max-width: 60%;
+    box-sizing: border-box;
+    position: relative;
+  }
+
+  .temoignage-special-inner {
+    display: flex;
+    flex-direction: row;
+    /* ✅ photo à gauche, texte à droite */
+    align-items: flex-start;
+    gap: 16px;
+    position: relative;
+  }
+
+  #temoignages .temoignage-special-inner .quote-icon {
+    position: relative;
+    top: -25px;
+    left: -5px;
+    font-size: 60px;
+    height: 60px;
+    color: var(--violet-profond);
+  }
+
+  .photo-profil-avis {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    top: -5px;
+    left: -20px;
+  }
+
+  .temoin-details {
+    padding-left: 0;
+  }
+
+  #temoignages .temoin-details .fs-16-bold {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    top: 20px;
+    left: -10px;
+    width:200px;
+    line-height: 22px;
+
+  }
+
+  #temoignages .temoin-details .fs-16-bold p:last-child {
+    margin-top: -15px;
+
+  }
+
+  #temoignages .temoin-details {
+    box-sizing: border-box;
+    padding-left: 0;
+    width: 100%;
+  }
+
+
+
+  .temoin-details .avis {
+    margin-top: 0px;
+    order: 1;
+    /* Met le texte en bas */
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    top: 20px;
+    right: 0;
+    margin-left: -125px;
+    width: fit-content;
+    margin-top: 30px;
+    margin-bottom: 40px;
+    font-size: 12px;
+    font-weight: 400;
+  }
+
+  /*** TARIFS ***/
+
+  #tarifs .offres-grid .offre-card {
+    
+    padding: 50px 50px;
+  }
+
+  #tarifs .cta-offre-mobile {
+
+    width: 90%;
+
+  }
+
+  #tarifs .cta-offre-mobile .cta-content{
+
+    width: 100%;
+    justify-content: space-between;
+
+  }
+
+  /***  LIVRE BLANC ***/
+
+
+  .section-livre-blanc .card {
+    padding: 50px 50px;
+    padding-top: 20px;
+
+  }
+
+  .section-livre-blanc .card-telechargement {
+   
+    padding-top: 50px;
+
+  }
+
+  .section-livre-blanc .cta-remise-offre {
+    width: 85%;
+  }
+
+  .section-livre-blanc .cta-remise-offre .cta-content{
+    justify-content: space-between;
+  }
+
+  .podcast-wrapper {
+    
+    padding:50px 50px;
+  }
+
+  #podcast .bloc-droit .btn {
+    width: 75%;
+  }
+
+  /*** FOOTER ***/
+  .footer-site {
+    width: 90%;
+    margin: auto;
+    padding-left: 0px;
+  }
+
+  .footer-menu {
+    display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
     justify-content: center;
     align-items: center;

@@ -72,6 +72,8 @@
 
   <!-- MAIN -->
   <main class="landing">
+
+  <!-- POUR QUI -->
     <section id="pour-qui" class="section-pour-qui">
 
       <div class="wrapper">
@@ -178,20 +180,16 @@
               <img class="illu-arrow-boucle" src="<?php echo esc_url($img['url']); ?>" alt="<?php echo esc_attr($img['alt']); ?>">
             <?php endif; ?>
             <h3><?php the_field('titre_ateliers'); ?></h3>
-            <ul>
-              <?php foreach (explode("\n", get_field('liste_ateliers')) as $item): ?>
-                <li><?php echo esc_html(trim($item)); ?></li>
-              <?php endforeach; ?>
-            </ul>
+            <div>
+              <?php the_field('liste_ateliers'); ?>
+            </div>
           </div>
 
           <div class="liste-finale">
             <h3><?php the_field('titre_final'); ?></h3>
-            <ul>
-              <?php foreach (explode("\n", get_field('liste_finale')) as $item): ?>
-                <li><?php echo esc_html(trim($item)); ?></li>
-              <?php endforeach; ?>
-            </ul>
+            <div>
+              <?php the_field('liste_finale'); ?>
+            </div>
             <?php $img = get_field('arrow_to_bottom'); ?>
             <?php if ($img): ?>
               <img class="arrow-to-bottom" src="<?php echo esc_url($img['url']); ?>" alt="<?php echo esc_attr($img['alt']); ?>">
@@ -286,9 +284,9 @@
         <div class="processus-left">
           <h3 class="sur-titre"><?php the_field('titre'); ?></h3>
           <h2><?php the_field('sous-titre'); ?></h2>
-          <p class="fs-18">
+          <div class="description fs-18">
             <?php the_field('description'); ?>
-          </p>
+          </div>
           <?php $img = get_field('fleche-boucle'); ?>
           <?php if ($img): ?>
             <img class="arrow-boucle" src="<?php echo esc_url($img['url']); ?>" alt="<?php echo esc_attr($img['alt']); ?>">
@@ -312,9 +310,7 @@
 
                 $numero = get_field('numero_atelier');
                 $sous_titre = get_field('sous_titre');
-                $points = get_field('points_principaux');
                 $titre_travail = get_field('titre_travail');
-                $liste_travail = get_field('liste_travail');
             ?>
 
                 <div class="accordion-item">
@@ -328,46 +324,18 @@
                     </div>
                   </div>
                   <div class="accordion-content">
-                    <?php if ($points): ?>
-                      <ul class="fs-18 ">
-                        <?php foreach (explode("\n", $points) as $point): ?>
-                          <li><i class="fa-solid fa-check"></i> <?php echo esc_html(trim($point)); ?></li>
-                        <?php endforeach; ?>
-                      </ul>
-                    <?php endif; ?>
+                      <div class="points-principaux fs-18">
+                        <?php the_field('points_principaux'); ?>
+                      </div>
 
                     <div class="travail">
                       <?php if ($titre_travail): ?>
                         <p class="fs-16-bold"><?php echo esc_html($titre_travail); ?></p>
                       <?php endif; ?>
 
-                      <?php if ($liste_travail): ?>
-                        <ul class="fs-16 list-travail">
-                          <?php
-                          foreach (explode("\n", $liste_travail) as $travail):
-                            $travail = trim($travail);
-
-                            // Détection
-                            $is_sub = strpos($travail, '-') === 0;
-                            $is_pink = strpos($travail, '+') === 0;
-
-                            // Nettoyage pour l'affichage (mais on garde le '-' s'il y est)
-                            $texte = ltrim($travail, "+");
-
-                            // On ne met la classe 'decale' QUE si le texte ne commence PAS déjà par un "-"
-                            $needs_decoration = $is_sub && strpos(ltrim($texte), '-') !== 0;
-                          ?>
-                            <li class="<?php echo $is_sub ? 'decale' : ''; ?>">
-                              <?php if ($is_pink): ?>
-                                <span class="pink"><?php echo esc_html($texte); ?></span>
-                              <?php else: ?>
-                                <?php echo esc_html($texte); ?>
-                              <?php endif; ?>
-                            </li>
-                          <?php endforeach; ?>
-
-                        </ul>
-                      <?php endif; ?>
+                        <div class="points-travails fs-16 ">
+                          <?php the_field('liste_travail'); ?>
+                        </div>
                     </div>
 
 
@@ -440,21 +408,25 @@
                   <h4 class="fs-18-bold prix"><?php echo esc_html($prix); ?> € <span>TTC</span></h4>
                   <p class="fs-16 option-paiement"><?php echo esc_html($option_paiement); ?></p>
 
-                  <?php if ($liste_descriptive): ?>
+                  <div class="liste-descriptive ">
+                    <?php the_field('liste_descriptive'); ?>
+                  </div>
+
+                  <!-- <?php if ($liste_descriptive): ?>
                     <ul class="liste-descriptive">
                       <?php foreach (explode("\n", $liste_descriptive) as $desc): ?>
                         <?php
-                        $desc = trim($desc);
-                        if (strpos($desc, '*') === 0) {
-                          $desc = ltrim($desc, '* '); // enlève * et espace éventuel
-                          echo '<li><i class="fa-solid fa-check"></i> <strong>' . esc_html($desc) . '</strong></li>';
-                        } else {
-                          echo '<li><i class="fa-solid fa-check"></i> ' . esc_html($desc) . '</li>';
-                        }
+                            $desc = trim($desc);
+                            if (strpos($desc, '*') === 0) {
+                              $desc = ltrim($desc, '* '); // enlève * et espace éventuel
+                              echo '<li><i class="fa-solid fa-check"></i> <strong>' . esc_html($desc) . '</strong></li>';
+                            } else {
+                              echo '<li><i class="fa-solid fa-check"></i> ' . esc_html($desc) . '</li>';
+                            }
                         ?>
                       <?php endforeach; ?>
                     </ul>
-                  <?php endif; ?>
+                  <?php endif; ?> -->
 
                   <p class="desc-rdv"><?php echo esc_html($desc_rdv); ?></p>
 
@@ -501,40 +473,16 @@
                 <?php the_field('titre_remise'); ?>
               </h3>
               <div class="description">
-                <?php
-                $texte = get_field('remise_pourcentage');
-
-                // Rechercher du texte entre *...* et le mettre dans un <span class="rose">
-                $texte = preg_replace('/\*(.*?)\*/', '<span class="rose">$1</span>', $texte);
-
-                echo $texte;
-                ?>
+                <?php the_field('remise_pourcentage');?>
+                
               </div>
             </div>
           </div>
 
           <div class="card-right">
-            <div class="bloc-text">
-              <?php
-              $texte = get_field('description_remise');
-
-              // Séparer le texte par lignes
-              $lignes = preg_split('/\r\n|\r|\n/', $texte);
-
-              echo '<p class="fs-16">' . esc_html(trim($lignes[0])) . '</p>'; // Première phrase normale
-
-              if (count($lignes) > 1) {
-                echo '<ul>';
-                foreach (array_slice($lignes, 1) as $ligne) {
-                  $ligne = trim($ligne);
-                  if (strpos($ligne, '-') === 0) {
-                    // Si la ligne commence par -, on enlève - et on la met dans <li>
-                    echo '<li class="fs-16">' . esc_html(ltrim($ligne, '- ')) . '</li>';
-                  }
-                }
-                echo '</ul>';
-              }
-              ?>
+            <div class="bloc-text fs-16">
+            <?php the_field('description_remise');?>
+            
 
               <?php if (get_field('btn_rdv')):  ?>
                 <a href="<?php the_field('lien_btn'); ?>" class="cta-remise btn">
@@ -570,31 +518,20 @@
 
       <div class="card card-telechargement">
         <div class="card-left">
-          <p class="texte-left">
-            <?php
-            $texte = get_field('texte_telecharger_lb');
 
-            // Remplacer ce qui est entre guillemets par un span rose
-            $texte = preg_replace('/“(.*?)”/', '“<span class="rose">$1</span>”', $texte);
-
-            echo $texte;
-            ?>
-          </p>
+          
+          <h3 class="texte-left">
+          <?php the_field('texte_telecharger_lb');?>
+            
+            </h3>
         </div>
 
         <div class="card-right">
           <div class="bloc-text">
+            <div class="fs-16">
             <h4 class="fs-16-bold "><?php the_field('titre_sommaire'); ?></h4>
-
-            <?php if (get_field('liste_sommaire')): ?>
-              <ul class="liste-sommaire">
-                <?php foreach (explode("\n", get_field('liste_sommaire')) as $item): ?>
-                  <li class="fs-16"><?php echo esc_html(trim($item)); ?></li>
-                <?php endforeach; ?>
-              </ul>
-            <?php endif; ?>
-
-
+              <?php the_field('liste_sommaire'); ?>
+            </div>
             <?php if (get_field('btn_envoi_lb')): ?>
               <a href="<?php the_field('lien_btn_envoi_lb'); ?>" class="cta-remise btn">
                 <?php the_field('btn_envoi_lb'); ?> <i class="fa-solid fa-arrow-right"></i>
@@ -696,6 +633,12 @@
   <div class="btn btn-fixe-mobile">
     <a href="<?php the_field('lien_bouton_rdv'); ?>"><?php the_field('texte_btn_rdv_mobile'); ?> <i class="fa-solid fa-arrow-right"></i></a>
   </div>
+  <!-- 
+  <div id="popup-form" class="popup-mailpoet">
+    <?php echo do_shortcode('[mailpoet_form id="2"]'); ?>
+  </div>
+ -->
+
 
 
 
@@ -852,7 +795,23 @@
 
 
 
-<?php wp_footer(); ?>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const popup = document.getElementById('popup-livre-blanc');
+      const closeBtn = document.querySelector('.popup-close');
+
+      // Affiche la popup automatiquement après 1.5 seconde
+      setTimeout(() => {
+        popup.classList.remove('popup-hidden');
+      }, 1500);
+
+      // Ferme la popup si on clique sur le bouton
+      closeBtn.addEventListener('click', () => {
+        popup.classList.add('popup-hidden');
+      });
+    });
+  </script>
+
 
 </body>
 

@@ -3622,26 +3622,26 @@ font-size: 15px;
 .liste-finale .arrow-to-bottom{
   right: -180px;
 }
-#temoignages .swiper-wrapper {
-  width: 100%;
+.temoignages-swiper {
+  max-width: 980px; /* 406x2 + 40 space */
+  margin: auto;
+  padding: 0 50px;
+}
+
+.swiper-wrapper {
   display: flex;
   justify-content: center;
-  align-items: center;
-
 }
-.temoignage-card {
-  height: 100%;
+
+.swiper-slide {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
 }
-
 #temoignages .swiper-button-prev {
-  left: 170px;
+  left: 30px;
 }
 
 #temoignages .swiper-button-next {
-  right: 170px;
+  right: 45px;
 }
-
 }

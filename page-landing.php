@@ -648,7 +648,6 @@
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       const swiper = new Swiper('.temoignages-swiper', {
-        slidesPerView: 1,
         loop: true,
         navigation: {
           nextEl: '.swiper-button-next',
@@ -664,11 +663,21 @@
           768: {
             slidesPerView: 1
           },
-          1200: {
+
+          1240: {
     slidesPerView: 2,
-    spaceBetween: -220
-  }
+    spaceBetween: 40,
+  },
+
+          1440: {
+            spaceBetween: -25,
+
+            slidesPerView: 3
+          },
+
+
         }
+
       });
     });
 

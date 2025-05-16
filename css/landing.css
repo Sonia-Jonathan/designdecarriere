@@ -3493,7 +3493,7 @@ h3 {
     height: 45px;
   }
   .main-header.scrolled .logo-default{
-    height: 35px;
+    height: 45px;
   }
   
   .main-header.scrolled .logo-round{
@@ -3501,7 +3501,9 @@ h3 {
     height: 50px;
   }
 
-  
+  .main-header.scrolled .main-nav ul{
+    gap: 10px;
+  }
   .main-header .container{
     justify-content: space-around;
   }

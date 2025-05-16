@@ -3491,6 +3491,7 @@ h3 {
 @media screen and (min-width: 1201px) and (max-width: 1440px) {
   .logo-default{
     height: 40px;
+    outline: 1px solid red;
   }
   .main-header .container{
     justify-content: space-around;

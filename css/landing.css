@@ -1415,7 +1415,7 @@ h3 {
   content: "✔";
   position: absolute;
   left: 0;
-  color: var(--blanc);
+  color: var(--blanc)!important;
 
 }
 

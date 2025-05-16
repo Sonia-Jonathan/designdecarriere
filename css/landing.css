@@ -902,6 +902,8 @@ h3 {
 
 
 .temoin-details .avis {
+  display: flex;
+  flex-wrap: wrap;
   margin-top: 20px;
   font-size: 13px;
   font-weight: 400;
@@ -1908,7 +1910,7 @@ h3 {
 
 
 /*** RESPONSIVE ***/
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1200px) {
   body.no-scroll {
     overflow: hidden;
     touch-action: none;

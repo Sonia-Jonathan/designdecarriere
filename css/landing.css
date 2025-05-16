@@ -3489,8 +3489,8 @@ h3 {
 }
 
 @media screen and (min-width: 1201px) and (max-width: 1440px) {
-  .logo-default , .main-header.scrolled .logo-default{
-    height: 45px;
+  .main-header .logo-default {
+    height: 51px;
   }
   .main-header.scrolled .logo-default{
     height: 45px;

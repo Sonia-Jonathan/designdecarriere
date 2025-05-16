@@ -3493,155 +3493,218 @@ h3 {
   .main-header .logo-default {
     height: 51px;
   }
-  .main-header.scrolled .logo-default{
+
+  .main-header.scrolled .logo-default {
     height: 45px;
   }
-  
-  .main-header.scrolled .logo-round{
+
+  .main-header.scrolled .logo-round {
     width: 50px;
     height: 50px;
   }
 
-  .main-header.scrolled .main-nav ul{
+  .main-header.scrolled .main-nav ul {
     gap: 10px;
   }
-  .main-header .container{
+
+  .main-header .container {
     justify-content: space-around;
   }
 
- .main-nav .menu-item a{
-  font-size:10px;
- }
+  .main-nav .menu-item a {
+    font-size: 10px;
+  }
 
 
- .main-nav a:hover {
-  border-color: var(--violet-profond);
-  background-color: rgba(255, 255, 255, 0.3);
-  /* si tu veux un léger fond, optionnel */
-}
+  .main-nav a:hover {
+    border-color: var(--violet-profond);
+    background-color: rgba(255, 255, 255, 0.3);
+    /* si tu veux un léger fond, optionnel */
+  }
 
-.main-nav .cta-button{
-  font-size:10px;
-  width: 125px;
+  .main-nav .cta-button {
+    font-size: 10px;
+    width: 125px;
 
-}
-.section-pour-qui .intro h1{
-  font-size: 60px;
-  width: 490px;
-}
-.section-pour-qui .wrapper h3 {
-  width: 517px;
-  font-size: 30px;
-}
+  }
 
-.section-pour-qui .intro .underline-carriere{
-  top: 120px;
-  left: 180px;
-}
-.section-pour-qui .intro .underline-carriere img {
-  width: 250px;
-}
+  .section-pour-qui .intro h1 {
+    font-size: 60px;
+    width: 490px;
+  }
 
-.section-pour-qui .arrow-envol {
-  top: 25px;
-  left: 500px;
-  width: 12%;
-}
+  .section-pour-qui .wrapper h3 {
+    width: 517px;
+    font-size: 30px;
+  }
 
-.section-pour-qui .visuel img {
-  top: 20px;
-  left: 700px;
-  width: auto;
-  height: 380px;
-}
-.section-pour-qui .types-epuisement  .arrow-left-to-right {
-  top:-10px;
-}
-.section-pour-qui .arrow-left-to-right img{
-  max-width:60%;
-  top:-10px;
-}
-.section-pour-qui .types-epuisement .fs-18-bold{
-  margin-top : -20px!important;
-  margin-left : -25px!important;
-}
+  .section-pour-qui .intro .underline-carriere {
+    top: 120px;
+    left: 180px;
+  }
 
-.stat-item .titre-exergue{
-  font-size: 25px;
-}
+  .section-pour-qui .intro .underline-carriere img {
+    width: 250px;
+  }
 
-.stat-item .fs-16-bold{
-  font-size: 14px;
-}
-.section-pour-qui .types-epuisement .fs-18-bold {
-  width: 420px;
-  margin-left: 0px;
-}
-.section-pour-qui .types-epuisement ul{
-  margin-left: -25px;
-}
+  .section-pour-qui .arrow-envol {
+    top: 25px;
+    left: 500px;
+    width: 12%;
+  }
 
-.stats{
-  margin-left:75px;
-}
-.stats .curly-arrow{
-  right:-60px;
-  bottom: 0px;
-}
+  .section-pour-qui .visuel img {
+    top: 20px;
+    left: 700px;
+    width: auto;
+    height: 380px;
+  }
 
-.stats .curly-arrow img {
-  height: 150px;
-}
+  .section-pour-qui .types-epuisement .arrow-left-to-right {
+    top: -10px;
+  }
 
-.bloc-retravail .col-gauche{
-  margin-top: 10px;
-}
-.bloc-retravail .titre{
-  width: 750px;
-}
-.bloc-retravail h3{
-  font-size: 25px;
-}
+  .section-pour-qui .arrow-left-to-right img {
+    max-width: 60%;
+    top: -10px;
+  }
 
-.bloc-retravail p{
-font-size: 15px;
-}
+  .section-pour-qui .types-epuisement .fs-18-bold {
+    margin-top: -20px !important;
+    margin-left: -25px !important;
+  }
 
-.bloc-retravail .pour-qui-listes{
-  margin-top: -10px;
-  margin-left: 150px;
-}
-.liste-ateliers .illu-arrow-boucle{
+  .stat-item .titre-exergue {
+    font-size: 25px;
+  }
+
+  .stat-item .fs-16-bold {
+    font-size: 14px;
+  }
+
+  .section-pour-qui .types-epuisement .fs-18-bold {
+    width: 420px;
+    margin-left: 0px;
+  }
+
+  .section-pour-qui .types-epuisement ul {
+    margin-left: -25px;
+  }
+
+  .stats {
+    margin-left: 75px;
+  }
+
+  .stats .curly-arrow {
+    right: -60px;
+    bottom: 0px;
+  }
+
+  .stats .curly-arrow img {
+    height: 150px;
+  }
+
+  .bloc-retravail .col-gauche {
+    margin-top: 10px;
+  }
+
+  .bloc-retravail .titre {
+    width: 750px;
+  }
+
+  .bloc-retravail h3 {
+    font-size: 25px;
+  }
+
+  .bloc-retravail p {
+    font-size: 15px;
+  }
+
+  .bloc-retravail .pour-qui-listes {
+    margin-top: -10px;
+    margin-left: 150px;
+  }
+
+  .liste-ateliers .illu-arrow-boucle {
+
+    left: -150px;
+    width: 100px;
+    height: 100px;
+  }
+
+
+  .liste-finale .arrow-to-bottom {
+    right: -180px;
+  }
+
+  .temoignages-swiper {
+    max-width: 980px;
+    margin: auto;
+    padding: 0 50px;
+  }
+
+  .swiper-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+
+  .swiper-slide {
+    display: flex;
+    justify-content: center;
+  }
+
+  #temoignages .swiper-button-prev {
+    left: 30px;
+  }
+
+  #temoignages .swiper-button-next {
+    right: 45px;
+  }
+
+  .temoignage-special {
+    margin-top: 50px;
+  }
+
+  .offres-wrapper {
+    width: 86%;
+
+  }
+
+  #tarifs .offre-card {
+    width: auto;
+  }
+
+  .offres-wrapper-title h1 {
+    font-size: 45px;
+  }
+
+  .section-livre-blanc .card-telechargement .bloc-img {
+    flex: 2;
+  }
+
+  .section-livre-blanc .card-telechargement .bloc-img img {
+    width: 300px;
+  }
+
+  #podcast h2 {
+    font-size: 25px;
+    font-weight: 800;
+    line-height: 30px;
+  }
+
+  #podcast .podcast-wrapper {
+    gap: 50px;
+  }
+
+  .section-podcast .bloc-droit .fs-16 {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
  
-  left: -150px;
-  width: 100px;
-  height: 100px;
-}
-
-
-.liste-finale .arrow-to-bottom{
-  right: -180px;
-}
-.temoignages-swiper {
-  max-width: 980px; /* 406x2 + 40 space */
-  margin: auto;
-  padding: 0 50px;
-}
-
-.swiper-wrapper {
-  display: flex;
-  justify-content: center;
-}
-
-.swiper-slide {
-  display: flex;
-  justify-content: center;
-}
-#temoignages .swiper-button-prev {
-  left: 30px;
-}
-
-#temoignages .swiper-button-next {
-  right: 45px;
+  .footer-column{
+    display: flex;
+    justify-content: center;  
 }
 }

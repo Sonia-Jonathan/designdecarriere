@@ -3489,21 +3489,29 @@ h3 {
 }
 
 @media screen and (min-width: 1201px) and (max-width: 1440px) {
- .main-nav ul{
-  gap: 12px;
- }
+  .logo-default{
+    height: 40px;
+  }
+  .main-header .container{
+    justify-content: space-around;
+  }
+  
 
  .main-nav .menu-item a{
-  padding: 0px 0px;
-  font-size:13px;
+  font-size:10px;
  }
 
 
  .main-nav a:hover {
-  padding: 10px 10px;
   border-color: var(--violet-profond);
   background-color: rgba(255, 255, 255, 0.3);
   /* si tu veux un léger fond, optionnel */
+}
+
+.main-nav .cta-button{
+  font-size:10px;
+  width: 125px;
+
 }
 
 }

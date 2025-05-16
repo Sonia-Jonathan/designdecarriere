@@ -2593,7 +2593,7 @@ h3 {
 
 /* FORMAT MOBILE  */
 
-@media screen and (max-width: 441px) {
+@media screen and (max-width: 768px) {
 
   body .btn-fixe-mobile {
     display: flex;

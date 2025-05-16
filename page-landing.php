@@ -665,10 +665,9 @@
             slidesPerView: 1
           },
           1200: {
-            spaceBetween: -25,
-
-            slidesPerView: 3
-          }
+    slidesPerView: 2,
+    spaceBetween: -220
+  }
         }
       });
     });

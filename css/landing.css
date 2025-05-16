@@ -649,6 +649,7 @@ h3 {
   font-size: 16px;
   font-weight: 300;
   padding-left: 5px;
+  line-height: 25px;
 }
 
 .liste-ateliers li::marker,
@@ -3523,6 +3524,124 @@ h3 {
   font-size:10px;
   width: 125px;
 
+}
+.section-pour-qui .intro h1{
+  font-size: 60px;
+  width: 490px;
+}
+.section-pour-qui .wrapper h3 {
+  width: 517px;
+  font-size: 30px;
+}
+
+.section-pour-qui .intro .underline-carriere{
+  top: 120px;
+  left: 180px;
+}
+.section-pour-qui .intro .underline-carriere img {
+  width: 250px;
+}
+
+.section-pour-qui .arrow-envol {
+  top: 25px;
+  left: 500px;
+  width: 12%;
+}
+
+.section-pour-qui .visuel img {
+  top: 20px;
+  left: 700px;
+  width: auto;
+  height: 380px;
+}
+.section-pour-qui .types-epuisement  .arrow-left-to-right {
+  top:-10px;
+}
+.section-pour-qui .arrow-left-to-right img{
+  max-width:60%;
+  top:-10px;
+}
+.section-pour-qui .types-epuisement .fs-18-bold{
+  margin-top : -20px!important;
+  margin-left : -25px!important;
+}
+
+.stat-item .titre-exergue{
+  font-size: 25px;
+}
+
+.stat-item .fs-16-bold{
+  font-size: 14px;
+}
+.section-pour-qui .types-epuisement .fs-18-bold {
+  width: 420px;
+  margin-left: 0px;
+}
+.section-pour-qui .types-epuisement ul{
+  margin-left: -25px;
+}
+
+.stats{
+  margin-left:75px;
+}
+.stats .curly-arrow{
+  right:-60px;
+  bottom: 0px;
+}
+
+.stats .curly-arrow img {
+  height: 150px;
+}
+
+.bloc-retravail .col-gauche{
+  margin-top: 10px;
+}
+.bloc-retravail .titre{
+  width: 750px;
+}
+.bloc-retravail h3{
+  font-size: 25px;
+}
+
+.bloc-retravail p{
+font-size: 15px;
+}
+
+.bloc-retravail .pour-qui-listes{
+  margin-top: -10px;
+  margin-left: 150px;
+}
+.liste-ateliers .illu-arrow-boucle{
+ 
+  left: -150px;
+  width: 100px;
+  height: 100px;
+}
+
+
+.liste-finale .arrow-to-bottom{
+  right: -180px;
+}
+#temoignages .swiper-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.temoignage-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#temoignages .swiper-button-prev {
+  left: 170px;
+}
+
+#temoignages .swiper-button-next {
+  right: 170px;
 }
 
 }

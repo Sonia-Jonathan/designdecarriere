@@ -1417,7 +1417,7 @@ h3 {
   content: "✔";
   position: absolute;
   left: 0;
-  color: var(--blanc)!important;
+  color: var(--blanc) !important;
 
 }
 
@@ -1911,58 +1911,6 @@ h3 {
 
 /*** RESPONSIVE ***/
 @media screen and (max-width: 1200px) {
-  body.no-scroll {
-    overflow: hidden;
-    touch-action: none;
-  }
-
-  body {
-    height: auto;
-  }
-
-  h1 {
-    font-size: 24px;
-    font-weight: 800;
-  }
-
-  h2 {
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 26px;
-  }
-
-  h3 {
-    font-size: 22px;
-    font-weight: 400;
-    line-height: 30px;
-  }
-
-  .fs-18 {
-    font-size: 15px;
-    font-weight: 400;
-  }
-
-  .fs-18-bold {
-    font-size: 16px;
-    font-weight: 700;
-  }
-
-  .fs-16 {
-    font-size: 15px;
-    font-weight: 400;
-  }
-
-  .fs-16-bold {
-    font-size: 15px;
-    font-weight: 700;
-  }
-
-  .titre-exergue {
-    font-size: 30px;
-    font-weight: 800;
-  }
-
-
   .main-header .burger-menu {
     background-color: transparent;
     display: block;
@@ -2067,6 +2015,62 @@ h3 {
   .main-header .cta-button {
     display: none;
   }
+}
+
+@media screen and (max-width: 1024px) {
+  body.no-scroll {
+    overflow: hidden;
+    touch-action: none;
+  }
+
+  body {
+    height: auto;
+  }
+
+  h1 {
+    font-size: 24px;
+    font-weight: 800;
+  }
+
+  h2 {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 26px;
+  }
+
+  h3 {
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 30px;
+  }
+
+  .fs-18 {
+    font-size: 15px;
+    font-weight: 400;
+  }
+
+  .fs-18-bold {
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  .fs-16 {
+    font-size: 15px;
+    font-weight: 400;
+  }
+
+  .fs-16-bold {
+    font-size: 15px;
+    font-weight: 700;
+  }
+
+  .titre-exergue {
+    font-size: 30px;
+    font-weight: 800;
+  }
+
+
+
 
   /*** POUR QUI  ***/
   .stats .curly-arrow img {
@@ -2156,12 +2160,13 @@ h3 {
     margin-top: 30px;
   }
 
- 
+
 
   /* TEMOIGNAGES */
- #temoignages .arrow-boucle {
+  #temoignages .arrow-boucle {
     display: none;
   }
+
   #temoignages .temoignages-background {
     position: relative;
     padding-top: 60px;
@@ -3233,11 +3238,12 @@ h3 {
 
 
 @media screen and (min-width: 441px) and (max-width: 1024px) {
-.main-header .cta-button{
-  display: inline-flex;
-  width:30%;
-  margin-top: 20px;
-}
+  .main-header .cta-button {
+    display: inline-flex;
+    width: 30%;
+    margin-top: 20px;
+  }
+
   #pour-qui .visuel {
     position: relative;
     left: 150px;
@@ -3304,7 +3310,7 @@ h3 {
   }
 
   /* Le slider lui-même */
-  
+
 
   /* Slide unique visible */
   #temoignages .swiper-slide {
@@ -3313,9 +3319,9 @@ h3 {
     align-items: center;
   }
 
-  
 
-  
+
+
 
   #temoignages .swiper-button-prev {
     left: 35px;
@@ -3325,7 +3331,7 @@ h3 {
     right: 35px;
   }
 
-  
+
 
   #temoignages .temoignage-special {
     background: var(--bleu-clair);
@@ -3379,7 +3385,7 @@ h3 {
     flex-wrap: wrap;
     top: 20px;
     left: -10px;
-    width:200px;
+    width: 200px;
     line-height: 22px;
 
   }
@@ -3417,7 +3423,7 @@ h3 {
   /*** TARIFS ***/
 
   #tarifs .offres-grid .offre-card {
-    
+
     padding: 50px 50px;
   }
 
@@ -3427,7 +3433,7 @@ h3 {
 
   }
 
-  #tarifs .cta-offre-mobile .cta-content{
+  #tarifs .cta-offre-mobile .cta-content {
 
     width: 100%;
     justify-content: space-between;
@@ -3444,7 +3450,7 @@ h3 {
   }
 
   .section-livre-blanc .card-telechargement {
-   
+
     padding-top: 50px;
 
   }
@@ -3453,13 +3459,13 @@ h3 {
     width: 85%;
   }
 
-  .section-livre-blanc .cta-remise-offre .cta-content{
+  .section-livre-blanc .cta-remise-offre .cta-content {
     justify-content: space-between;
   }
 
   .podcast-wrapper {
-    
-    padding:50px 50px;
+
+    padding: 50px 50px;
   }
 
   #podcast .bloc-droit .btn {
@@ -3480,4 +3486,24 @@ h3 {
     justify-content: center;
     align-items: center;
   }
+}
+
+@media screen and (min-width: 1201px) and (max-width: 1440px) {
+ .main-nav ul{
+  gap: 12px;
+ }
+
+ .main-nav .menu-item a{
+  padding: 0px 0px;
+  font-size:13px;
+ }
+
+
+ .main-nav a:hover {
+  padding: 10px 10px;
+  border-color: var(--violet-profond);
+  background-color: rgba(255, 255, 255, 0.3);
+  /* si tu veux un léger fond, optionnel */
+}
+
 }

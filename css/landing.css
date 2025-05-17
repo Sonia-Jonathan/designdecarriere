@@ -4015,15 +4015,6 @@ align-items: center;
 }
 
 @media screen and (min-width: 900px) and (max-width: 1024px) {
-
-  
-  /* .main-header .cta-button {
-    display: inline-flex;
-  }
-
-  .btn-fixe-mobile {
-    display: none !important;
-  }*/
    #pour-qui .wrapper{
     padding-bottom:100px;
   }
@@ -4037,5 +4028,17 @@ align-items: center;
     top: 20px;
   }
   
+}
+
+@media screen and (min-width: 1201px) and (max-width: 1220px) {
+
+  .main-header .logo-default {
+    height: 45px;
+}
+
+.main-header .container{
+  gap: 0;
+}
+
 }
 

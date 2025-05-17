@@ -78,3 +78,4 @@ add_filter('mailpoet_automation_email_attachments', function($attachments, $emai
     return $attachments;
 }, 10, 3);
 
+add_filter('show_admin_bar', '__return_false');

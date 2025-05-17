@@ -25,7 +25,9 @@
     <header class="main-header">
         <div class="progress-wrapper"></div>
         <div class="progress-bar"></div>
-        <div class="container">
+
+
+        <div class="container ">
             <div class="logo-group">
                 <?php $img = get_field('marc_img'); ?>
                 <?php if ($img): ?>
@@ -33,25 +35,35 @@
                 <?php endif; ?>
                 <?php $img = get_field('logo_header'); ?>
                 <?php if ($img): ?>
-                    <img class="logo-default" src="<?php echo esc_url($img['url']); ?>" alt="<?php echo esc_attr($img['alt']); ?>">
+                    <a href="/"><img class="logo-default" src="<?php echo esc_url($img['url']); ?>" alt="<?php echo esc_attr($img['alt']); ?>"></a>
                 <?php endif; ?>
             </div>
+
+            <button class="burger-menu" aria-label="Ouvrir le menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
             <div class="header-right">
                 <nav class="main-nav">
-                    <?php
-                    wp_nav_menu([
-                        'menu' => 'Header Menu',
-                        'container' => false,
-                        'menu_class' => '',
-                        'items_wrap' => '<ul>%3$s</ul>'
-                    ]);
-                    ?>
+                    <ul>
+
+                        <?php
+                        wp_nav_menu([
+                            'menu' => 'Header Menu',
+                            'container' => false,
+                            'menu_class' => '',
+                            'items_wrap' => '<li>%3$s</li>'
+                        ]);
+                        ?>
+
+                        <li>
+                            <a class="btn btn-jaune cta-button" href="<?php the_field('lien_bouton_rdv'); ?>">
+                                <?php the_field('texte_bouton_rdv'); ?> <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </li>
+                    </ul>
                 </nav>
-                <div class="cta-container">
-                    <a href="<?php the_field('lien_bouton_rdv'); ?>" class="btn btn-jaune cta-button">
-                        <?php the_field('texte_bouton_rdv'); ?> <i class="fa-solid fa-arrow-right"></i>
-                    </a>
-                </div>
+
             </div>
         </div>
     </header>

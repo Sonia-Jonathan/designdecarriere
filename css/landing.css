@@ -1444,7 +1444,7 @@ h3 {
 }
 
 .section-offres .liste-descriptive ul li::before {
-  content: "🗸";
+  content: "✓";
   position: absolute;
   left: 0;
   color: var(--blanc) !important;

@@ -6,7 +6,7 @@
   --jaune: #FCF57F;
   --bleu-clair: #F4F5FF;
 }
-/* Empêche le débordement de la popup MailPoet */
+/* Empêche le débordement de la popup MailPoet  */
 .mailpoet_form {
   max-width: 100% !important;
   overflow-x: hidden !important;
@@ -20,11 +20,11 @@
   overflow: visible !important;
 }
 
-/* Corrige l'affichage de ton wrapper principal si nécessaire */
+/* Corrige l'affichage de ton wrapper principal si nécessaire */ 
 .formulaire-burnout {
   max-width: 100% !important;
   overflow: hidden;
-}
+} 
 
 /* 
 #popup-form {
@@ -873,17 +873,19 @@ h3 {
 
 /* TEMOIGNAGE SPEC */
 
-.temoignage-special {
+.temoignage-special { 
   background: var(--bleu-clair);
   border-radius: 10px;
   padding: 40px 60px;
-  min-width: 853px;
-  max-width: 90%;
   width: fit-content;
+  max-width: 90%;
   margin-top: 20px;
   position: relative;
-  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
 }
+
 
 .temoignage-special-inner {
   display: flex;
@@ -1244,7 +1246,7 @@ h3 {
 
 /*** TARIFS ***/
 .section-offres {
-  padding: 70px 0rem;
+  padding: 70px 5rem;
   padding-bottom: 80px;
   background: #1A0034;
   background: linear-gradient(180deg, rgba(26, 0, 52, 1) 0%, rgba(32, 21, 91, 1) 100%);
@@ -1292,7 +1294,9 @@ h3 {
   justify-content: space-between;
   transition: all 0.3s ease;
   height: fit-content;
-  width: 427px;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .offre-card:first-child {
@@ -1753,7 +1757,10 @@ h3 {
 }
 
 .bloc-droit .fs-16 {
-  width: 750px;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+
 }
 
 .vignette-podcast {
@@ -1928,7 +1935,26 @@ h3 {
 }
 
 
+@media screen and (min-width: 1025px) and (max-width: 1201px) {
 
+  .section-pour-qui .arrow-envol {
+    position: absolute;
+    top: 50px;
+    left: 550px;
+    width: 12%;
+}
+  .section-pour-qui .visuel img{
+    position: absolute;
+    top: 50px;
+    right: 30px;
+    width: 350px;
+    height: 350px;
+  }
+
+  .section-pour-qui .arrow-envol{
+    display: none;
+  }
+}
 /*** RESPONSIVE ***/
 @media screen and (max-width: 1200px) {
   .main-header .burger-menu {
@@ -2389,6 +2415,9 @@ h3 {
     border-radius: 10px;
     margin-bottom: 40px;
     padding: 30px 30px;
+
+ 
+
   }
 
   #tarifs .cta-offre {
@@ -3011,7 +3040,6 @@ h3 {
     right: 0;
     margin-left: -125px;
     width: 100%;
-    width: 265px;
     margin-top: 0px;
     margin-bottom: 40px;
     font-size: 12px;
@@ -3423,22 +3451,6 @@ h3 {
 
 
 
-  .temoin-details .avis {
-    margin-top: 0px;
-    order: 1;
-    /* Met le texte en bas */
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    top: 20px;
-    right: 0;
-    margin-left: -125px;
-    width: fit-content;
-    margin-top: 30px;
-    margin-bottom: 40px;
-    font-size: 12px;
-    font-weight: 400;
-  }
 
   /*** TARIFS ***/
 
@@ -3726,4 +3738,32 @@ h3 {
     display: flex;
     justify-content: center;  
 }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1201px) {
+
+  .section-pour-qui .arrow-envol {
+    position: absolute;
+    top: 40px;
+    left: 550px;
+    width: 12%;
+    display: block;
+}
+  .section-pour-qui .visuel img{
+    position: absolute;
+    top: 50px;
+    right: 0px;
+    width: 350px;
+    height: 350px;
+  }
+
+  .section-pour-qui .curly-arrow{
+    display: none;
+  }
+}
+
+@media screen and (min-width: 425px) {
+  .btn-fixe-mobile{
+    display: none!important;
+  }
 }

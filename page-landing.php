@@ -585,10 +585,10 @@
           <div class="fs-16">
             <?php the_field('texte_descriptif_podcast'); ?>
           </div>
-
+<!-- 
           <a href="<?php the_field('lien_btn_podcast'); ?>" class="btn btn-jaune">
             <?php the_field('btn_podcast'); ?> <i class="fa-solid fa-arrow-right"></i>
-          </a>
+          </a> -->
         </div>
 
       </div>

@@ -457,7 +457,7 @@
     </section>
 
     <!--  LIVRE BLANC -->
-    <section id="livre-blanc" class="section-livre-blanc">
+    <section id="livre-blanc-section" class="section-livre-blanc">
       <!-- LIVRE BLANC - REMISE -->
       <?php if (get_field('afficher_remise')): ?>
         <div class="card">
@@ -516,7 +516,7 @@
 
       <!-- LIVRE BLANC - TELECHARGER LIVRE BLANC -->
 
-      <div class="card card-telechargement">
+      <section id="livre-blanc" class="card card-telechargement">
         <div class="card-left">
 
 
@@ -546,7 +546,7 @@
             <?php endif; ?>
           </div>
         </div>
-      </div>
+      </section>
 
     </section>
 
@@ -585,7 +585,7 @@
           <div class="fs-16">
             <?php the_field('texte_descriptif_podcast'); ?>
           </div>
-<!-- 
+          <!-- 
           <a href="<?php the_field('lien_btn_podcast'); ?>" class="btn btn-jaune">
             <?php the_field('btn_podcast'); ?> <i class="fa-solid fa-arrow-right"></i>
           </a> -->

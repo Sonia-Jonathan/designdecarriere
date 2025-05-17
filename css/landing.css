@@ -1246,7 +1246,7 @@ h3 {
 
 /*** TARIFS ***/
 .section-offres {
-  padding: 70px 5rem;
+  padding: 70px 0px;
   padding-bottom: 80px;
   background: #1A0034;
   background: linear-gradient(180deg, rgba(26, 0, 52, 1) 0%, rgba(32, 21, 91, 1) 100%);
@@ -1275,6 +1275,9 @@ h3 {
   height: 101.63px;
 }
 
+.offres-wrapper{
+  width: 90%;
+}
 
 
 .offres-grid {
@@ -3752,7 +3755,7 @@ h3 {
   .section-pour-qui .visuel img{
     position: absolute;
     top: 50px;
-    right: 0px;
+    right: -10px;
     width: 350px;
     height: 350px;
   }
@@ -3760,9 +3763,17 @@ h3 {
   .section-pour-qui .curly-arrow{
     display: none;
   }
+
+  .stat-item{
+    height: auto;
+  }
 }
 
-@media screen and (min-width: 425px) {
+@media screen and (min-width: 426px) {
+
+  .main-header .cta-button{
+    display: inline-flex;
+  }
   .btn-fixe-mobile{
     display: none!important;
   }

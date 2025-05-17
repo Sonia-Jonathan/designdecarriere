@@ -73,7 +73,7 @@
   <!-- MAIN -->
   <main class="landing">
 
-  <!-- POUR QUI -->
+    <!-- POUR QUI -->
     <section id="pour-qui" class="section-pour-qui">
 
       <div class="wrapper">
@@ -324,18 +324,18 @@
                     </div>
                   </div>
                   <div class="accordion-content">
-                      <div class="points-principaux fs-18">
-                        <?php the_field('points_principaux'); ?>
-                      </div>
+                    <div class="points-principaux fs-18">
+                      <?php the_field('points_principaux'); ?>
+                    </div>
 
                     <div class="travail">
                       <?php if ($titre_travail): ?>
                         <p class="fs-16-bold"><?php echo esc_html($titre_travail); ?></p>
                       <?php endif; ?>
 
-                        <div class="points-travails fs-16 ">
-                          <?php the_field('liste_travail'); ?>
-                        </div>
+                      <div class="points-travails fs-16 ">
+                        <?php the_field('liste_travail'); ?>
+                      </div>
                     </div>
 
 
@@ -473,16 +473,16 @@
                 <?php the_field('titre_remise'); ?>
               </h3>
               <div class="description">
-                <?php the_field('remise_pourcentage');?>
-                
+                <?php the_field('remise_pourcentage'); ?>
+
               </div>
             </div>
           </div>
 
           <div class="card-right">
             <div class="bloc-text fs-16">
-            <?php the_field('description_remise');?>
-            
+              <?php the_field('description_remise'); ?>
+
 
               <?php if (get_field('btn_rdv')):  ?>
                 <a href="<?php the_field('lien_btn'); ?>" class="cta-remise btn">
@@ -519,17 +519,17 @@
       <div class="card card-telechargement">
         <div class="card-left">
 
-          
+
           <h3 class="texte-left">
-          <?php the_field('texte_telecharger_lb');?>
-            
-            </h3>
+            <?php the_field('texte_telecharger_lb'); ?>
+
+          </h3>
         </div>
 
         <div class="card-right">
           <div class="bloc-text">
             <div class="fs-16">
-            <h4 class="fs-16-bold "><?php the_field('titre_sommaire'); ?></h4>
+              <h4 class="fs-16-bold "><?php the_field('titre_sommaire'); ?></h4>
               <?php the_field('liste_sommaire'); ?>
             </div>
             <?php if (get_field('btn_envoi_lb')): ?>
@@ -558,22 +558,24 @@
         <div class="bloc-gauche">
           <h2 class="titre-exergue"><?php the_field('titre_gauche_podcast'); ?></h2>
 
-          <div class="vignette-podcast">
-            <?php $illu = get_field('image_vignette_podcast'); ?>
-            <?php if ($illu): ?>
-              <img src="<?php echo esc_url($illu['url']); ?>" alt="<?php echo esc_attr($illu['alt']); ?>">
-            <?php endif; ?>
+          <a href="<?php the_field('lien_btn_podcast'); ?>">
+            <div class="vignette-podcast">
+              <?php $illu = get_field('image_vignette_podcast'); ?>
+              <?php if ($illu): ?>
+                <img src="<?php echo esc_url($illu['url']); ?>" alt="<?php echo esc_attr($illu['alt']); ?>">
+              <?php endif; ?>
 
-            <button class="btn-ecouter">
-              <i class="fa-solid fa-play"></i>
-              <span class="text"><?php the_field('btn_hover_text'); ?></span>
-            </button>
+              <button class="btn-ecouter">
+                <i class="fa-solid fa-play"></i>
+                <span class="text"><?php the_field('btn_hover_text'); ?></span>
+              </button>
 
-            <div class="hover-vignette">
-              <p class="fs-16-bold"><?php the_field('titre_texte_hover_podcast'); ?></p>
+              <div class="hover-vignette">
+                <p class="fs-16-bold"><?php the_field('titre_texte_hover_podcast'); ?></p>
+              </div>
+
             </div>
-          </div>
-
+          </a>
 
         </div>
 
@@ -640,7 +642,7 @@
  -->
 
 
- <?php wp_footer(); ?>
+  <?php wp_footer(); ?>
 
 
 
@@ -666,9 +668,9 @@
           },
 
           1240: {
-    slidesPerView: 2,
-    spaceBetween: 40,
-  },
+            slidesPerView: 2,
+            spaceBetween: 40,
+          },
 
           1440: {
             spaceBetween: -25,

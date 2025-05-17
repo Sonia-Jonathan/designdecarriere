@@ -1554,6 +1554,7 @@ h3 {
 }
 
 /***  LIVRE BLANC ***/
+
 .section-livre-blanc {
   padding-top: 90px;
   padding-bottom: 30px;
@@ -1894,8 +1895,8 @@ h3 {
 
 .footer-column {
   flex: 1;
- 
-   
+
+
 
 }
 
@@ -3313,7 +3314,7 @@ h3 {
     width: 70%;
   }
 
-  
+
 
   .section-pour-qui .visuel img {
     position: absolute;
@@ -3321,7 +3322,7 @@ h3 {
     right: 0px;
     width: 100%;
     height: auto;
-}
+  }
 
 
 
@@ -3727,6 +3728,8 @@ h3 {
 
   #tarifs .offre-card {
     width: auto;
+    min-width: 357px;
+    flex:1;
   }
 
   .offres-wrapper-title h1 {
@@ -3817,7 +3820,7 @@ h3 {
     height: 76px;
   }
 
-  #temoignages .arrow-boucle{
+  #temoignages .arrow-boucle {
     right: -140px;
   }
 
@@ -3840,77 +3843,82 @@ h3 {
   #temoignages .swiper-button-prev {
     left: 35px;
   }
-  
+
   #temoignages .swiper-button-next {
     right: 40px;
   }
 
-  #temoignages .temoignage-special{
+  #temoignages .temoignage-special {
     margin-top: 60px;
   }
-  #processus .processus-left{
+
+  #processus .processus-left {
     flex: 0.6;
   }
 
-  #processus .processus-left .arrow-boucle{
+  #processus .processus-left .arrow-boucle {
     width: 113px;
     top: -10px;
     left: 20px;
   }
-  #processus .processus-right{
+
+  #processus .processus-right {
     flex: 0.9;
   }
-#tarifs h1{
-  font-size: 40px;
-}
 
-#tarifs .ampoule_img {
-  width: 90px;
-  height: 90px;
-  top: 0px;
-}
-.section-livre-blanc .card {
-  display: flex;
-  flex-direction: column;
-  gap: 0px;
-}
+  #tarifs h1 {
+    font-size: 40px;
+  }
 
-.section-livre-blanc .card .card-left .cadeau-img{
-  
-  margin-top: -70px;
-}
+  #tarifs .ampoule_img {
+    width: 90px;
+    height: 90px;
+    top: 0px;
+  }
 
-.section-livre-blanc .card .card-left .texte-left{
-  
-  margin-left: 0px;
-}
+  .section-livre-blanc .card {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+  }
 
-.section-livre-blanc .card .card-left, .section-livre-blanc .card .card-right{
-  width: 100%;
-  top: 0px;
-  padding-bottom: 40px;
+  .section-livre-blanc .card .card-left .cadeau-img {
 
-}
+    margin-top: -70px;
+  }
+
+  .section-livre-blanc .card .card-left .texte-left {
+
+    margin-left: 0px;
+  }
+
+  .section-livre-blanc .card .card-left,
+  .section-livre-blanc .card .card-right {
+    width: 100%;
+    top: 0px;
+    padding-bottom: 40px;
+
+  }
 
 
 
-.section-livre-blanc .card-telechargement {
-  
-  padding-bottom: 40px;
-}
+  .section-livre-blanc .card-telechargement {
 
-.section-livre-blanc .card-telechargement .card-left{
-  top: 0px;
-  padding-top: 40px;
-  padding-bottom: 20px;
-}
+    padding-bottom: 40px;
+  }
 
-.podcast-wrapper .bloc-gauche{
-flex: 0.8;
-}
+  .section-livre-blanc .card-telechargement .card-left {
+    top: 0px;
+    padding-top: 40px;
+    padding-bottom: 20px;
+  }
 
-.podcast-wrapper .bloc-droit{
-  flex: 1;
+  .podcast-wrapper .bloc-gauche {
+    flex: 0.8;
+  }
+
+  .podcast-wrapper .bloc-droit {
+    flex: 1;
   }
 
   .footer-column {
@@ -3918,17 +3926,17 @@ flex: 0.8;
     justify-content: center;
   }
 
-  .footer-menu{
+  .footer-menu {
     display: flex;
     flex-direction: column;
     justify-content: center;
-align-items: center;
+    align-items: center;
   }
 }
 
 @media screen and (min-width: 441px) {
 
-  
+
   .main-header .cta-button {
     display: inline-flex;
   }
@@ -3936,109 +3944,134 @@ align-items: center;
   .btn-fixe-mobile {
     display: none !important;
   }
-  #pour-qui .wrapper{
-    padding-bottom:100px;
+
+  #pour-qui .wrapper {
+    padding-bottom: 100px;
   }
-  #pour-qui .visuel{
+
+  #pour-qui .visuel {
     left: 0px;
     width: 100%;
   }
 
-  
-  
+
+
 }
 
 @media screen and (min-width: 630px) and (max-width: 900px) {
 
-  #pour-qui .wrapper{
+  #pour-qui .wrapper {
     padding-bottom: 0px;
   }
- 
-  #pour-qui .visuel{
+
+  #pour-qui .visuel {
     top: 240px;
     left: 100px;
     width: 70%;
-  } 
+  }
 
-  .section-pour-qui .stats{
+  .section-pour-qui .stats {
     top: -150px;
   }
-  
+
 }
 
 @media screen and (min-width: 750px) and (max-width: 770px) {
 
-  #pour-qui .wrapper{
+  #pour-qui .wrapper {
     padding-bottom: 0px;
   }
-  #pour-qui .visuel{
+
+  #pour-qui .visuel {
     top: 230px;
     left: 80px;
-  } 
+  }
 
-  .section-pour-qui .stats{
+  .section-pour-qui .stats {
     top: -100px;
   }
-  
+
 }
 
 @media screen and (min-width: 770px) and (max-width: 800px) {
 
-  #pour-qui .wrapper{
+  #pour-qui .wrapper {
     padding-bottom: 20px;
   }
-  #pour-qui .visuel{
+
+  #pour-qui .visuel {
     top: 200px;
     left: 80px;
-  } 
+  }
 
-  .section-pour-qui .stats{
+  .section-pour-qui .stats {
     top: -70px;
   }
-  
+
 }
 
 @media screen and (min-width: 800px) and (max-width: 900px) {
 
-  #pour-qui .wrapper{
+  #pour-qui .wrapper {
     padding-bottom: 100px;
   }
-  #pour-qui .visuel{
+
+  #pour-qui .visuel {
     top: 200px;
     left: 80px;
-  } 
+  }
 
-  .section-pour-qui .stats{
+  .section-pour-qui .stats {
     top: 0px;
   }
-  
+
 }
 
 @media screen and (min-width: 900px) and (max-width: 1024px) {
-   #pour-qui .wrapper{
-    padding-bottom:100px;
+  #pour-qui .wrapper {
+    padding-bottom: 100px;
   }
-  #pour-qui .visuel{
+
+  #pour-qui .visuel {
     top: 200px;
     left: 150px;
     width: 60%;
-  } 
+  }
 
-  .section-pour-qui .stats{
+  .section-pour-qui .stats {
     top: 20px;
   }
-  
+
 }
+
+@media screen and (min-width: 1025px) and (max-width: 1280px) {
+
+
+  #tarifs .offres-grid .offre-card .cta-offre:hover {
+    white-space: normal; /* ✅ permet de passer à la ligne */
+    word-break: break-word;
+    width: 100%;
+    max-width: 100%;
+    text-align: left;
+  }
+
+  #tarifs .offres-grid .offre-card .cta-offre:hover .label-hover {
+   
+    width: 70%;
+    max-width: 100%;
+  }
+}
+
 
 @media screen and (min-width: 1201px) and (max-width: 1232px) {
 
   .main-header .logo-default {
     height: 45px;
-}
+  }
 
-.main-header .container{
-  gap: 0;
-}
+  .main-header .container {
+    gap: 0;
+  }
+
 
 }
-

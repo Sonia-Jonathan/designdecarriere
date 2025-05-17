@@ -515,7 +515,6 @@
 
 
       <!-- LIVRE BLANC - TELECHARGER LIVRE BLANC -->
-
       <section id="livre-blanc" class="card card-telechargement">
         <div class="card-left">
 
@@ -826,6 +825,8 @@
       });
     });
   </script>
+
+  
 
 
 </body>

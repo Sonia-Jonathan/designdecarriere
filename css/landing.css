@@ -447,9 +447,9 @@ h3 {
 .section-pour-qui .visuel img {
   position: absolute;
   top: -20px;
-  right: 15px;
-  width: 698.08px;
-  height: 540px;
+  right: 0px;
+  width: 600px;
+  height: auto;
 }
 
 .section-pour-qui .types-epuisement {
@@ -2823,10 +2823,12 @@ h3 {
 
   .section-pour-qui .visuel img {
     position: absolute;
-    top: 500px;
+    top: 450px;
     right: 15px;
     width: 382.51px;
     height: 327px;
+    margin-top: 20px;
+
   }
 
   /* stats */
@@ -3306,18 +3308,31 @@ h3 {
 
   #pour-qui .visuel {
     position: relative;
-    left: 150px;
+    left: 0px;
     top: 250px;
     width: 70%;
   }
+
+  
+
+  .section-pour-qui .visuel img {
+    position: absolute;
+    top: 50px;
+    right: 0px;
+    width: 100%;
+    height: auto;
+}
+
+
 
   .types-epuisement {
     margin-bottom: 550px;
   }
 
 
-  .stats {
-    margin-top: 100px;
+  .section-pour-qui .stats {
+    margin-top: 0px;
+    top: 0px;
     display: flex;
     flex-wrap: wrap;
     /* Permet le retour à la ligne */
@@ -3913,6 +3928,7 @@ align-items: center;
 
 @media screen and (min-width: 441px) {
 
+  
   .main-header .cta-button {
     display: inline-flex;
   }
@@ -3920,4 +3936,106 @@ align-items: center;
   .btn-fixe-mobile {
     display: none !important;
   }
+  #pour-qui .wrapper{
+    padding-bottom:100px;
+  }
+  #pour-qui .visuel{
+    left: 0px;
+    width: 100%;
+  }
+
+  
+  
 }
+
+@media screen and (min-width: 630px) and (max-width: 900px) {
+
+  #pour-qui .wrapper{
+    padding-bottom: 0px;
+  }
+ 
+  #pour-qui .visuel{
+    top: 240px;
+    left: 100px;
+    width: 70%;
+  } 
+
+  .section-pour-qui .stats{
+    top: -150px;
+  }
+  
+}
+
+@media screen and (min-width: 750px) and (max-width: 770px) {
+
+  #pour-qui .wrapper{
+    padding-bottom: 0px;
+  }
+  #pour-qui .visuel{
+    top: 230px;
+    left: 80px;
+  } 
+
+  .section-pour-qui .stats{
+    top: -100px;
+  }
+  
+}
+
+@media screen and (min-width: 770px) and (max-width: 800px) {
+
+  #pour-qui .wrapper{
+    padding-bottom: 20px;
+  }
+  #pour-qui .visuel{
+    top: 200px;
+    left: 80px;
+  } 
+
+  .section-pour-qui .stats{
+    top: -70px;
+  }
+  
+}
+
+@media screen and (min-width: 800px) and (max-width: 900px) {
+
+  #pour-qui .wrapper{
+    padding-bottom: 100px;
+  }
+  #pour-qui .visuel{
+    top: 200px;
+    left: 80px;
+  } 
+
+  .section-pour-qui .stats{
+    top: 0px;
+  }
+  
+}
+
+@media screen and (min-width: 900px) and (max-width: 1024px) {
+
+  
+  /* .main-header .cta-button {
+    display: inline-flex;
+  }
+
+  .btn-fixe-mobile {
+    display: none !important;
+  }*/
+   #pour-qui .wrapper{
+    padding-bottom:100px;
+  }
+  #pour-qui .visuel{
+    top: 200px;
+    left: 150px;
+    width: 60%;
+  } 
+
+  .section-pour-qui .stats{
+    top: 20px;
+  }
+  
+}
+

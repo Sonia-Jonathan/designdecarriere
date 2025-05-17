@@ -6,6 +6,25 @@
   --jaune: #FCF57F;
   --bleu-clair: #F4F5FF;
 }
+/* Empêche le débordement de la popup MailPoet */
+.mailpoet_form {
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+}
+
+/* Fixe les dimensions internes de la popup */
+.mailpoet_form_container,
+.mailpoet_form_popup {
+  max-width: 100% !important;
+  height: auto !important;
+  overflow: visible !important;
+}
+
+/* Corrige l'affichage de ton wrapper principal si nécessaire */
+.formulaire-burnout {
+  max-width: 100% !important;
+  overflow: hidden;
+}
 
 /* 
 #popup-form {

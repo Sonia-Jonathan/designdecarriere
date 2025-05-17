@@ -1055,6 +1055,7 @@ h3 {
   padding-right: 40px;
   padding-top: 30px;
   padding-bottom: 20px;
+  gap: 10px;
 }
 
 
@@ -1076,6 +1077,7 @@ h3 {
   justify-content: center;
   border: 2px solid var(--violet-profond);
   box-shadow: -8px 8px 0 0 var(--jaune);
+  aspect-ratio: 1 / 1;
   /* effet léger au hover */
   transition: all 0.8s ease;
 }
@@ -1892,6 +1894,9 @@ h3 {
 
 .footer-column {
   flex: 1;
+ 
+   
+
 }
 
 .footer-menu {
@@ -3276,6 +3281,7 @@ h3 {
     border-bottom: 1px solid var(--violet-profond);
     padding: 20px 0px;
 
+
   }
 
   .footer-column:last-child {
@@ -3795,9 +3801,117 @@ h3 {
     width: 28px;
     height: 76px;
   }
+
+  #temoignages .arrow-boucle{
+    right: -140px;
+  }
+
+  .temoignages-swiper {
+    max-width: 980px;
+    margin: auto;
+    padding: 0 50px;
+  }
+
+  .swiper-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+
+  .swiper-slide {
+    display: flex;
+    justify-content: center;
+  }
+
+  #temoignages .swiper-button-prev {
+    left: 35px;
+  }
+  
+  #temoignages .swiper-button-next {
+    right: 40px;
+  }
+
+  #temoignages .temoignage-special{
+    margin-top: 60px;
+  }
+  #processus .processus-left{
+    flex: 0.6;
+  }
+
+  #processus .processus-left .arrow-boucle{
+    width: 113px;
+    top: -10px;
+    left: 20px;
+  }
+  #processus .processus-right{
+    flex: 0.9;
+  }
+#tarifs h1{
+  font-size: 40px;
 }
 
-@media screen and (min-width: 426px) {
+#tarifs .ampoule_img {
+  width: 90px;
+  height: 90px;
+  top: 0px;
+}
+.section-livre-blanc .card {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+}
+
+.section-livre-blanc .card .card-left .cadeau-img{
+  
+  margin-top: -70px;
+}
+
+.section-livre-blanc .card .card-left .texte-left{
+  
+  margin-left: 0px;
+}
+
+.section-livre-blanc .card .card-left, .section-livre-blanc .card .card-right{
+  width: 100%;
+  top: 0px;
+  padding-bottom: 40px;
+
+}
+
+
+
+.section-livre-blanc .card-telechargement {
+  
+  padding-bottom: 40px;
+}
+
+.section-livre-blanc .card-telechargement .card-left{
+  top: 0px;
+  padding-top: 40px;
+  padding-bottom: 20px;
+}
+
+.podcast-wrapper .bloc-gauche{
+flex: 0.8;
+}
+
+.podcast-wrapper .bloc-droit{
+  flex: 1;
+  }
+
+  .footer-column {
+    display: flex;
+    justify-content: center;
+  }
+
+  .footer-menu{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+align-items: center;
+  }
+}
+
+@media screen and (min-width: 441px) {
 
   .main-header .cta-button {
     display: inline-flex;

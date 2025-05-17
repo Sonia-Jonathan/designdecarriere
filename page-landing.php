@@ -666,6 +666,10 @@
           768: {
             slidesPerView: 1
           },
+          1025: {
+            slidesPerView: 2,
+            spaceBetween: 50,
+          },
 
           1240: {
             slidesPerView: 2,

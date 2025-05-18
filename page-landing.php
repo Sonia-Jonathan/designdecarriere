@@ -583,7 +583,10 @@ get_header('landing');
 
 
 <div id="popup-livre-blanc" class="popup-mailpoet popup-hidden">
+  <div class="popup-inner">
+    <button class="popup-close" aria-label="Fermer">×</button>
     <?php echo do_shortcode('[mailpoet_form id="2"]'); ?>
+  </div>
 </div>
 
 
@@ -687,47 +690,28 @@ get_header('landing');
 
 
 
-
-
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const popup = document.getElementById('popup-livre-blanc');
-    const closeBtn = document.querySelector('.popup-close');
+  document.addEventListener('DOMContentLoaded', function () {
+  const openBtn = document.getElementById('ouvrir-popup-livre-blanc');
+  const popup = document.getElementById('popup-livre-blanc');
+  const closeBtn = popup.querySelector('.popup-close');
 
-    // Affiche la popup automatiquement après 1.5 seconde
-    setTimeout(() => {
-      popup.classList.remove('popup-hidden');
-    }, 1500);
-
-    // Ferme la popup si on clique sur le bouton
-    closeBtn.addEventListener('click', () => {
-      popup.classList.add('popup-hidden');
-    });
+  openBtn.addEventListener('click', function (e) {
+    e.preventDefault();
+    popup.classList.remove('popup-hidden');
   });
-</script>
 
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const openBtn = document.getElementById('ouvrir-popup-livre-blanc');
-    const popup = document.getElementById('popup-livre-blanc');
-    const closeBtn = popup.querySelector('.popup-close');
-
-    openBtn.addEventListener('click', function(e) {
-      e.preventDefault();
-      popup.classList.remove('popup-hidden');
-    });
-
-    closeBtn.addEventListener('click', function() {
-      popup.classList.add('popup-hidden');
-    });
-
-    // ferme la popup si on clique en dehors
-    popup.addEventListener('click', function(e) {
-      if (e.target === popup) {
-        popup.classList.add('popup-hidden');
-      }
-    });
+  closeBtn.addEventListener('click', function () {
+    popup.classList.add('popup-hidden');
   });
+
+  popup.addEventListener('click', function (e) {
+    if (e.target === popup) {
+      popup.classList.add('popup-hidden');
+    }
+  });
+});
+
 </script>
 
 

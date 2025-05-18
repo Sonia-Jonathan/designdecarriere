@@ -14,10 +14,7 @@
 } */
 
 /* Fixe les dimensions internes de la popup */
-.mailpoet_form_container,
-.mailpoet_form_popup {
-  overflow: visible !important;
-}
+
 
 /* Corrige l'affichage de ton wrapper principal si nécessaire */
 /* .formulaire-burnout {
@@ -1942,10 +1939,49 @@ h3 {
   /* caché par défaut */
 }
 
+.popup-mailpoet {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
 
+.popup-inner {
+  background: white;
+  padding: 40px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+}
 
 .popup-hidden {
   display: none;
+}
+
+.popup-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  color: #1a0034;
+}
+
+/* Empêche MailPoet de déformer */
+.mailpoet_form,
+.mailpoet_form_container {
+  width: 100% !important;
+  height: 20px;
 }
 
 

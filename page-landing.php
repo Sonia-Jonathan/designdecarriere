@@ -714,7 +714,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
 
-
+<!-- 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     const btn = document.getElementById('ouvrir-popup-livre-blanc');
@@ -729,7 +729,7 @@ document.addEventListener("DOMContentLoaded", function () {
       console.warn('Bouton ou popup introuvable');
     }
   });
-</script>
+</script> -->
 
 
 

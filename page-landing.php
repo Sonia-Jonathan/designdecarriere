@@ -580,6 +580,8 @@ get_header('landing');
 <div class="btn btn-fixe-mobile">
   <a href="<?php the_field('lien_bouton_rdv'); ?>"><?php the_field('texte_btn_rdv_mobile'); ?> <i class="fa-solid fa-arrow-right"></i></a>
 </div>
+
+
 <div id="popup-livre-blanc" class="popup-mailpoet popup-hidden">
   <div class="popup-inner">
     <?php echo do_shortcode('[mailpoet_form id="2"]'); ?>

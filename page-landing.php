@@ -581,6 +581,7 @@ get_header('landing');
   <a href="<?php the_field('lien_bouton_rdv'); ?>"><?php the_field('texte_btn_rdv_mobile'); ?> <i class="fa-solid fa-arrow-right"></i></a>
 </div>
 
+<!-- POPUP -->
 <div id="popup-livre-blanc" >
   <div >
     <?php echo do_shortcode('[mailpoet_form id="2"]'); ?>
@@ -685,33 +686,33 @@ get_header('landing');
 
 
 
-
-
+<!-- SCRIPT POPUP -->
 
 
 
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const btn = document.getElementById('ouvrir-popup-livre-blanc');
-    const popup = document.getElementById('popup-livre-blanc');
-    const closeBtn = document.getElementById('fermer-popup-livre-blanc');
+document.addEventListener("DOMContentLoaded", function () {
+  const trigger = document.getElementById("ouvrir-popup-livre-blanc");
+  const popup = document.getElementById("popup-livre-blanc");
+  const close = document.getElementById("fermer-popup-livre-blanc");
 
-    btn?.addEventListener('click', function (e) {
+  if (trigger && popup) {
+    trigger.addEventListener("click", function (e) {
       e.preventDefault();
-      popup.style.display = 'flex';
+      popup.style.display = "block";
+      popup.style.zIndex = "9999";
     });
+  }
 
-    closeBtn?.addEventListener('click', function () {
-      popup.style.display = 'none';
+  if (close && popup) {
+    close.addEventListener("click", function (e) {
+      e.preventDefault();
+      popup.style.display = "none";
     });
-
-    popup?.addEventListener('click', function (e) {
-      if (e.target === popup) {
-        popup.style.display = 'none';
-      }
-    });
-  });
+  }
+});
 </script>
+
 
 
 

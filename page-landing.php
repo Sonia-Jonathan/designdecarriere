@@ -581,8 +581,13 @@ get_header('landing');
   <a href="<?php the_field('lien_bouton_rdv'); ?>"><?php the_field('texte_btn_rdv_mobile'); ?> <i class="fa-solid fa-arrow-right"></i></a>
 </div>
 
+<div id="popup-livre-blanc" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.7); z-index:9999; display:flex; justify-content:center; align-items:center;">
+  <div style="background:white; padding:40px; border-radius:10px; max-width:600px; width:90%; position:relative;">
+    <button id="fermer-popup-livre-blanc" style="position:absolute; top:10px; right:10px; font-size:20px; border:none; background:none; cursor:pointer;">×</button>
+    <?php echo do_shortcode('[mailpoet_form id="2"]'); ?>
+  </div>
+</div>
 
-  <?php echo do_shortcode('[mailpoet_form id="2"]'); ?>
 
 
 
@@ -682,26 +687,32 @@ get_header('landing');
 
 
 
+
+
+
+
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     const btn = document.getElementById('ouvrir-popup-livre-blanc');
     const popup = document.getElementById('popup-livre-blanc');
+    const closeBtn = document.getElementById('fermer-popup-livre-blanc');
 
-    if (btn && popup) {
-      btn.addEventListener('click', function (e) {
-        e.preventDefault();
-        popup.style.display = 'block';
-      });
-    } else {
-      console.warn('Bouton ou popup introuvable');
-    }
+    btn?.addEventListener('click', function (e) {
+      e.preventDefault();
+      popup.style.display = 'flex';
+    });
+
+    closeBtn?.addEventListener('click', function () {
+      popup.style.display = 'none';
+    });
+
+    popup?.addEventListener('click', function (e) {
+      if (e.target === popup) {
+        popup.style.display = 'none';
+      }
+    });
   });
 </script>
-
-
-
-
-
 
 
 

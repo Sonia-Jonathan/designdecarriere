@@ -477,7 +477,7 @@ get_header('landing');
             <?php the_field('liste_sommaire'); ?>
           </div>
           <?php if (get_field('btn_envoi_lb')): ?>
-            <a id="ouvrir-popup-livre-blanc" href="#" class="cta-remise btn">
+            <a id="ouvrir-popup-livre-blanc" href="<?php the_field('lien_btn_envoi_lb'); ?>" class="cta-remise btn">
               <?php the_field('btn_envoi_lb'); ?> <i class="fa-solid fa-arrow-right"></i>
             </a>
 

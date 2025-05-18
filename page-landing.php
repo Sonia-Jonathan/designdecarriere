@@ -693,7 +693,7 @@ get_header('landing');
 document.addEventListener("DOMContentLoaded", function () {
   const trigger = document.getElementById("ouvrir-popup-livre-blanc");
   const popup = document.querySelector(".mailpoet_form_popup"); // Ciblage par classe
-  const close = document.querySelector("mailpoet_form_close_icon");
+  const close = document.querySelector(".mailpoet_form_close_icon");
 
   if (trigger && popup) {
     trigger.addEventListener("click", function (e) {

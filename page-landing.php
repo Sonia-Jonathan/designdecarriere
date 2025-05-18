@@ -582,7 +582,7 @@ get_header('landing');
 </div>
 
 <!-- POPUP -->
-<div id="popup-livre-blanc" >
+<div id="popup-livre-blanc" style="display: none;">
   <div >
     <?php echo do_shortcode('[mailpoet_form id="3"]'); ?>
   </div>
@@ -715,6 +715,21 @@ document.addEventListener("DOMContentLoaded", function () {
 </script>
 
 
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const btn = document.getElementById('ouvrir-popup-livre-blanc');
+    const popup = document.getElementById('popup-livre-blanc');
+
+    if (btn && popup) {
+      btn.addEventListener('click', function (e) {
+        e.preventDefault();
+        popup.style.display = 'block';
+      });
+    } else {
+      console.warn('Bouton ou popup introuvable');
+    }
+  });
+</script>
 
 
 

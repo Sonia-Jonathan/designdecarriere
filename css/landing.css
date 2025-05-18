@@ -1944,6 +1944,33 @@ h3 {
   /* caché par défaut */
 }
 
+.popup-mailpoet {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(26, 0, 52, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.popup-hidden {
+  display: none;
+}
+
+.popup-inner {
+  background: white;
+  padding: 40px;
+  border-radius: 10px;
+  max-width: 600px;
+  width: 90%;
+  position: relative;
+}
+
+
 
 @media screen and (min-width: 1025px) and (max-width: 1201px) {
 

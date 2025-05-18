@@ -583,10 +583,9 @@ get_header('landing');
 
 
 <div id="popup-livre-blanc" class="popup-mailpoet popup-hidden">
-  <div class="popup-inner">
-    <button class="popup-close" aria-label="Fermer">×</button>
+  
     <?php echo do_shortcode('[mailpoet_form id="2"]'); ?>
-  </div>
+ 
 </div>
 
 

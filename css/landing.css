@@ -7,6 +7,87 @@
   --bleu-clair: #F4F5FF;
 }
 
+/* Empêche le débordement de la popup MailPoet  */
+/* .mailpoet_form {
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+} */
+
+/* Fixe les dimensions internes de la popup */
+.mailpoet_form_container,
+.mailpoet_form_popup {
+  overflow: visible !important;
+}
+
+/* Corrige l'affichage de ton wrapper principal si nécessaire */
+/* .formulaire-burnout {
+  max-width: 100% !important;
+  overflow: hidden;
+} */
+
+/* 
+#popup-form {
+  background: #fefefe;
+  display: flex;
+  max-width: 900px;
+  margin: 50px auto;
+  border-radius: 12px;
+  box-shadow: 0 0 40px rgba(0,0,0,0.3);
+  overflow: hidden;
+  font-family: 'Inter', sans-serif;
+}
+
+#popup-form .mailpoet_form {
+  display: flex;
+  width: 100%;
+}
+
+#popup-form .mailpoet_column_with_background {
+  background-color: #2c004b;
+  padding: 30px;
+  color: white;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#popup-form .mailpoet_form_column {
+  flex: 2;
+  padding: 40px;
+  background: white;
+}
+
+.mailpoet_text_label,
+.mailpoet_checkbox_label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.mailpoet_text {
+  border: 2px solid #d600c0;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+.mailpoet_submit {
+  background: #ffe44d;
+  color: #000;
+  font-weight: bold;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.mailpoet_submit:hover {
+  background: #fddc00;
+}
+ */
 
 html {
   margin-top: 0px !important;

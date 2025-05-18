@@ -689,11 +689,11 @@ get_header('landing');
 <!-- SCRIPT POPUP -->
 
 
-<script>
+<!-- <script>
 document.addEventListener("DOMContentLoaded", function () {
   const trigger = document.getElementById("ouvrir-popup-livre-blanc");
   const popup = document.querySelector(".mailpoet_form_popup"); // Ciblage par classe
-  const close = document.getElementById("fermer-popup-livre-blanc");
+  // const close = document.getElementById("fermer-popup-livre-blanc");
 
   if (trigger && popup) {
     trigger.addEventListener("click", function (e) {
@@ -704,15 +704,15 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  if (close && popup) {
-    close.addEventListener("click", function (e) {
-      e.preventDefault();
-      popup.style.setProperty("display", "none", "important");
-      popup.classList.remove("active");
-    });
-  }
+//   if (close && popup) {
+//     close.addEventListener("click", function (e) {
+//       e.preventDefault();
+//       popup.style.setProperty("display", "none", "important");
+//       popup.classList.remove("active");
+//     });
+//   }
 });
-</script>
+</script> -->
 
 
 <script>

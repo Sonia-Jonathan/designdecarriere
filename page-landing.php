@@ -439,7 +439,7 @@ get_header('landing');
                 </div>
               </a>
 
-              
+
 
             <?php endif; ?>
           </div>
@@ -480,11 +480,7 @@ get_header('landing');
             <a id="ouvrir-popup-livre-blanc" href="<?php the_field('lien_btn_envoi_lb'); ?>" class="cta-remise btn">
               <?php the_field('btn_envoi_lb'); ?> <i class="fa-solid fa-arrow-right"></i>
             </a>
-            <div id="popup-livre-blanc" class="popup-mailpoet popup-hidden">
-                <div class="popup-inner">
-                  <?php echo do_shortcode('[mailpoet_form id="2"]'); ?>
-                </div>
-              </div>
+
           <?php endif; ?>
         </div>
 
@@ -584,11 +580,11 @@ get_header('landing');
 <div class="btn btn-fixe-mobile">
   <a href="<?php the_field('lien_bouton_rdv'); ?>"><?php the_field('texte_btn_rdv_mobile'); ?> <i class="fa-solid fa-arrow-right"></i></a>
 </div>
-<!-- 
-  <div id="popup-form" class="popup-mailpoet">
+<div id="popup-livre-blanc" class="popup-mailpoet popup-hidden">
+  <div class="popup-inner">
     <?php echo do_shortcode('[mailpoet_form id="2"]'); ?>
   </div>
- -->
+</div>
 
 
 <?php wp_footer(); ?>
@@ -711,28 +707,27 @@ get_header('landing');
 </script>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
-  const openBtn = document.getElementById('ouvrir-popup-livre-blanc');
-  const popup = document.getElementById('popup-livre-blanc');
-  const closeBtn = popup.querySelector('.popup-close');
+  document.addEventListener('DOMContentLoaded', function() {
+    const openBtn = document.getElementById('ouvrir-popup-livre-blanc');
+    const popup = document.getElementById('popup-livre-blanc');
+    const closeBtn = popup.querySelector('.popup-close');
 
-  openBtn.addEventListener('click', function (e) {
-    e.preventDefault();
-    popup.classList.remove('popup-hidden');
-  });
+    openBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      popup.classList.remove('popup-hidden');
+    });
 
-  closeBtn.addEventListener('click', function () {
-    popup.classList.add('popup-hidden');
-  });
-
-  // ferme la popup si on clique en dehors
-  popup.addEventListener('click', function (e) {
-    if (e.target === popup) {
+    closeBtn.addEventListener('click', function() {
       popup.classList.add('popup-hidden');
-    }
-  });
-});
+    });
 
+    // ferme la popup si on clique en dehors
+    popup.addEventListener('click', function(e) {
+      if (e.target === popup) {
+        popup.classList.add('popup-hidden');
+      }
+    });
+  });
 </script>
 
 

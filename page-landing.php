@@ -582,9 +582,7 @@ get_header('landing');
 </div>
 
 
-<div id="popup-livre-blanc" style="display: none;">
   <?php echo do_shortcode('[mailpoet_form id="2"]'); ?>
-</div>
 
 
 

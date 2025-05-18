@@ -582,6 +582,9 @@ get_header('landing');
 </div>
 
 
+<div id="popup-livre-blanc" style="display: none;">
+  <?php echo do_shortcode('[mailpoet_form id="2"]'); ?>
+</div>
 
 
 
@@ -681,6 +684,17 @@ get_header('landing');
 
 
 
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const btn = document.getElementById('ouvrir-popup-livre-blanc');
+    const popup = document.getElementById('popup-livre-blanc');
+
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      popup.style.display = 'block';
+    });
+  });
+</script>
 
 
 

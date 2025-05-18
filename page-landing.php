@@ -690,28 +690,7 @@ get_header('landing');
 
 
 
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  const trigger = document.getElementById("ouvrir-popup-livre-blanc");
-  const popup = document.getElementById("popup-livre-blanc");
-  const close = document.getElementById("fermer-popup-livre-blanc");
 
-  if (trigger && popup) {
-    trigger.addEventListener("click", function (e) {
-      e.preventDefault();
-      popup.style.display = "block";
-      popup.style.zIndex = "9999";
-    });
-  }
-
-  if (close && popup) {
-    close.addEventListener("click", function (e) {
-      e.preventDefault();
-      popup.style.display = "none";
-    });
-  }
-});
-</script>
 
 
 

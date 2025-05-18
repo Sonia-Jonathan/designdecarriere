@@ -685,29 +685,7 @@ get_header('landing');
 
 
 
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-  const openBtn = document.getElementById('ouvrir-popup-livre-blanc');
-  const popup = document.getElementById('popup-livre-blanc');
-  const closeBtn = popup.querySelector('.popup-close');
 
-  openBtn.addEventListener('click', function (e) {
-    e.preventDefault();
-    popup.classList.remove('popup-hidden');
-  });
-
-  closeBtn.addEventListener('click', function () {
-    popup.classList.add('popup-hidden');
-  });
-
-  popup.addEventListener('click', function (e) {
-    if (e.target === popup) {
-      popup.classList.add('popup-hidden');
-    }
-  });
-});
-
-</script>
 
 
 </body>

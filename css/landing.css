@@ -1970,6 +1970,17 @@ h3 {
   position: relative;
 }
 
+.popup-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 22px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+
 
 
 @media screen and (min-width: 1025px) and (max-width: 1201px) {

@@ -689,12 +689,17 @@ get_header('landing');
     const btn = document.getElementById('ouvrir-popup-livre-blanc');
     const popup = document.getElementById('popup-livre-blanc');
 
-    btn.addEventListener('click', function (e) {
-      e.preventDefault();
-      popup.style.display = 'block';
-    });
+    if (btn && popup) {
+      btn.addEventListener('click', function (e) {
+        e.preventDefault();
+        popup.style.display = 'block';
+      });
+    } else {
+      console.warn('Bouton ou popup introuvable');
+    }
   });
 </script>
+
 
 
 

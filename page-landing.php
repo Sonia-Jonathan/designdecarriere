@@ -584,7 +584,7 @@ get_header('landing');
 <!-- POPUP -->
 <div id="popup-livre-blanc" >
   <div >
-    <?php echo do_shortcode('[mailpoet_form id="2"]'); ?>
+    <?php echo do_shortcode('[mailpoet_form id="3"]'); ?>
   </div>
 </div>
 

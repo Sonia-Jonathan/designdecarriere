@@ -1,5 +1,5 @@
 <?php
-/* Template Name: Politique de confidentialité Page */
+/* Template Name: ThanksToSub Page*/
 ?>
 
 <!DOCTYPE html>
@@ -13,7 +13,7 @@ get_header('landing');
 
 
     <!-- MAIN -->
-    <main class="cgv">
+    <main class="thanks-sub">
 
         <?php
         while (have_posts()) : the_post();
@@ -58,6 +58,16 @@ get_header('landing');
             </div>
         </div>
     </footer>
+
+
+
+
+
+
+
+
+
+
 
 
 

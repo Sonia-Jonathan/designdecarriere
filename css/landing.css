@@ -7,6 +7,9 @@
   --bleu-clair: #F4F5FF;
 }
 
+#wpadminbar{
+display: none;
+}
 /* Empêche le débordement de la popup MailPoet  */
 .mailpoet_form {
   max-width: 100% !important;

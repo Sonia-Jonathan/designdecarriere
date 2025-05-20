@@ -1903,6 +1903,12 @@ h3 {
 
 
 /*** RESPONSIVE ***/
+@media screen and (min-width: 1196px) and (max-width: 1330px) {
+  #pour-qui .stats .stat-item{
+    min-width: 218px;
+  }
+
+}
 @media screen and (max-width: 1200px) {
   .main-header .burger-menu {
     background-color: transparent;
@@ -3736,7 +3742,7 @@ h3 {
   }
 
 }
-@media screen and (min-width: 1025px) and (max-width: 1230px) {
+@media screen and (min-width: 1025px) and (max-width: 1201px) {
   
 
 

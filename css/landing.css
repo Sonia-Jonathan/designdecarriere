@@ -351,6 +351,7 @@ h3 {
 
 .section-pour-qui .wrapper-intro {
   display: flex;
+  gap: 40px;
 }
 
 .section-pour-qui .wrapper-intro .wrapper-left {
@@ -358,6 +359,7 @@ h3 {
 }
 
 .section-pour-qui .wrapper-intro .wrapper-right {
+  
   flex: 1.5;
   display: flex;
   justify-content: center;
@@ -3730,7 +3732,7 @@ h3 {
 }
 @media screen and (min-width: 1025px) and (max-width: 1460px) {
   .arrow-envol{
-    right: -20px;
+    right: 0px;
   }
 
 }
@@ -3988,7 +3990,7 @@ h3 {
 
 }
 
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+@media screen and (min-width: 769px) and (max-width: 1024px) {
   .arrow-envol {
     left: 550px;
   }

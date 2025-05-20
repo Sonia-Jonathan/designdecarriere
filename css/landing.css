@@ -1903,6 +1903,46 @@ h3 {
 
 
 /*** RESPONSIVE ***/
+
+@media screen and (min-width: 320px) and (max-width: 365px) {
+  body .btn-fixe-mobile a{
+    font-size: 11px!important;
+  }
+}
+
+@media screen and (min-width: 365px) and (max-width: 388px) {
+  body .btn-fixe-mobile a{
+    font-size: 13px!important;
+  }
+}
+
+@media screen and (max-width: 424px) {
+
+
+  #pour-qui .arrow-left-to-right{
+    display: none;
+  }
+
+  #temoignages .temoin-details .fs-16-bold {
+    width: 110px!important;
+    left: -20px!important;
+  }
+  #temoignages .temoignage-special .avis{
+   display: flex;
+   flex-wrap: wrap ;
+   width: 220px;
+  }
+
+  .section-livre-blanc .card-telechargement .cta-remise{
+    width: fit-content;
+    text-align: left;
+  }
+
+  .footer-menu li a{
+    font-size: 12px;
+  }
+
+}
 @media screen and (min-width: 1196px) and (max-width: 1330px) {
   #pour-qui .stats .stat-item{
     min-width: 218px;

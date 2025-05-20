@@ -15,53 +15,60 @@ get_header('landing');
 <!-- MAIN -->
 <main class="landing">
 
-  <!-- POUR QUI -->
+
   <section id="pour-qui" class="section-pour-qui">
 
     <div class="wrapper">
-      <div class="intro">
-        <h1>
-          <?php the_field('titre_pour_qui'); ?>
-        </h1>
-        <div class="underline-carriere">
-          <?php $img = get_field('underline_carriere'); ?>
-          <?php if ($img): ?>
-            <img src="<?php echo esc_url($img['url']); ?>" alt="<?php echo esc_attr($img['alt']); ?>">
-          <?php endif; ?>
+      <div class="wrapper-intro">
+        <div class="wrapper-left">
+          <div class="intro">
+              <h1>
+                <?php the_field('titre_pour_qui'); ?>
+              </h1>
+              <div class="underline-carriere">
+                <?php $img = get_field('underline_carriere'); ?>
+                <?php if ($img): ?>
+                  <img src="<?php echo esc_url($img['url']); ?>" alt="<?php echo esc_attr($img['alt']); ?>">
+                <?php endif; ?>
+              </div>
+              <div class="arrow-envol">
+                <?php $img = get_field('arrow_envol'); ?>
+                <?php if ($img): ?>
+                  <img src="<?php echo esc_url($img['url']); ?>" alt="<?php echo esc_attr($img['alt']); ?>">
+                <?php endif; ?>
+              </div>
+              <h3><?php the_field('texte_intro_pour_qui'); ?></h3>
+            
+
+
+          </div>
+          <div class="types-epuisement">
+            <div class="arrow-left-to-right">
+              <?php $img = get_field('arrow_left_to_right'); ?>
+              <?php if ($img): ?>
+                <img src="<?php echo esc_url($img['url']); ?>" alt="<?php echo esc_attr($img['alt']); ?>">
+              <?php endif; ?>
+            </div>
+            <p class="fs-18-bold"><?php the_field('titre_types_epuisement'); ?></p>
+            <ul>
+              <li class="titre-exergue"><?php the_field('etiquette_1'); ?></li>
+              <li class="titre-exergue"><?php the_field('etiquette_2'); ?></li>
+              <li class="titre-exergue"><?php the_field('etiquette_3'); ?></li>
+            </ul>
+          </div>
         </div>
-        <div class="arrow-envol">
-          <?php $img = get_field('arrow_envol'); ?>
-          <?php if ($img): ?>
-            <img src="<?php echo esc_url($img['url']); ?>" alt="<?php echo esc_attr($img['alt']); ?>">
-          <?php endif; ?>
-        </div>
-        <h3><?php the_field('texte_intro_pour_qui'); ?></h3>
-        <div class="visuel">
-          <?php $img = get_field('image_femme_pour_qui'); ?>
-          <?php if ($img): ?>
-            <img src="<?php echo esc_url($img['url']); ?>" alt="<?php echo esc_attr($img['alt']); ?>">
-          <?php endif; ?>
+
+        <div class="wrapper-right">
+          <div class="visuel">
+            <?php $img = get_field('image_femme_pour_qui'); ?>
+            <?php if ($img): ?>
+              <img src="<?php echo esc_url($img['url']); ?>" alt="<?php echo esc_attr($img['alt']); ?>">
+            <?php endif; ?>
+          </div>
         </div>
       </div>
 
 
-
-      <!-- TYPE EPUISEMENT -->
-
-      <div class="types-epuisement">
-        <div class="arrow-left-to-right">
-          <?php $img = get_field('arrow_left_to_right'); ?>
-          <?php if ($img): ?>
-            <img src="<?php echo esc_url($img['url']); ?>" alt="<?php echo esc_attr($img['alt']); ?>">
-          <?php endif; ?>
-        </div>
-        <p class="fs-18-bold"><?php the_field('titre_types_epuisement'); ?></p>
-        <ul>
-          <li class="titre-exergue"><?php the_field('etiquette_1'); ?></li>
-          <li class="titre-exergue"><?php the_field('etiquette_2'); ?></li>
-          <li class="titre-exergue"><?php the_field('etiquette_3'); ?></li>
-        </ul>
-      </div>
 
       <div class="stats">
         <?php for ($i = 1; $i <= 4; $i++): ?>
@@ -83,7 +90,7 @@ get_header('landing');
           <?php endif; ?>
         </div>
       </div>
-
+    </div>
 
     </div>
 
@@ -583,7 +590,7 @@ get_header('landing');
 
 <!-- POPUP -->
 <div id="popup-livre-blanc" style="display: none;">
-  <div >
+  <div>
     <?php echo do_shortcode('[mailpoet_form id="3"]'); ?>
   </div>
 </div>
@@ -690,28 +697,28 @@ get_header('landing');
 
 
 <script>
-document.addEventListener("DOMContentLoaded", function () {
-  const trigger = document.getElementById("ouvrir-popup-livre-blanc");
-  const popup = document.querySelector(".mailpoet_form_popup"); // Ciblage par classe
-  const close = document.querySelector(".mailpoet_form_close_icon");
+  document.addEventListener("DOMContentLoaded", function() {
+    const trigger = document.getElementById("ouvrir-popup-livre-blanc");
+    const popup = document.querySelector(".mailpoet_form_popup"); // Ciblage par classe
+    const close = document.querySelector(".mailpoet_form_close_icon");
 
-  if (trigger && popup) {
-    trigger.addEventListener("click", function (e) {
-      e.preventDefault();
-      popup.style.setProperty("display", "block", "important");
-      popup.classList.add("active"); // utile si MailPoet gère l’affichage par cette classe
-      popup.style.zIndex = "9999";
-    });
-  }
+    if (trigger && popup) {
+      trigger.addEventListener("click", function(e) {
+        e.preventDefault();
+        popup.style.setProperty("display", "block", "important");
+        popup.classList.add("active"); // utile si MailPoet gère l’affichage par cette classe
+        popup.style.zIndex = "9999";
+      });
+    }
 
-  if (close && popup) {
-    close.addEventListener("click", function (e) {
-      e.preventDefault();
-      popup.style.setProperty("display", "none", "important");
-      popup.classList.remove("active");
-    });
-  }
-});
+    if (close && popup) {
+      close.addEventListener("click", function(e) {
+        e.preventDefault();
+        popup.style.setProperty("display", "none", "important");
+        popup.classList.remove("active");
+      });
+    }
+  });
 </script>
 
 <!-- 

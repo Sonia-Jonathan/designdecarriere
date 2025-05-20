@@ -10,7 +10,7 @@
 
 
     <!-- MAIN -->
-    <main class="thanks-sub">
+    <main class="cgv">
 
         <?php
         while (have_posts()) : the_post();
@@ -22,6 +22,21 @@
 
 
     </main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 </body>
 

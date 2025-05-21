@@ -233,7 +233,7 @@ get_header('landing');
       <div class="processus-left">
         <h3 class="sur-titre"><?php the_field('titre'); ?></h3>
         <h2><?php the_field('sous-titre'); ?></h2>
-        <div class="description fs-18">
+        <div class="description fs-16">
           <?php the_field('description'); ?>
         </div>
         <?php $img = get_field('fleche-boucle'); ?>
@@ -273,7 +273,7 @@ get_header('landing');
                   </div>
                 </div>
                 <div class="accordion-content">
-                  <div class="points-principaux fs-18">
+                  <div class="points-principaux fs-16">
                     <?php the_field('points_principaux'); ?>
                   </div>
 
@@ -282,7 +282,7 @@ get_header('landing');
                       <p class="fs-16-bold"><?php echo esc_html($titre_travail); ?></p>
                     <?php endif; ?>
 
-                    <div class="points-travails fs-16 ">
+                    <div class="points-travails fs-13 ">
                       <?php the_field('liste_travail'); ?>
                     </div>
                   </div>
@@ -510,7 +510,7 @@ get_header('landing');
       <div class="bloc-gauche">
         <h2 class="titre-exergue"><?php the_field('titre_gauche_podcast'); ?></h2>
 
-        <a href="<?php the_field('lien_btn_podcast'); ?>">
+        <a href="<?php the_field('lien_btn_podcast'); ?>" target="_blank">
           <div class="vignette-podcast">
             <?php $illu = get_field('image_vignette_podcast'); ?>
             <?php if ($illu): ?>

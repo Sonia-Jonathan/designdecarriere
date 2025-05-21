@@ -22,23 +22,23 @@ get_header('landing');
       <div class="wrapper-intro">
         <div class="wrapper-left">
           <div class="intro">
-              <h1>
-                <?php the_field('titre_pour_qui'); ?>
-              </h1>
-              <div class="underline-carriere">
-                <?php $img = get_field('underline_carriere'); ?>
-                <?php if ($img): ?>
-                  <img src="<?php echo esc_url($img['url']); ?>" alt="<?php echo esc_attr($img['alt']); ?>">
-                <?php endif; ?>
-              </div>
-              <div class="arrow-envol">
-                <?php $img = get_field('arrow_envol'); ?>
-                <?php if ($img): ?>
-                  <img src="<?php echo esc_url($img['url']); ?>" alt="<?php echo esc_attr($img['alt']); ?>">
-                <?php endif; ?>
-              </div>
-              <h3><?php the_field('texte_intro_pour_qui'); ?></h3>
-            
+            <h1>
+              <?php the_field('titre_pour_qui'); ?>
+            </h1>
+            <div class="underline-carriere">
+              <?php $img = get_field('underline_carriere'); ?>
+              <?php if ($img): ?>
+                <img src="<?php echo esc_url($img['url']); ?>" alt="<?php echo esc_attr($img['alt']); ?>">
+              <?php endif; ?>
+            </div>
+            <div class="arrow-envol">
+              <?php $img = get_field('arrow_envol'); ?>
+              <?php if ($img): ?>
+                <img src="<?php echo esc_url($img['url']); ?>" alt="<?php echo esc_attr($img['alt']); ?>">
+              <?php endif; ?>
+            </div>
+            <h3><?php the_field('texte_intro_pour_qui'); ?></h3>
+
 
 
           </div>
@@ -632,12 +632,17 @@ get_header('landing');
           spaceBetween: 40,
         },
 
-        1440: {
+        1441: {
           spaceBetween: -25,
 
           slidesPerView: 3
         },
 
+        2055: {
+          spaceBetween: 5,
+
+          slidesPerView: 4
+        }
 
       }
 
@@ -720,23 +725,6 @@ get_header('landing');
     }
   });
 </script>
-
-<!-- 
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const btn = document.getElementById('ouvrir-popup-livre-blanc');
-    const popup = document.getElementById('popup-livre-blanc');
-
-    if (btn && popup) {
-      btn.addEventListener('click', function (e) {
-        e.preventDefault();
-        popup.style.display = 'block';
-      });
-    } else {
-      console.warn('Bouton ou popup introuvable');
-    }
-  });
-</script> -->
 
 
 

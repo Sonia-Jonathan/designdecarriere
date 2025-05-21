@@ -4083,3 +4083,18 @@ h3 {
 
 
 }
+
+@media screen and (min-width: 1460px) {
+ 
+  #pour-qui .arrow-envol{
+    left: 560px;
+    width: max-content;
+  }
+
+  #pour-qui .wrapper, #pour-qui .bloc-retravail .contenu-bloc, .temoignage-special, .processus-wrapper, .offres-wrapper, .section-livre-blanc .card, .podcast-wrapper{
+    width: 1440px;
+  }
+
+  
+
+}

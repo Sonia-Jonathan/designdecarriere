@@ -216,7 +216,7 @@ get_header('landing');
             <p><?php the_field('nom_prenom'); ?></p>
             <p><?php the_field('profession'); ?></p>
           </div>
-          <p class="avis"><?php the_field('avis'); ?></p>
+          <div class="avis"><?php the_field('avis'); ?></div>
         </div>
       </div>
     </div>

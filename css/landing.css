@@ -1937,7 +1937,7 @@ h3 {
   #temoignages .temoignage-special .avis {
     display: flex;
     flex-wrap: wrap;
-    width: 260px;
+    width: 220px;
   }
 
   .section-livre-blanc .card-telechargement .cta-remise {

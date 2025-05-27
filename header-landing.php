@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title><?php the_title(); ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="noindex, nofollow">
+    <!-- <meta name="robots" content="noindex, nofollow"> -->
     <?php wp_head(); ?>
     <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/css/landing.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
